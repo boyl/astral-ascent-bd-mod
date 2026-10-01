@@ -110,4 +110,3 @@ function Invoke-InstallTransaction($Plan, [string]$Destination) {
     }
     Write-Host "安装完成并验证；备份：$backupRoot" -ForegroundColor Green
 }
-
