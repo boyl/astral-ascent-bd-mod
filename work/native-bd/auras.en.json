@@ -1,0 +1,2487 @@
+[
+  {
+    "id": 2,
+    "name": "Shooting Star",
+    "description": "Rarity: Common\n• This aura can be upgraded.",
+    "quality": 1,
+    "elements": 0
+  },
+  {
+    "id": 3,
+    "name": "Ember Shock I",
+    "description": "Rarity: Common\n• On Spell Refresh, creates 10 Embers",
+    "quality": 1,
+    "elements": 1
+  },
+  {
+    "id": 4,
+    "name": "Ember Shock II",
+    "description": "Rarity: Rare\n• On Spell Refresh, creates 12 Embers\n• Increases Embers time by 1 seconds",
+    "quality": 2,
+    "elements": 1
+  },
+  {
+    "id": 5,
+    "name": "Ember Shock III",
+    "description": "Rarity: Epic\n• On Spell Refresh, creates 15 Embers\n• Increases Embers time by 3 seconds\n• Increases Embers damage by 50%",
+    "quality": 3,
+    "elements": 1
+  },
+  {
+    "id": 42,
+    "name": "Explosive Flames I",
+    "description": "Rarity: Common\n• On Combustion, creates 2 Embers",
+    "quality": 1,
+    "elements": 1
+  },
+  {
+    "id": 49,
+    "name": "Exalted Fall I",
+    "description": "Rarity: Common\n• On fall attack, creates 1 Combustion (Cooldown / interval:  10 seconds)",
+    "quality": 1,
+    "elements": 1
+  },
+  {
+    "id": 65,
+    "name": "Flame Blessing I",
+    "description": "Rarity: Common\n• On enemies with Burn, deals 15% more damage",
+    "quality": 1,
+    "elements": 1
+  },
+  {
+    "id": 66,
+    "name": "Flame Blessing II",
+    "description": "Rarity: Rare\n• On enemies with Burn, deals 20% more damage\n• Increases Combustion damage by 20%",
+    "quality": 2,
+    "elements": 1
+  },
+  {
+    "id": 67,
+    "name": "Flame Blessing III",
+    "description": "Rarity: Epic\n• On enemies with Burn, deals 25% more damage\n• Increases Combustion damage by 30%\n• When applying 1 Burn, apply 1 more",
+    "quality": 3,
+    "elements": 1
+  },
+  {
+    "id": 68,
+    "name": "Exalted Fall II",
+    "description": "Rarity: Rare\n• On fall attack, creates 1 Combustion (Cooldown / interval:  8 seconds)\n• Increases Combustion damage by 20%",
+    "quality": 2,
+    "elements": 1
+  },
+  {
+    "id": 69,
+    "name": "Exalted Fall III",
+    "description": "Rarity: Epic\n• On fall attack, creates 1 Combustion (Cooldown / interval:  5 seconds)\n• Increases Combustion damage by 30%\n• Increases fall attack damage by 200%",
+    "quality": 3,
+    "elements": 1
+  },
+  {
+    "id": 72,
+    "name": "Blazing Scar I",
+    "description": "Rarity: Common\n• On enemies with Burn, 10% chance of Critical Hit",
+    "quality": 1,
+    "elements": 1
+  },
+  {
+    "id": 73,
+    "name": "Blazing Scar II",
+    "description": "Rarity: Rare\n• On enemies with Burn, 15% chance of Critical Hit\n• On enemies with Burn, 5% of chance to restore 1 Life",
+    "quality": 2,
+    "elements": 1
+  },
+  {
+    "id": 74,
+    "name": "Blazing Scar III",
+    "description": "Rarity: Epic\n• On enemies with Burn, 25% chance of Critical Hit\n• On enemies with Burn, 10% of chance to restore 1 Life\n• On enemies with Burn, 100% chance to restore 1 Mana (Cooldown / interval:  4 seconds)",
+    "quality": 3,
+    "elements": 1
+  },
+  {
+    "id": 75,
+    "name": "The First Flame",
+    "description": "Rarity: Astral\n• On spell hit, 50% chance to apply 1 Burn\n• Increases Combustion damage by 60%",
+    "quality": 4,
+    "elements": 1
+  },
+  {
+    "id": 76,
+    "name": "Ardent Sprint I",
+    "description": "Rarity: Common\n• On dash, creates 1 Combustion (Cooldown / interval:  10 seconds)",
+    "quality": 1,
+    "elements": 1
+  },
+  {
+    "id": 77,
+    "name": "Ardent Sprint II",
+    "description": "Rarity: Rare\n• On dash, creates 1 Combustion (Cooldown / interval:  8 seconds)\n• On dash hit, deals damage and applies 1 Burn",
+    "quality": 2,
+    "elements": 1
+  },
+  {
+    "id": 78,
+    "name": "Ardent Sprint III",
+    "description": "Rarity: Epic\n• On dash, creates 1 Combustion (Cooldown / interval:  5 seconds)\n• On dash hit, deals damage and applies 2 Burn\n• Increases Combustion damage by 30%",
+    "quality": 3,
+    "elements": 1
+  },
+  {
+    "id": 79,
+    "name": "Explosive Flames II",
+    "description": "Rarity: Rare\n• On Combustion, creates 2 Embers\n• Increases Embers damage by 30%",
+    "quality": 2,
+    "elements": 1
+  },
+  {
+    "id": 80,
+    "name": "Explosive Flames III",
+    "description": "Rarity: Epic\n• On Combustion, creates 3 Embers\n• Increases Embers damage by 50%\n• When walking over Embers, creates Fire Shield for 3 seconds (Cooldown / interval:  8 seconds)",
+    "quality": 3,
+    "elements": 1
+  },
+  {
+    "id": 81,
+    "name": "Raw Force",
+    "description": "Rarity: Astral\n• If enemy life is full, creates 1 Combustion\n• Increases Combustion damage by 100%",
+    "quality": 4,
+    "elements": 1
+  },
+  {
+    "id": 82,
+    "name": "Wisdom of the Blue Fire",
+    "description": "Rarity: Astral\n• On spell hit, 80% chance to create 1 Embers\n• Increases Embers damage by 100%\n• Transforms Embers into Blue Embers",
+    "quality": 4,
+    "elements": 3
+  },
+  {
+    "id": 83,
+    "name": "Wisp Caller I",
+    "description": "Rarity: Common\n• On Spell Refresh, summons 2 Wisp",
+    "quality": 1,
+    "elements": 1
+  },
+  {
+    "id": 84,
+    "name": "Wisp Caller II",
+    "description": "Rarity: Rare\n• On Spell Refresh, summons 2 Wisp\n• Increases Wisp damage by 30%",
+    "quality": 2,
+    "elements": 1
+  },
+  {
+    "id": 85,
+    "name": "Wisp Caller III",
+    "description": "Rarity: Epic\n• On Spell Refresh, summons 2 Wisp\n• Increases Wisp damage by 50%\n• Transforms Wisps into Venomous Wisp",
+    "quality": 3,
+    "elements": 9
+  },
+  {
+    "id": 86,
+    "name": "Fairy Revenge I",
+    "description": "Rarity: Common\n• When hero is hit, summons 2 Wisp (Cooldown / interval:  6 seconds)",
+    "quality": 1,
+    "elements": 1
+  },
+  {
+    "id": 87,
+    "name": "Fairy Revenge II",
+    "description": "Rarity: Rare\n• When hero is hit, summons 2 Wisp (Cooldown / interval:  6 seconds)\n• Increases Wisp damage by 30%",
+    "quality": 2,
+    "elements": 1
+  },
+  {
+    "id": 88,
+    "name": "Fairy Revenge III",
+    "description": "Rarity: Epic\n• When hero is hit, summons 2 Wisp (Cooldown / interval:  6 seconds)\n• Increases Wisp damage by 50%\n• On Wisp hit, creates 2 Embers",
+    "quality": 3,
+    "elements": 1
+  },
+  {
+    "id": 89,
+    "name": "Seal Of The Fairy King",
+    "description": "Rarity: Astral\n• Summons 2 permanent Wisp\n• Wisp now shoots explosive fireballs",
+    "quality": 4,
+    "elements": 1
+  },
+  {
+    "id": 90,
+    "name": "Lingering Flame I",
+    "description": "Rarity: Common\n• On spell hit, 10% chance to apply Ignition",
+    "quality": 1,
+    "elements": 1
+  },
+  {
+    "id": 91,
+    "name": "Lingering Flame II",
+    "description": "Rarity: Rare\n• On spell hit, 15% chance to apply Ignition\n• Increases Ignition duration by 2 seconds",
+    "quality": 2,
+    "elements": 1
+  },
+  {
+    "id": 92,
+    "name": "Lingering Flame III",
+    "description": "Rarity: Epic\n• On spell hit, 30% chance to apply Ignition\n• Increases Ignition duration by 4 seconds\n• Increases Ignition damage by 50%",
+    "quality": 3,
+    "elements": 1
+  },
+  {
+    "id": 93,
+    "name": "Ignited Scar I",
+    "description": "Rarity: Common\n• 30% chance: On Critical Hit, apply Ignition (Interval: 6 seconds)",
+    "quality": 1,
+    "elements": 1
+  },
+  {
+    "id": 94,
+    "name": "Ignited Scar II",
+    "description": "Rarity: Rare\n• 40% chance: On Critical Hit, apply Ignition (Interval: 5 seconds)\n• Increases Critical Hit chances by 8%",
+    "quality": 2,
+    "elements": 1
+  },
+  {
+    "id": 95,
+    "name": "Ignited Scar III",
+    "description": "Rarity: Epic\n• 50% chance: On Critical Hit, apply Ignition (Interval: 4 seconds)\n• Increases Critical Hit chances by 15%\n• On enemies with Ignition, deals 30% more damage",
+    "quality": 3,
+    "elements": 1
+  },
+  {
+    "id": 96,
+    "name": "Igneous Shield I",
+    "description": "Rarity: Common\n• Creates Fire Shield for 4 seconds (Cooldown / interval:  24 seconds)",
+    "quality": 1,
+    "elements": 1
+  },
+  {
+    "id": 97,
+    "name": "Igneous Shield II",
+    "description": "Rarity: Rare\n• Creates Fire Shield for 4 seconds (Cooldown / interval:  20 seconds)\n• When Fire Shield is active, increases Armor by 6%",
+    "quality": 2,
+    "elements": 1
+  },
+  {
+    "id": 98,
+    "name": "Igneous Shield III",
+    "description": "Rarity: Epic\n• Creates Fire Shield for 6 seconds (Cooldown / interval:  12 seconds)\n• When Fire Shield is active, increases Armor by 8%\n• Increases Fire Shield damage by 50%",
+    "quality": 3,
+    "elements": 1
+  },
+  {
+    "id": 99,
+    "name": "Fiery Retribution I",
+    "description": "Rarity: Common\n• When hero is hit, creates Fire Shield for 4 seconds (Cooldown / interval:  10 seconds)",
+    "quality": 1,
+    "elements": 1
+  },
+  {
+    "id": 100,
+    "name": "Fiery Retribution II",
+    "description": "Rarity: Rare\n• When hero is hit, creates Fire Shield for 4 seconds (Cooldown / interval:  8 seconds)\n• On Fire Shield hit, 30% chances to apply Ignition",
+    "quality": 2,
+    "elements": 1
+  },
+  {
+    "id": 101,
+    "name": "Fiery Retribution III",
+    "description": "Rarity: Epic\n• When hero is hit, creates Fire Shield for 4 seconds (Cooldown / interval:  6 seconds)\n• On Fire Shield hit, 50% chances to apply Ignition\n• While Fire Shield is active, gains Movespeed and Enrage",
+    "quality": 3,
+    "elements": 1
+  },
+  {
+    "id": 102,
+    "name": "Ring of Sol",
+    "description": "Rarity: Astral\n• On dash, creates Fire Shield for 6 seconds (Cooldown / interval:  10 seconds)\n• Increases Fire Shield size\n• Increases Fire Shield damage by 100%",
+    "quality": 4,
+    "elements": 1
+  },
+  {
+    "id": 103,
+    "name": "Frost Blessing I",
+    "description": "Rarity: Common\n• On enemies with Freeze, deals 15% more damage",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 104,
+    "name": "Frost Blessing II",
+    "description": "Rarity: Rare\n• On enemies with Freeze, deals 20% more damage\n• Increases Frostbite damage by 20%",
+    "quality": 2,
+    "elements": 2
+  },
+  {
+    "id": 105,
+    "name": "Frost Blessing III",
+    "description": "Rarity: Epic\n• On enemies with Freeze, deals 25% more damage\n• Increases Frostbite damage by 30%\n• On spell hit on enemy with Freeze, 15% chance to apply Frostbite",
+    "quality": 3,
+    "elements": 2
+  },
+  {
+    "id": 106,
+    "name": "Brittle Ice I",
+    "description": "Rarity: Common\n• For each Freeze stack on enemy, increases Critical Hit chances on hit by 2%",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 107,
+    "name": "Brittle Ice II",
+    "description": "Rarity: Rare\n• For each Freeze stack on enemy, increases Critical Hit chances on hit by 3%\n• On Frostbite enemy, creates 4 Ice Fragment",
+    "quality": 2,
+    "elements": 2
+  },
+  {
+    "id": 108,
+    "name": "Brittle Ice III",
+    "description": "Rarity: Epic\n• For each Freeze stack on enemy, increases Critical Hit chances on hit by 5%\n• On Frostbite enemy, creates 5 Ice Fragment\n• On spell hit on Frostbite enemy, creates 1 Ice Fragment",
+    "quality": 3,
+    "elements": 2
+  },
+  {
+    "id": 109,
+    "name": "Frost Sculptor",
+    "description": "Rarity: Astral\n• On Frostbite enemy, creates 6 Ice Fragment\n• On Frostbite enemy, creates 1 Ice Idol\n• On Frostbite enemy, creates 4 Snowflake",
+    "quality": 4,
+    "elements": 2
+  },
+  {
+    "id": 110,
+    "name": "Icy Blow I",
+    "description": "Rarity: Common\n• If enemy life is full, applies 2 Freeze",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 111,
+    "name": "Icy Blow II",
+    "description": "Rarity: Rare\n• If enemy life is full, applies 3 Freeze\n• On Frostbite enemy, creates 4 Ice Fragment",
+    "quality": 2,
+    "elements": 2
+  },
+  {
+    "id": 112,
+    "name": "Icy Blow III",
+    "description": "Rarity: Epic\n• If enemy life is full, applies 5 Freeze\n• On Frostbite enemy, creates 5 Ice Fragment\n• Increases Frostbite damage by 30%",
+    "quality": 3,
+    "elements": 2
+  },
+  {
+    "id": 113,
+    "name": "Gelid Charm I",
+    "description": "Rarity: Common\n• On spell hit, 10% chance to apply 1 Freeze",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 114,
+    "name": "Gelid Charm II",
+    "description": "Rarity: Rare\n• On spell hit, 15% chance to apply 1 Freeze\n• Increases Frostbite damage by 20%",
+    "quality": 2,
+    "elements": 2
+  },
+  {
+    "id": 115,
+    "name": "Gelid Charm III",
+    "description": "Rarity: Epic\n• On spell hit, 25% chance to apply 1 Freeze\n• Increases Frostbite damage by 30%\n• On Frostbite enemy, creates 3 Snowflake",
+    "quality": 3,
+    "elements": 2
+  },
+  {
+    "id": 116,
+    "name": "Ice Pebble I",
+    "description": "Rarity: Common\n• On spell cast, creates 1 Ice Fragment",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 117,
+    "name": "Ice Pebble II",
+    "description": "Rarity: Rare\n• On spell cast, creates 2 Ice Fragment\n• On Ice Fragment hit, 5% chances to create 1 Ice Idol",
+    "quality": 2,
+    "elements": 2
+  },
+  {
+    "id": 118,
+    "name": "Ice Pebble III",
+    "description": "Rarity: Epic\n• On spell cast, creates 3 Ice Fragment\n• On Ice Fragment hit, 10% chances to create 1 Ice Idol\n• Increases Ice Fragment damage by 50%",
+    "quality": 3,
+    "elements": 2
+  },
+  {
+    "id": 119,
+    "name": "Iceberg I",
+    "description": "Rarity: Common\n• When hero is hit, creates 3 Ice Fragment (Cooldown / interval:  6 seconds)",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 120,
+    "name": "Iceberg II",
+    "description": "Rarity: Rare\n• When hero is hit, creates 4 Ice Fragment (Cooldown / interval:  6 seconds)\n• Increases Ice Fragment damage by 30%",
+    "quality": 2,
+    "elements": 2
+  },
+  {
+    "id": 121,
+    "name": "Iceberg III",
+    "description": "Rarity: Epic\n• When hero is hit, creates 5 Ice Fragment (Cooldown / interval:  6 seconds)\n• Increases Ice Fragment damage by 50%\n• When hero is hit, gains Barrier for 5 seconds",
+    "quality": 3,
+    "elements": 2
+  },
+  {
+    "id": 122,
+    "name": "Absolute Zero",
+    "description": "Rarity: Astral\n• Increases Frostbite effect duration by 2 seconds\n• Increases Frostbite damage by 60%\n• On enemies with Frostbite, 30% Critical Hit chances",
+    "quality": 4,
+    "elements": 2
+  },
+  {
+    "id": 123,
+    "name": "Rustling Fall",
+    "description": "Rarity: Astral\n• On fall attack, creates 4 Ice Fragment (Cooldown / interval:  6 seconds)\n• Increases Ice Fragment damage by 100%\n• Ice Fragment multiplies when it bounces",
+    "quality": 4,
+    "elements": 2
+  },
+  {
+    "id": 124,
+    "name": "Carve Mastery",
+    "description": "Rarity: Astral\n• On Critical Hit, creates 1 Ice Idol (Cooldown / interval:  2 seconds)\n• Increases Ice Idol damage by 100%\n• Increases Critical Hit chances by 20%",
+    "quality": 4,
+    "elements": 18
+  },
+  {
+    "id": 125,
+    "name": "Sub-Zero Sprint I",
+    "description": "Rarity: Common\n• On dash, creates 1 Ice Idol (Cooldown / interval:  10 seconds)",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 126,
+    "name": "Sub-Zero Sprint II",
+    "description": "Rarity: Rare\n• On dash, creates 1 Ice Idol (Cooldown / interval:  8 seconds)\n• Increases Ice Idol damage by 30%",
+    "quality": 2,
+    "elements": 2
+  },
+  {
+    "id": 127,
+    "name": "Sub-Zero Sprint III",
+    "description": "Rarity: Epic\n• On dash, creates 1 Ice Idol (Cooldown / interval:  6 seconds)\n• Increases Ice Idol damage by 50%\n• On Ice Idol disappearance, creates 4 Ice Fragment",
+    "quality": 3,
+    "elements": 2
+  },
+  {
+    "id": 128,
+    "name": "Snow Fall I",
+    "description": "Rarity: Common\n• On fall attack, creates 1 Ice Idol (Cooldown / interval:  10 seconds)",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 129,
+    "name": "Snow Fall II",
+    "description": "Rarity: Rare\n• On fall attack, creates 1 Ice Idol (Cooldown / interval:  8 seconds)\n• On Ice Idol hit, 30% chances to apply 1 Vulnerability",
+    "quality": 2,
+    "elements": 18
+  },
+  {
+    "id": 130,
+    "name": "Snow Fall III",
+    "description": "Rarity: Epic\n• On fall attack, creates 1 Ice Idol (Cooldown / interval:  6 seconds)\n• On Ice Idol hit, 50% chances to apply 1 Vulnerability\n• On Ice Idol appearance, gains Enrage for 3 seconds",
+    "quality": 3,
+    "elements": 18
+  },
+  {
+    "id": 131,
+    "name": "Snow Amulet I",
+    "description": "Rarity: Common\n• When hero is hit, creates 2 Snowflake (Cooldown / interval:  6 seconds)",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 132,
+    "name": "Snow Amulet II",
+    "description": "Rarity: Rare\n• When hero is hit, creates 3 Snowflake (Cooldown / interval:  4 seconds)\n• Increases Snowflake damage by 30%",
+    "quality": 2,
+    "elements": 2
+  },
+  {
+    "id": 133,
+    "name": "Snow Amulet III",
+    "description": "Rarity: Epic\n• When hero is hit, creates 4 Snowflake (Cooldown / interval:  2 seconds)\n• Increases Snowflake damage by 50%\n• On Critical Hit, 25% chances to summon a Snowflake",
+    "quality": 3,
+    "elements": 2
+  },
+  {
+    "id": 134,
+    "name": "Glacial Spirit I",
+    "description": "Rarity: Common\n• Creates 1 Snowflake, up to 2 at once (Cooldown / interval:  6 seconds)",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 135,
+    "name": "Glacial Spirit II",
+    "description": "Rarity: Rare\n• Creates 1 Snowflake, up to 3 at once (Cooldown / interval:  5 seconds)\n• Increases Snowflake damage by 30%",
+    "quality": 2,
+    "elements": 2
+  },
+  {
+    "id": 136,
+    "name": "Glacial Spirit III",
+    "description": "Rarity: Epic\n• Creates 1 Snowflake, up to 4 at once (Cooldown / interval:  4 seconds)\n• Increases Snowflake damage by 50%\n• On Snowflake hit, creates 2 Ice Fragment",
+    "quality": 3,
+    "elements": 2
+  },
+  {
+    "id": 137,
+    "name": "Ring of Storms and Blizzards",
+    "description": "Rarity: Astral\n• On Spell Refresh, creates 6 Snowflake\n• On Snowflake hit, 30% chances to create 1 Plasma",
+    "quality": 4,
+    "elements": 6
+  },
+  {
+    "id": 138,
+    "name": "Serac Saber I",
+    "description": "Rarity: Common\n• On spell cast, creates 1 Ice Sword",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 139,
+    "name": "Serac Saber II",
+    "description": "Rarity: Rare\n• On spell cast, creates 1 Ice Sword\n• Increases Ice Sword damage by 30%",
+    "quality": 2,
+    "elements": 2
+  },
+  {
+    "id": 140,
+    "name": "Serac Saber III",
+    "description": "Rarity: Epic\n• On spell cast, creates 2 Ice Sword\n• Increases Ice Sword damage by 50%\n• On Ice Sword hit, spreads ice (Cooldown / interval:  4 seconds)",
+    "quality": 3,
+    "elements": 2
+  },
+  {
+    "id": 141,
+    "name": "Saber Call I",
+    "description": "Rarity: Common\n• Creates 2 Ice Sword (Cooldown / interval:  8 seconds)",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 142,
+    "name": "Saber Call II",
+    "description": "Rarity: Rare\n• Creates 3 Ice Sword (Cooldown / interval:  8 seconds)\n• Increases Ice Sword damage by 30%",
+    "quality": 2,
+    "elements": 2
+  },
+  {
+    "id": 143,
+    "name": "Saber Call III",
+    "description": "Rarity: Epic\n• Creates 4 Ice Sword (Cooldown / interval:  8 seconds)\n• Increases Ice Sword damage by 50%\n• On Ice Sword hit, creates 2 Missiles",
+    "quality": 3,
+    "elements": 18
+  },
+  {
+    "id": 144,
+    "name": "Vision of the Mountain Hunter",
+    "description": "Rarity: Astral\n• On Spell Refresh, applies 4 Target\n• On Target hit, creates 3 Ice Sword",
+    "quality": 4,
+    "elements": 2
+  },
+  {
+    "id": 145,
+    "name": "Thunder Blessing I",
+    "description": "Rarity: Common\n• On enemies with Electrify, deals 15% more damage",
+    "quality": 1,
+    "elements": 4
+  },
+  {
+    "id": 146,
+    "name": "Thunder Blessing II",
+    "description": "Rarity: Rare\n• On enemies with Electrify, deals 20% more damage\n• Increases Spark damage by 20%",
+    "quality": 2,
+    "elements": 4
+  },
+  {
+    "id": 147,
+    "name": "Thunder Blessing III",
+    "description": "Rarity: Epic\n• On enemies with Electrify, deals 25% more damage\n• Increases Spark damage by 30%\n• When applying 1 Electrify, applies 1 more",
+    "quality": 3,
+    "elements": 4
+  },
+  {
+    "id": 148,
+    "name": "Storm Blow I",
+    "description": "Rarity: Common\n• If enemy life is full, applies 2 Electrify",
+    "quality": 1,
+    "elements": 4
+  },
+  {
+    "id": 149,
+    "name": "Storm Blow II",
+    "description": "Rarity: Rare\n• If enemy life is full, applies 2 Electrify\n• Increases Spark damage by 20%",
+    "quality": 2,
+    "elements": 4
+  },
+  {
+    "id": 150,
+    "name": "Storm Blow III",
+    "description": "Rarity: Epic\n• If enemy life is full, applies 3 Electrify\n• Increases Spark damage by 30%\n• When applying Electrify to enemy with 10 Electrify, creates 1 Spark",
+    "quality": 3,
+    "elements": 4
+  },
+  {
+    "id": 151,
+    "name": "Sparkling Sprint I",
+    "description": "Rarity: Common\n• On dash, creates 3 Spark (Cooldown / interval:  10 seconds)",
+    "quality": 1,
+    "elements": 4
+  },
+  {
+    "id": 152,
+    "name": "Sparkling Sprint II",
+    "description": "Rarity: Rare\n• On dash, creates 5 Spark (Cooldown / interval:  10 seconds)\n• Increases Spark damage by 20%",
+    "quality": 2,
+    "elements": 4
+  },
+  {
+    "id": 153,
+    "name": "Sparkling Sprint III",
+    "description": "Rarity: Epic\n• On dash, creates 7 Spark (Cooldown / interval:  10 seconds)\n• Increases Spark damage by 30%\n• On Spark hit, 25% chances to apply 1 Electrify",
+    "quality": 3,
+    "elements": 4
+  },
+  {
+    "id": 154,
+    "name": "Sparkling Cast I",
+    "description": "Rarity: Common\n• On spell cast, creates 1 Spark",
+    "quality": 1,
+    "elements": 4
+  },
+  {
+    "id": 155,
+    "name": "Sparkling Cast II",
+    "description": "Rarity: Rare\n• On spell cast, creates 2 Spark\n• Increases Spark damage by 20%",
+    "quality": 2,
+    "elements": 4
+  },
+  {
+    "id": 156,
+    "name": "Sparkling Cast III",
+    "description": "Rarity: Epic\n• On spell cast, creates 3 Spark\n• Increases Spark damage by 30%\n• On Spark hit, 10% chances to create 1 Thunder Strike",
+    "quality": 3,
+    "elements": 4
+  },
+  {
+    "id": 157,
+    "name": "Sparks Conductor",
+    "description": "Rarity: Astral\n• Creates 10 Spark (Cooldown / interval:  10 seconds)\n• Spark bounces an additional time",
+    "quality": 4,
+    "elements": 4
+  },
+  {
+    "id": 158,
+    "name": "Plasma Cast I",
+    "description": "Rarity: Common\n• On spell cast, creates 1 Plasma",
+    "quality": 1,
+    "elements": 4
+  },
+  {
+    "id": 159,
+    "name": "Plasma Cast II",
+    "description": "Rarity: Rare\n• On spell cast, creates 2 Plasma\n• Increases Plasma damage by 30%",
+    "quality": 2,
+    "elements": 4
+  },
+  {
+    "id": 160,
+    "name": "Plasma Cast III",
+    "description": "Rarity: Epic\n• On spell cast, creates 3 Plasma\n• Increases Plasma damage by 50%\n• On Plasma hit, adds 1 more Electrify",
+    "quality": 3,
+    "elements": 4
+  },
+  {
+    "id": 161,
+    "name": "Plasma Generator I",
+    "description": "Rarity: Common\n• Creates 6 Plasma (Cooldown / interval:  10 Mana spent)",
+    "quality": 1,
+    "elements": 4
+  },
+  {
+    "id": 162,
+    "name": "Plasma Generator II",
+    "description": "Rarity: Rare\n• Creates 6 Plasma (Cooldown / interval:  8 Mana spent)\n• On Plasma hit, creates 1 Spark",
+    "quality": 2,
+    "elements": 4
+  },
+  {
+    "id": 163,
+    "name": "Plasma Generator III",
+    "description": "Rarity: Epic\n• Creates 6 Plasma (Cooldown / interval:  6 Mana spent)\n• On Plasma hit, creates 1 Spark\n• On Plasma appearance, 30% chances to create 1 extra Plasma",
+    "quality": 3,
+    "elements": 4
+  },
+  {
+    "id": 164,
+    "name": "Storm Caller I",
+    "description": "Rarity: Common\n• On Spell Refresh, summons 2 Nimbus",
+    "quality": 1,
+    "elements": 4
+  },
+  {
+    "id": 165,
+    "name": "Storm Caller II",
+    "description": "Rarity: Rare\n• On Spell Refresh, summons 2 Nimbus\n• Increases Nimbus damage by 30%",
+    "quality": 2,
+    "elements": 4
+  },
+  {
+    "id": 166,
+    "name": "Storm Caller III",
+    "description": "Rarity: Epic\n• On Spell Refresh, summons 2 Nimbus\n• Increases Nimbus damage by 50%\n• Nimbus shoots 1 more times before disappearing",
+    "quality": 3,
+    "elements": 4
+  },
+  {
+    "id": 167,
+    "name": "Furious Storm",
+    "description": "Rarity: Astral\n• On enemy with 10 Electrify hit, gains Velocity for 4 seconds (Cooldown / interval:  8 seconds)\n• On spell hit, 25% chance to apply 1 Electrify\n• Increases Attack Speed by 20%",
+    "quality": 4,
+    "elements": 4
+  },
+  {
+    "id": 168,
+    "name": "Form of Plasma",
+    "description": "Rarity: Astral\n• When dashing through enemies, creates 8 Plasma and gains Movespeed for 8 seconds (Cooldown / interval:  8 seconds)\n• On Plasma appearance, applies 1 Target\n• Increases Plasma damage by 100%",
+    "quality": 4,
+    "elements": 4
+  },
+  {
+    "id": 169,
+    "name": "Nimbus Revenge I",
+    "description": "Rarity: Common\n• When hero is hit, summons 2 Nimbus (Cooldown / interval:  10 seconds)",
+    "quality": 1,
+    "elements": 4
+  },
+  {
+    "id": 170,
+    "name": "Nimbus Revenge II",
+    "description": "Rarity: Rare\n• When hero is hit, summons 2 Nimbus (Cooldown / interval:  8 seconds)\n• Increases Nimbus damage by 30%",
+    "quality": 2,
+    "elements": 4
+  },
+  {
+    "id": 171,
+    "name": "Nimbus Revenge III",
+    "description": "Rarity: Epic\n• When hero is hit, summons 2 Nimbus (Cooldown / interval:  6 seconds)\n• Increases Nimbus damage by 50%\n• For each Nimbus active, increases Attack Speed by 3%",
+    "quality": 3,
+    "elements": 4
+  },
+  {
+    "id": 172,
+    "name": "Seal of the Storm Lord",
+    "description": "Rarity: Astral\n• Summons 2 permanent Nimbus\n• For each Nimbus active, increases Nimbus damage by 10%",
+    "quality": 4,
+    "elements": 4
+  },
+  {
+    "id": 173,
+    "name": "Thundering Sprint I",
+    "description": "Rarity: Common\n• On dash, creates 1 Lightning Orb (Cooldown / interval:  8 seconds)",
+    "quality": 1,
+    "elements": 4
+  },
+  {
+    "id": 174,
+    "name": "Thundering Sprint II",
+    "description": "Rarity: Rare\n• On dash, creates 1 Lightning Orb (Cooldown / interval:  6 seconds)\n• Increases Lightning Orb duration by 1 seconds",
+    "quality": 2,
+    "elements": 4
+  },
+  {
+    "id": 175,
+    "name": "Thundering Sprint III",
+    "description": "Rarity: Epic\n• On dash, creates 1 Lightning Orb (Cooldown / interval:  4 seconds)\n• Increases Lightning Orb duration by 2 seconds\n• Increases Lightning Orb damage by 50%",
+    "quality": 3,
+    "elements": 4
+  },
+  {
+    "id": 176,
+    "name": "Crackling End I",
+    "description": "Rarity: Common\n• On enemy death, creates 1 Lightning Orb (Cooldown / interval:  6 seconds)",
+    "quality": 1,
+    "elements": 4
+  },
+  {
+    "id": 177,
+    "name": "Crackling End II",
+    "description": "Rarity: Rare\n• On enemy death, creates 1 Lightning Orb (Cooldown / interval:  4 seconds)\n• Increases Lightning Orb damage by 30%",
+    "quality": 2,
+    "elements": 4
+  },
+  {
+    "id": 178,
+    "name": "Crackling End III",
+    "description": "Rarity: Epic\n• On enemy death, creates 1 Lightning Orb (Cooldown / interval:  2 seconds)\n• Increases Lightning Orb damage by 50%\n• Increases Lightning Orb range",
+    "quality": 3,
+    "elements": 4
+  },
+  {
+    "id": 179,
+    "name": "Boots of the Herald",
+    "description": "Rarity: Astral\n• On Lightning Orb hit, 50% chance to create 1 Spark\n• On fall attack, creates 4 Lightning Orb (Cooldown / interval:  5 seconds)\n• Increases Spark damage by 60%",
+    "quality": 4,
+    "elements": 4
+  },
+  {
+    "id": 180,
+    "name": "Lightning Favor I",
+    "description": "Rarity: Common\n• Creates 1 Thunder Strike (Cooldown / interval:  10 seconds)",
+    "quality": 1,
+    "elements": 4
+  },
+  {
+    "id": 181,
+    "name": "Lightning Favor II",
+    "description": "Rarity: Rare\n• Creates 2 Thunder Strike (Cooldown / interval:  10 seconds)\n• Increases Thunder Strike damage by 30%",
+    "quality": 2,
+    "elements": 4
+  },
+  {
+    "id": 182,
+    "name": "Lightning Favor III",
+    "description": "Rarity: Epic\n• Creates 3 Thunder Strike (Cooldown / interval:  10 seconds)\n• Increases Thunder Strike damage by 50%\n• On Thunder Strike hit, 30% chance to create Thunder Strike",
+    "quality": 3,
+    "elements": 4
+  },
+  {
+    "id": 183,
+    "name": "Lightning Sprint I",
+    "description": "Rarity: Common\n• When dashing through enemies, creates 1 Thunder Strike (Cooldown / interval:  8 seconds)",
+    "quality": 1,
+    "elements": 4
+  },
+  {
+    "id": 184,
+    "name": "Lightning Sprint II",
+    "description": "Rarity: Rare\n• When dashing through enemies, creates 1 Thunder Strike (Cooldown / interval:  6 seconds)\n• Increases Thunder Strike damage by 30%",
+    "quality": 2,
+    "elements": 4
+  },
+  {
+    "id": 185,
+    "name": "Lightning Sprint III",
+    "description": "Rarity: Epic\n• When dashing through enemies, creates 2 Thunder Strike (Cooldown / interval:  5 seconds)\n• Increases Thunder Strike damage by 50%\n• Increases Thunder Strike Critical Hit chances by 30%",
+    "quality": 3,
+    "elements": 4
+  },
+  {
+    "id": 186,
+    "name": "Prowess of the Sky",
+    "description": "Rarity: Astral\n• When hero is hit, gains a random bonus effect for 5 seconds (Cooldown / interval:  5 seconds)\n• When gaining a bonus effect, creates 4 Thunder Strike",
+    "quality": 4,
+    "elements": 4
+  },
+  {
+    "id": 187,
+    "name": "Toxic Firework I",
+    "description": "Rarity: Common\n• On spell hit, creates 1 Toxic Gas (Cooldown / interval:  6 seconds)",
+    "quality": 1,
+    "elements": 8
+  },
+  {
+    "id": 188,
+    "name": "Toxic Firework II",
+    "description": "Rarity: Rare\n• On spell hit, creates 1 Toxic Gas (Cooldown / interval:  4 seconds)\n• On enemies with Poison, deals 10% more damage",
+    "quality": 2,
+    "elements": 8
+  },
+  {
+    "id": 189,
+    "name": "Toxic Firework III",
+    "description": "Rarity: Epic\n• On spell hit, creates 1 Toxic Gas (Cooldown / interval:  2 seconds)\n• On enemies with Poison, deals 20% more damage\n• Increases Poison limit by 5",
+    "quality": 3,
+    "elements": 8
+  },
+  {
+    "id": 190,
+    "name": "Serpent Fang I",
+    "description": "Rarity: Common\n• For each Poison stack on enemy, increases Critical Hit chances on hit by 1%",
+    "quality": 1,
+    "elements": 8
+  },
+  {
+    "id": 191,
+    "name": "Serpent Fang II",
+    "description": "Rarity: Rare\n• For each Poison stack on enemy, increases Critical Hit chances on hit by 2%\n• Increases Poison limit by 3",
+    "quality": 2,
+    "elements": 8
+  },
+  {
+    "id": 192,
+    "name": "Serpent Fang III",
+    "description": "Rarity: Epic\n• For each Poison stack on enemy, increases Critical Hit chances on hit by 3%\n• Increases Poison limit by 5\n• On enemy death, creates 1 Toxic Gas and 1 Sapling",
+    "quality": 3,
+    "elements": 8
+  },
+  {
+    "id": 193,
+    "name": "Polar Venom",
+    "description": "Rarity: Astral\n• If enemy has Poison, applies 1 Freeze periodically (Cooldown / interval:  1 seconds)\n• On enemies with Poison death, transfers Poison to nearby enemy\n• Increases Poison limit by 5",
+    "quality": 4,
+    "elements": 10
+  },
+  {
+    "id": 194,
+    "name": "Green Thumb I",
+    "description": "Rarity: Common\n• Summons 1 Sapling, up to 2 at once (Cooldown / interval:  2 seconds)",
+    "quality": 1,
+    "elements": 8
+  },
+  {
+    "id": 195,
+    "name": "Green Thumb II",
+    "description": "Rarity: Rare\n• Summons 1 Sapling, up to 3 at once (Cooldown / interval:  2 seconds)\n• Increases Sapling damage by 30%",
+    "quality": 2,
+    "elements": 8
+  },
+  {
+    "id": 196,
+    "name": "Green Thumb III",
+    "description": "Rarity: Epic\n• Summons 1 Sapling, up to 5 at once (Cooldown / interval:  2 seconds)\n• Increases Sapling damage by 50%\n• On Sapling hit, adds 1 more Poison",
+    "quality": 3,
+    "elements": 8
+  },
+  {
+    "id": 197,
+    "name": "Sapling Generator I",
+    "description": "Rarity: Common\n• Summons 2 Sapling (Cooldown / interval:  6 Mana spent)",
+    "quality": 1,
+    "elements": 8
+  },
+  {
+    "id": 198,
+    "name": "Sapling Generator II",
+    "description": "Rarity: Rare\n• Summons 3 Sapling (Cooldown / interval:  6 Mana spent)\n• 10% chances to transform Sapling into Lightning Sapling",
+    "quality": 2,
+    "elements": 12
+  },
+  {
+    "id": 199,
+    "name": "Sapling Generator III",
+    "description": "Rarity: Epic\n• Summons 6 Sapling (Cooldown / interval:  6 Mana spent)\n• 20% chances to transform Sapling into Lightning Sapling\n• Increases Sapling damage by 50%",
+    "quality": 3,
+    "elements": 12
+  },
+  {
+    "id": 200,
+    "name": "Xeno Seeds",
+    "description": "Rarity: Astral\n• On spell cast, summons 3 Sapling\n• On Sapling hit, 30% chances to create 1 Meteor",
+    "quality": 4,
+    "elements": 8
+  },
+  {
+    "id": 201,
+    "name": "Slimy Fall I",
+    "description": "Rarity: Common\n• On fall attack, summons 4 Slime (Cooldown / interval:  12 seconds)",
+    "quality": 1,
+    "elements": 8
+  },
+  {
+    "id": 202,
+    "name": "Slimy Fall II",
+    "description": "Rarity: Rare\n• On fall attack, summons 4 Slime (Cooldown / interval:  10 seconds)\n• 10% chances to transform Slime into Lava Slime",
+    "quality": 2,
+    "elements": 9
+  },
+  {
+    "id": 203,
+    "name": "Slimy Fall III",
+    "description": "Rarity: Epic\n• On fall attack, summons 4 Slime (Cooldown / interval:  8 seconds)\n• 20% chances to transform Slime into Lava Slime\n• Increases Slime damage by 50%",
+    "quality": 3,
+    "elements": 9
+  },
+  {
+    "id": 204,
+    "name": "Blood of the Bane I",
+    "description": "Rarity: Common\n• On Poison hit, 15% chance to summon 1 Slime",
+    "quality": 1,
+    "elements": 8
+  },
+  {
+    "id": 205,
+    "name": "Blood of the Bane II",
+    "description": "Rarity: Rare\n• On Poison hit, 20% chance to summon 1 Slime\n• Increases Slime damage by 30%",
+    "quality": 2,
+    "elements": 8
+  },
+  {
+    "id": 206,
+    "name": "Blood of the Bane III",
+    "description": "Rarity: Epic\n• On Poison hit, 25% chance to summon 1 Slime\n• Increases Slime damage by 50%\n• On Slime bounce, 10% chances to summon 1 extra Slime",
+    "quality": 3,
+    "elements": 8
+  },
+  {
+    "id": 207,
+    "name": "Crown of Goo",
+    "description": "Rarity: Astral\n• On spell cast, summons 2 Slime\n• Summons 1 Giant Slime (Cooldown / interval:  20 Slime summoned)",
+    "quality": 4,
+    "elements": 8
+  },
+  {
+    "id": 208,
+    "name": "Meteor Cast I",
+    "description": "Rarity: Common\n• On spell cast, creates 1 Meteor (Cooldown / interval:  5 seconds)",
+    "quality": 1,
+    "elements": 8
+  },
+  {
+    "id": 209,
+    "name": "Meteor Cast II",
+    "description": "Rarity: Rare\n• On spell cast, creates 2 Meteor (Cooldown / interval:  5 seconds)\n• Increases Meteor damage by 30%",
+    "quality": 2,
+    "elements": 8
+  },
+  {
+    "id": 210,
+    "name": "Meteor Cast III",
+    "description": "Rarity: Epic\n• On spell cast, creates 3 Meteor (Cooldown / interval:  5 seconds)\n• Increases Meteor damage by 50%\n• On Meteor impact, creates 1 Combustion",
+    "quality": 3,
+    "elements": 9
+  },
+  {
+    "id": 211,
+    "name": "Meteor Caller I",
+    "description": "Rarity: Common\n• Creates 2 Meteor (Cooldown / interval:  8 seconds)",
+    "quality": 1,
+    "elements": 8
+  },
+  {
+    "id": 212,
+    "name": "Meteor Caller II",
+    "description": "Rarity: Rare\n• Creates 3 Meteor (Cooldown / interval:  8 seconds)\n• Increases Meteor damage by 30%",
+    "quality": 2,
+    "elements": 8
+  },
+  {
+    "id": 213,
+    "name": "Meteor Caller III",
+    "description": "Rarity: Epic\n• Creates 4 Meteor (Cooldown / interval:  8 seconds)\n• Increases Meteor damage by 50%\n• On Meteor impact, creates 1 Pulse applying 1 Vulnerability",
+    "quality": 3,
+    "elements": 8
+  },
+  {
+    "id": 214,
+    "name": "Living Rocks",
+    "description": "Rarity: Astral\n• On spell cast, creates 1 Meteor (Cooldown / interval:  1 seconds)\n• On Meteor impact, summons 2 Sapling",
+    "quality": 4,
+    "elements": 8
+  },
+  {
+    "id": 215,
+    "name": "Spreading Pest I",
+    "description": "Rarity: Common\n• If enemy life is full, creates 1 Toxic Gas",
+    "quality": 1,
+    "elements": 8
+  },
+  {
+    "id": 216,
+    "name": "Spreading Pest II",
+    "description": "Rarity: Rare\n• If enemy life is full, creates 1 Toxic Gas\n• On Poison hit, 10% chance to apply 1 Poison to another nearby enemy",
+    "quality": 2,
+    "elements": 8
+  },
+  {
+    "id": 217,
+    "name": "Spreading Pest III",
+    "description": "Rarity: Epic\n• If enemy life is full, creates 1 Toxic Gas\n• On Poison hit, 20% chance to apply 1 Poison to another nearby enemy\n• On Poison hit, creates 1 Toxic Gas (Cooldown / interval:  4 seconds)",
+    "quality": 3,
+    "elements": 8
+  },
+  {
+    "id": 218,
+    "name": "Viper Fall I",
+    "description": "Rarity: Common\n• On fall attack, creates 1 Toxic Gas (Cooldown / interval:  7 seconds)",
+    "quality": 1,
+    "elements": 8
+  },
+  {
+    "id": 219,
+    "name": "Viper Fall II",
+    "description": "Rarity: Rare\n• On fall attack, creates 1 Toxic Gas (Cooldown / interval:  6 seconds)\n• Increases Toxic Gas damage by 30%",
+    "quality": 2,
+    "elements": 8
+  },
+  {
+    "id": 220,
+    "name": "Viper Fall III",
+    "description": "Rarity: Epic\n• On fall attack, creates 1 Toxic Gas (Cooldown / interval:  5 seconds)\n• Increases Toxic Gas damage by 50%\n• On Toxic Gas, summons 2 Slime",
+    "quality": 3,
+    "elements": 8
+  },
+  {
+    "id": 221,
+    "name": "Sword Fang",
+    "description": "Rarity: Astral\n• On spell hit, creates 1 Toxic Gas (Cooldown / interval:  3 seconds)\n• On Toxic Gas, 30% chance to create 1 Spirit Sword",
+    "quality": 4,
+    "elements": 24
+  },
+  {
+    "id": 222,
+    "name": "Fire Form",
+    "description": "Rarity: Astral\n• When dashing through enemies, applies Ignition\n• On Ignition hit, creates 1 Pulse applying 1 Burn",
+    "quality": 4,
+    "elements": 1
+  },
+  {
+    "id": 223,
+    "name": "Newfound Strength I",
+    "description": "Rarity: Common\n• If at high life, increases Strength by 20%",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 224,
+    "name": "Newfound Strength II",
+    "description": "Rarity: Rare\n• If at high life, increases Strength by 30%\n• If enemy life is full, applies 3 Vulnerability",
+    "quality": 2,
+    "elements": 16
+  },
+  {
+    "id": 225,
+    "name": "Newfound Strength III",
+    "description": "Rarity: Epic\n• If at high life, increases Strength by 50%\n• If enemy life is full, applies 5 Vulnerability\n• On spell cast, restores 3 Life",
+    "quality": 3,
+    "elements": 16
+  },
+  {
+    "id": 226,
+    "name": "Crisis Power I",
+    "description": "Rarity: Common\n• If at low life, increases Strength by 30%",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 227,
+    "name": "Crisis Power II",
+    "description": "Rarity: Rare\n• If at low life, increases Strength by 40%\n• If at low life, increases Attack Speed by 25%",
+    "quality": 2,
+    "elements": 16
+  },
+  {
+    "id": 228,
+    "name": "Crisis Power III",
+    "description": "Rarity: Epic\n• If at low life, increases Strength by 60%\n• If at low life, increases Attack Speed by 40%\n• If at low life, gains Barrier",
+    "quality": 3,
+    "elements": 16
+  },
+  {
+    "id": 230,
+    "name": "Warchief Bracers",
+    "description": "Rarity: Astral\n• On Spell Refresh, gains Enrage for 5 seconds\n• On Spell Refresh, restores 2 Mana\n• Increases Max Mana by 3",
+    "quality": 4,
+    "elements": 0
+  },
+  {
+    "id": 231,
+    "name": "Sword of the Warrior",
+    "description": "Rarity: Astral\n• Increases Strength by 30%\n• Increases Attack Speed by 20%\n• Increases Critical Hit chances by 20%",
+    "quality": 4,
+    "elements": 0
+  },
+  {
+    "id": 232,
+    "name": "Eye of the Eagle I",
+    "description": "Rarity: Common\n• Increases Critical Hit chances by 8%",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 233,
+    "name": "Eye of the Eagle II",
+    "description": "Rarity: Rare\n• Increases Critical Hit chances by 10%\n• On Critical Hit, creates 2 Missiles (Cooldown / interval:  6 seconds)",
+    "quality": 2,
+    "elements": 16
+  },
+  {
+    "id": 234,
+    "name": "Eye of the Eagle III",
+    "description": "Rarity: Epic\n• Increases Critical Hit chances by 15%\n• On Critical Hit, creates 4 Missiles (Cooldown / interval:  3 seconds)\n• Increases Critical Hit damage by 15%",
+    "quality": 3,
+    "elements": 16
+  },
+  {
+    "id": 235,
+    "name": "Aiming System I",
+    "description": "Rarity: Common\n• Applies 2 Target to nearby enemies (Cooldown / interval:  6 seconds)",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 236,
+    "name": "Aiming System II",
+    "description": "Rarity: Rare\n• Applies 2 Target to nearby enemies (Cooldown / interval:  6 seconds)\n• On Target hit, applies 1 Vulnerability",
+    "quality": 2,
+    "elements": 16
+  },
+  {
+    "id": 237,
+    "name": "Aiming System III",
+    "description": "Rarity: Epic\n• Applies 3 Target to nearby enemies (Cooldown / interval:  6 seconds)\n• On Target hit, applies 2 Vulnerability\n• Increases Critical Hit chances by 15%",
+    "quality": 3,
+    "elements": 16
+  },
+  {
+    "id": 238,
+    "name": "Balance Master",
+    "description": "Rarity: Astral\n• Increases Critical Hit chances by 20%\n• On Critical Hit, gains Velocity for 3 seconds (Cooldown / interval:  6 seconds)\n• Increases Critical Hit damage by 25%",
+    "quality": 4,
+    "elements": 16
+  },
+  {
+    "id": 239,
+    "name": "Scale Armor I",
+    "description": "Rarity: Common\n• Increases Armor by 4%",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 240,
+    "name": "Scale Armor II",
+    "description": "Rarity: Rare\n• Increases Armor by 6%\n• When hero is hit, creates 2 Ice Sword",
+    "quality": 2,
+    "elements": 18
+  },
+  {
+    "id": 241,
+    "name": "Scale Armor III",
+    "description": "Rarity: Epic\n• Increases Armor by 9%\n• When hero is hit, creates 3 Ice Sword\n• When hero is hit, gains Shield for 2 seconds (Cooldown / interval:  20 seconds)",
+    "quality": 3,
+    "elements": 18
+  },
+  {
+    "id": 242,
+    "name": "Iron Armor I",
+    "description": "Rarity: Common\n• Increases Armor by 4%",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 243,
+    "name": "Iron Armor II",
+    "description": "Rarity: Rare\n• Increases Armor by 6%\n• When hero is hit, summons 1 Spirit Sword (Cooldown / interval:  8 seconds)",
+    "quality": 2,
+    "elements": 16
+  },
+  {
+    "id": 244,
+    "name": "Iron Armor III",
+    "description": "Rarity: Epic\n• Increases Armor by 9%\n• When hero is hit, summons 1 Spirit Sword (Cooldown / interval:  5 seconds)\n• When hero is hit, creates 1 Pulse applying 3 Random Effect",
+    "quality": 3,
+    "elements": 16
+  },
+  {
+    "id": 245,
+    "name": "Adamantite Armor",
+    "description": "Rarity: Astral\n• Absorbs 1 hit (Cooldown / interval:  3 hits taken)\n• Increases Armor by 12%",
+    "quality": 4,
+    "elements": 0
+  },
+  {
+    "id": 246,
+    "name": "Wild Breath I",
+    "description": "Rarity: Common\n• Increases Max Life by 30",
+    "quality": 1,
+    "elements": 0
+  },
+  {
+    "id": 247,
+    "name": "Wild Breath II",
+    "description": "Rarity: Rare\n• Increases Max Life by 50\n• On hit, 5% chance to restore 1 Life",
+    "quality": 2,
+    "elements": 0
+  },
+  {
+    "id": 248,
+    "name": "Wild Breath III",
+    "description": "Rarity: Epic\n• Increases Max Life by 75\n• On hit, 15% chance to restore 1 Life\n• On Spell Refresh, restores 10 Life",
+    "quality": 3,
+    "elements": 0
+  },
+  {
+    "id": 249,
+    "name": "Traveler Wisdom I",
+    "description": "Rarity: Common\n• When entering a room, restores 5% Life",
+    "quality": 1,
+    "elements": 0
+  },
+  {
+    "id": 250,
+    "name": "Traveler Wisdom II",
+    "description": "Rarity: Rare\n• When entering a room, restores 10% Life\n• When entering a room, restores 3 Mana",
+    "quality": 2,
+    "elements": 0
+  },
+  {
+    "id": 251,
+    "name": "Traveler Wisdom III",
+    "description": "Rarity: Epic\n• When entering a room, restores 15% Life\n• When entering a room, restores 6 Mana\n• When entering a room, gains Movement speed for 20 seconds",
+    "quality": 3,
+    "elements": 0
+  },
+  {
+    "id": 252,
+    "name": "Cetus Secret",
+    "description": "Rarity: Astral\n• Increases Max Life by 150\n• Increases Armor by 12%\n• Increases Max Mana by 3",
+    "quality": 4,
+    "elements": 0
+  },
+  {
+    "id": 253,
+    "name": "Advanced Wizardry I",
+    "description": "Rarity: Common\n• Increases Max Mana by 2",
+    "quality": 1,
+    "elements": 0
+  },
+  {
+    "id": 254,
+    "name": "Advanced Wizardry II",
+    "description": "Rarity: Rare\n• Increases Max Mana by 2\n• On spell hit, restores 1 Mana (Cooldown / interval:  7 seconds)",
+    "quality": 2,
+    "elements": 0
+  },
+  {
+    "id": 255,
+    "name": "Advanced Wizardry III",
+    "description": "Rarity: Epic\n• Increases Max Mana by 2\n• On spell hit, restores 1 Mana (Cooldown / interval:  5 seconds)\n• On Spell Refresh, gains Velocity for 4 seconds",
+    "quality": 3,
+    "elements": 0
+  },
+  {
+    "id": 256,
+    "name": "Magic Weapon I",
+    "description": "Rarity: Common\n• Increases Strength by 1% for each point of Max Mana",
+    "quality": 1,
+    "elements": 0
+  },
+  {
+    "id": 257,
+    "name": "Magic Weapon II",
+    "description": "Rarity: Rare\n• Increases Strength by 1% for each point of Max Mana\n• Increases Max Mana by 2",
+    "quality": 2,
+    "elements": 0
+  },
+  {
+    "id": 258,
+    "name": "Magic Weapon III",
+    "description": "Rarity: Epic\n• Increases Strength by 2% for each point of Max Mana\n• Increases Max Mana by 2\n• On Spell Refresh, restores 1 Mana",
+    "quality": 3,
+    "elements": 0
+  },
+  {
+    "id": 259,
+    "name": "Mana Drainer I",
+    "description": "Rarity: Common\n• On spell hit, restores 1 Mana (Cooldown / interval:  10 seconds)",
+    "quality": 1,
+    "elements": 0
+  },
+  {
+    "id": 260,
+    "name": "Mana Drainer II",
+    "description": "Rarity: Rare\n• On spell hit, restores 1 Mana (Cooldown / interval:  7 seconds)\n• On Spell Refresh, creates 1 Missiles  for each point of Max Mana",
+    "quality": 2,
+    "elements": 0
+  },
+  {
+    "id": 261,
+    "name": "Mana Drainer III",
+    "description": "Rarity: Epic\n• On spell hit, restores 1 Mana (Cooldown / interval:  5 seconds)\n• On Spell Refresh, creates 2 Missiles  for each point of Max Mana\n• Increases Max Mana by 2",
+    "quality": 3,
+    "elements": 0
+  },
+  {
+    "id": 262,
+    "name": "Yalee Magic Charm",
+    "description": "Rarity: Astral\n• Increases Max Mana by 3\n• On Spell Refresh, adds 50% chance to create 1 Yalee for each point of Max Mana",
+    "quality": 4,
+    "elements": 0
+  },
+  {
+    "id": 263,
+    "name": "Sorcerer Mantle",
+    "description": "Rarity: Astral\n• When out of Mana, gains Infinite Mana and Enrage for 4 seconds (Cooldown / interval:  28 seconds)",
+    "quality": 4,
+    "elements": 0
+  },
+  {
+    "id": 264,
+    "name": "Sapping Strike I",
+    "description": "Rarity: Common\n• If enemy life is full, applies 3 Pacification",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 265,
+    "name": "Sapping Strike II",
+    "description": "Rarity: Rare\n• If enemy life is full, applies 4 Pacification\n• On spell hit on enemy with Pacification, 50% chance to create 1 Embers",
+    "quality": 2,
+    "elements": 17
+  },
+  {
+    "id": 266,
+    "name": "Sapping Strike III",
+    "description": "Rarity: Epic\n• If enemy life is full, applies 5 Pacification\n• On spell hit on enemy with Pacification, 75% chance to create 1 Embers\n• If enemy has 10 Pacification, creates 1 Combustion (Cooldown / interval:  2 seconds)",
+    "quality": 3,
+    "elements": 17
+  },
+  {
+    "id": 267,
+    "name": "Straining Spells I",
+    "description": "Rarity: Common\n• On spell hit, 15% chance to apply 1 Pacification",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 268,
+    "name": "Straining Spells II",
+    "description": "Rarity: Rare\n• On spell hit, 20% chance to apply 1 Pacification\n• On enemies with Pacification death, summons 2 Sapling",
+    "quality": 2,
+    "elements": 24
+  },
+  {
+    "id": 269,
+    "name": "Straining Spells III",
+    "description": "Rarity: Epic\n• On spell hit, 25% chance to apply 1 Pacification\n• On enemies with Pacification death, summons 3 Sapling\n• On Sapling hit, 50% chances to restore 1 Life",
+    "quality": 3,
+    "elements": 24
+  },
+  {
+    "id": 270,
+    "name": "Pink Pulsar",
+    "description": "Rarity: Astral\n• Creates 1 Pulse applying 5 Pacification on hit (Cooldown / interval:  10 seconds)\n• Increases Armor by 12%\n• On hit, 15% chance to restore 1 Life",
+    "quality": 4,
+    "elements": 16
+  },
+  {
+    "id": 271,
+    "name": "Weakening Strike I",
+    "description": "Rarity: Common\n• If enemy life is full, applies 3 Vulnerability",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 272,
+    "name": "Weakening Strike II",
+    "description": "Rarity: Rare\n• If enemy life is full, applies 4 Vulnerability\n• On spell hit on enemy with Vulnerability, 15% chance to create 1 Thunder Strike",
+    "quality": 2,
+    "elements": 20
+  },
+  {
+    "id": 273,
+    "name": "Weakening Strike III",
+    "description": "Rarity: Epic\n• If enemy life is full, applies 5 Vulnerability\n• On spell hit on enemy with Vulnerability, 30% chance to create 1 Thunder Strike\n• If enemy has 10 Vulnerability, creates 8 Spark (Cooldown / interval:  3 seconds)",
+    "quality": 3,
+    "elements": 20
+  },
+  {
+    "id": 274,
+    "name": "Dampening Spells I",
+    "description": "Rarity: Common\n• On spell hit, 15% chance to apply 1 Vulnerability",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 275,
+    "name": "Dampening Spells II",
+    "description": "Rarity: Rare\n• On spell hit, 20% chance to apply 1 Vulnerability\n• On enemies with Vulnerability death, creates 1 Lightning Orb",
+    "quality": 2,
+    "elements": 20
+  },
+  {
+    "id": 276,
+    "name": "Dampening Spells III",
+    "description": "Rarity: Epic\n• On spell hit, 25% chance to apply 1 Vulnerability\n• On enemies with Vulnerability death, creates 2 Lightning Orb\n• On Lightning Orb hit, 20% chances to apply 1 Vulnerability",
+    "quality": 3,
+    "elements": 20
+  },
+  {
+    "id": 277,
+    "name": "Grey Pulsar",
+    "description": "Rarity: Astral\n• Creates 1 Pulse applying 5 Vulnerability on hit (Cooldown / interval:  10 seconds)\n• Increases Strength by 30%",
+    "quality": 4,
+    "elements": 16
+  },
+  {
+    "id": 278,
+    "name": "Guardian Shield I",
+    "description": "Rarity: Common\n• When hero is hit, gains Shield for 2 seconds (Cooldown / interval:  25 seconds)",
+    "quality": 1,
+    "elements": 0
+  },
+  {
+    "id": 279,
+    "name": "Guardian Shield II",
+    "description": "Rarity: Rare\n• When hero is hit, gains Shield for 2 seconds (Cooldown / interval:  23 seconds)\n• While Shield is active, increases Strength by 40%",
+    "quality": 2,
+    "elements": 0
+  },
+  {
+    "id": 280,
+    "name": "Guardian Shield III",
+    "description": "Rarity: Epic\n• When hero is hit, gains Shield for 2 seconds (Cooldown / interval:  20 seconds)\n• While Shield is active, increases Strength by 60%\n• While Shield is active, increases Attack Speed by 30%",
+    "quality": 3,
+    "elements": 0
+  },
+  {
+    "id": 281,
+    "name": "Crystal Screen I",
+    "description": "Rarity: Common\n• On Healing Shard use, gains Shield for 3 seconds",
+    "quality": 1,
+    "elements": 0
+  },
+  {
+    "id": 282,
+    "name": "Crystal Screen II",
+    "description": "Rarity: Rare\n• On Healing Shard use, gains Shield for 4 seconds\n• On Shield disappearance, creates a 100% Vital Blast",
+    "quality": 2,
+    "elements": 16
+  },
+  {
+    "id": 283,
+    "name": "Crystal Screen III",
+    "description": "Rarity: Epic\n• On Healing Shard use, gains Shield for 5 seconds\n• On Shield disappearance, creates a 200% Vital Blast\n• On Shield disappearance, restores 40 Life",
+    "quality": 3,
+    "elements": 16
+  },
+  {
+    "id": 284,
+    "name": "Multi-Purpose Barrier",
+    "description": "Rarity: Astral\n• If at low life, gains Enrage, Velocity, Movespeed, and Shield for 6 seconds (Cooldown / interval:  18 seconds)",
+    "quality": 4,
+    "elements": 0
+  },
+  {
+    "id": 285,
+    "name": "Missile Generator I",
+    "description": "Rarity: Common\n• Creates 10 Missiles (Cooldown / interval:  10 Mana spent)",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 286,
+    "name": "Missile Generator II",
+    "description": "Rarity: Rare\n• Creates 12 Missiles (Cooldown / interval:  10 Mana spent)\n• Increases Missiles damage by 30%",
+    "quality": 2,
+    "elements": 16
+  },
+  {
+    "id": 287,
+    "name": "Missile Generator III",
+    "description": "Rarity: Epic\n• Creates 15 Missiles (Cooldown / interval:  10 Mana spent)\n• Increases Missiles damage by 50%\n• On Missiles hit, 30% chances to apply 1 Electrify",
+    "quality": 3,
+    "elements": 20
+  },
+  {
+    "id": 288,
+    "name": "Astral Cast I",
+    "description": "Rarity: Common\n• On spell cast, creates 2 Missiles",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 289,
+    "name": "Astral Cast II",
+    "description": "Rarity: Rare\n• On spell cast, creates 3 Missiles\n• Increases Missiles damage by 30%",
+    "quality": 2,
+    "elements": 16
+  },
+  {
+    "id": 290,
+    "name": "Astral Cast III",
+    "description": "Rarity: Epic\n• On spell cast, creates 4 Missiles\n• Increases Missiles damage by 50%\n• On Missiles hit, 30% chances to create 1 Ice Fragment",
+    "quality": 3,
+    "elements": 18
+  },
+  {
+    "id": 291,
+    "name": "Entropic Magic",
+    "description": "Rarity: Astral\n• On Spell Refresh, creates 20 Missiles\n• On Missiles hit, 30% chances to apply 1 Random Effect\n• Increases Missiles damage by 100%",
+    "quality": 4,
+    "elements": 16
+  },
+  {
+    "id": 292,
+    "name": "Durendal Shard I",
+    "description": "Rarity: Common\n• On Spell Refresh, summons 2 Spirit Sword",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 293,
+    "name": "Durendal Shard II",
+    "description": "Rarity: Rare\n• On Spell Refresh, summons 2 Spirit Sword\n• On Spirit Sword hit, applies 2 Target to nearby enemies",
+    "quality": 2,
+    "elements": 16
+  },
+  {
+    "id": 294,
+    "name": "Durendal Shard III",
+    "description": "Rarity: Epic\n• On Spell Refresh, summons 2 Spirit Sword\n• On Spirit Sword hit, applies 3 Target to nearby enemies\n• Increases Spirit Sword damage by 50%",
+    "quality": 3,
+    "elements": 16
+  },
+  {
+    "id": 295,
+    "name": "Sword Sculptor I",
+    "description": "Rarity: Common\n• Summons 2 Spirit Sword (Cooldown / interval:  12 Mana spent)",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 296,
+    "name": "Sword Sculptor II",
+    "description": "Rarity: Rare\n• Summons 2 Spirit Sword (Cooldown / interval:  10 Mana spent)\n• On Spirit Sword hit, 25% chances to create 1 Toxic Gas",
+    "quality": 2,
+    "elements": 24
+  },
+  {
+    "id": 297,
+    "name": "Sword Sculptor III",
+    "description": "Rarity: Epic\n• Summons 2 Spirit Sword (Cooldown / interval:  8 Mana spent)\n• On Spirit Sword hit, 30% chances to create 1 Toxic Gas\n• Summons 1 permanent Spirit Sword",
+    "quality": 3,
+    "elements": 24
+  },
+  {
+    "id": 298,
+    "name": "Twin Calibur",
+    "description": "Rarity: Astral\n• Summons 2 permanent Spirit Sword\n• On Spirit Sword hit, creates 2 Missiles",
+    "quality": 4,
+    "elements": 16
+  },
+  {
+    "id": 299,
+    "name": "Yalee Token I",
+    "description": "Rarity: Common\n• On spell cast, 20% chance to summon 1 Yalee",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 300,
+    "name": "Yalee Token II",
+    "description": "Rarity: Rare\n• On spell cast, 30% chance to summon 1 Yalee\n• Increases Yalee damage by 30%",
+    "quality": 2,
+    "elements": 16
+  },
+  {
+    "id": 301,
+    "name": "Yalee Token III",
+    "description": "Rarity: Epic\n• On spell cast, 50% chance to summon 1 Yalee\n• Increases Yalee damage by 50%\n• On Yalee appearing, creates 1 Meteor",
+    "quality": 3,
+    "elements": 24
+  },
+  {
+    "id": 302,
+    "name": "Catnip I",
+    "description": "Rarity: Common\n• On Spell Refresh, summons 2 Yalee",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 303,
+    "name": "Catnip II",
+    "description": "Rarity: Rare\n• On Spell Refresh, summons 2 Yalee\n• Increases Yalee damage by 30%",
+    "quality": 2,
+    "elements": 16
+  },
+  {
+    "id": 304,
+    "name": "Catnip III",
+    "description": "Rarity: Epic\n• On Spell Refresh, summons 2 Yalee\n• Increases Yalee damage by 50%\n• On Yalee hit, 20% chance to create 1 Thunder Strike",
+    "quality": 3,
+    "elements": 20
+  },
+  {
+    "id": 305,
+    "name": "Polar-Yalee Coat",
+    "description": "Rarity: Astral\n• On spell cast, summons 1 Yalee\n• Summons 1 Freeze Yalee (Cooldown / interval:  3 Yalee summoned)\n• Increases Yalee damage by 100%",
+    "quality": 4,
+    "elements": 18
+  },
+  {
+    "id": 306,
+    "name": "Thunder-Yalee Coat",
+    "description": "Rarity: Astral\n• On spell cast, summons 1 Yalee\n• Summons 1 Electrify Yalee (Cooldown / interval:  3 Yalee summoned)\n• Increases Yalee damage by 100%",
+    "quality": 4,
+    "elements": 20
+  },
+  {
+    "id": 307,
+    "name": "Agile Foot I",
+    "description": "Rarity: Common\n• Gains 1 extra jumps",
+    "quality": 1,
+    "elements": 0
+  },
+  {
+    "id": 308,
+    "name": "Agile Foot II",
+    "description": "Rarity: Rare\n• Gains 1 extra jumps\n• On double jump, summons 4 Slime (Cooldown / interval:  7 seconds)",
+    "quality": 2,
+    "elements": 0
+  },
+  {
+    "id": 309,
+    "name": "Agile Foot III",
+    "description": "Rarity: Epic\n• Gains 1 extra jumps\n• On double jump, summons 4 Slime (Cooldown / interval:  5 seconds)\n• Increases fall attack damage by 200%",
+    "quality": 3,
+    "elements": 0
+  },
+  {
+    "id": 310,
+    "name": "Killer Ember I",
+    "description": "Rarity: Common\n• Increases Embers damage by 30%",
+    "quality": 1,
+    "elements": 1
+  },
+  {
+    "id": 311,
+    "name": "Killer Ember II",
+    "description": "Rarity: Rare\n• Increases Embers damage by 40%\n• On enemy death, creates 2 Embers",
+    "quality": 2,
+    "elements": 1
+  },
+  {
+    "id": 312,
+    "name": "Killer Ember III",
+    "description": "Rarity: Epic\n• Increases Embers damage by 50%\n• On enemy death, creates 3 Embers\n• 20% chance: On Embers hit, creates 2 Missiles",
+    "quality": 3,
+    "elements": 1
+  },
+  {
+    "id": 313,
+    "name": "Explosive Wisp I",
+    "description": "Rarity: Common\n• Increases Wisp damage by 30%",
+    "quality": 1,
+    "elements": 1
+  },
+  {
+    "id": 314,
+    "name": "Explosive Wisp II",
+    "description": "Rarity: Rare\n• Increases Wisp damage by 40%\n• 10% chance: On Combustion hit, summons 1 Wisp",
+    "quality": 2,
+    "elements": 1
+  },
+  {
+    "id": 315,
+    "name": "Explosive Wisp III",
+    "description": "Rarity: Epic\n• Increases Wisp damage by 50%\n• 20% chance: On Combustion hit, summons 1 Wisp\n• Summons 1 Wisp (Cooldown / interval:  5 enemies killed)",
+    "quality": 3,
+    "elements": 1
+  },
+  {
+    "id": 316,
+    "name": "Sparkling Fire I",
+    "description": "Rarity: Common\n• Increases Ignition damage by 30%",
+    "quality": 1,
+    "elements": 1
+  },
+  {
+    "id": 317,
+    "name": "Sparkling Fire II",
+    "description": "Rarity: Rare\n• Increases Ignition damage by 40%\n• 25% chance: On Ignition hit, creates 1 Spark",
+    "quality": 2,
+    "elements": 5
+  },
+  {
+    "id": 318,
+    "name": "Sparkling Fire III",
+    "description": "Rarity: Epic\n• Increases Ignition damage by 50%\n• 50% chance: On Ignition hit, creates 1 Spark\n• Increases Spark damage by 30%",
+    "quality": 3,
+    "elements": 5
+  },
+  {
+    "id": 319,
+    "name": "Frosted Fire I",
+    "description": "Rarity: Common\n• Increases Fire Shield damage by 30%",
+    "quality": 1,
+    "elements": 1
+  },
+  {
+    "id": 320,
+    "name": "Frosted Fire II",
+    "description": "Rarity: Rare\n• Increases Fire Shield damage by 40%\n• 15% chance: On Fire Shield hit, creates 1 Snowflake",
+    "quality": 2,
+    "elements": 3
+  },
+  {
+    "id": 321,
+    "name": "Frosted Fire III",
+    "description": "Rarity: Epic\n• Increases Fire Shield damage by 50%\n• 30% chance: On Fire Shield hit, creates 2 Snowflake\n• Increases Snowflake damage by 50%",
+    "quality": 3,
+    "elements": 3
+  },
+  {
+    "id": 322,
+    "name": "Incandescent Rain",
+    "description": "Rarity: Astral\n• On enemies with Burn, casts FIRE RAIN (Cooldown / interval:  6 seconds)\n• Increases Combustion damage by 60%",
+    "quality": 4,
+    "elements": 1
+  },
+  {
+    "id": 323,
+    "name": "Blinding Comets",
+    "description": "Rarity: Astral\n• On Combustion, casts 6 MAGMA COMETS (Cooldown / interval:  1 seconds)\n• Increases Combustion damage by 60%",
+    "quality": 4,
+    "elements": 1
+  },
+  {
+    "id": 324,
+    "name": "Solar Swords",
+    "description": "Rarity: Astral\n• When Embers touches ground, 30% chances to cast 1 METEOR BLADES\n• Increases Embers damage by 100%",
+    "quality": 4,
+    "elements": 1
+  },
+  {
+    "id": 325,
+    "name": "Vampiric Friend",
+    "description": "Rarity: Astral\n• 15% chance: On Wisp hit, restores 1 Life\n• Increases Wisp damage by 100%\n• Summons 2 permanent Wisp",
+    "quality": 4,
+    "elements": 17
+  },
+  {
+    "id": 326,
+    "name": "Toxic Burn",
+    "description": "Rarity: Astral\n• Transforms Ignition into Poison Ignition\n• Increases Ignition damage by 100%",
+    "quality": 4,
+    "elements": 9
+  },
+  {
+    "id": 327,
+    "name": "Propagating Fire",
+    "description": "Rarity: Astral\n• On Spell Refresh, gain Fire Shield for 6 seconds\n• On Fire Shield hit, creates 2 Embers\n• Increases Fire Shield damage by 100%",
+    "quality": 4,
+    "elements": 1
+  },
+  {
+    "id": 328,
+    "name": "Bubbling Projectiles",
+    "description": "Rarity: Astral\n• On Frostbite enemy, casts 5 WATER BUBBLES (Cooldown / interval:  1 seconds)\n• Increases Frostbite damage by 100%",
+    "quality": 4,
+    "elements": 2
+  },
+  {
+    "id": 329,
+    "name": "Sudden Frostbite",
+    "description": "Rarity: Astral\n• If enemy life is full, 20% chances to apply Frostbite\n• On enemy with Freeze death, casts AQUA BALL (Cooldown / interval:  1 seconds)",
+    "quality": 4,
+    "elements": 2
+  },
+  {
+    "id": 330,
+    "name": "Piercing Surprise",
+    "description": "Rarity: Astral\n• On Ice Idol disappearance, casts 6 FREEZING NEEDLES (Cooldown / interval:  1 seconds)\n• Increases Ice Idol damage by 100%",
+    "quality": 4,
+    "elements": 2
+  },
+  {
+    "id": 331,
+    "name": "Magnifying Snowflake",
+    "description": "Rarity: Astral\n• On Snowflake hit, casts 2 FROST MINES (Cooldown / interval:  2 seconds)\n• Increases Snowflake damage by 100%",
+    "quality": 4,
+    "elements": 2
+  },
+  {
+    "id": 332,
+    "name": "Frozen Overpower",
+    "description": "Rarity: Astral\n• Casts COLD-STEEL SWORD (Cooldown / interval:  8 Ice Sword created)\n• Increases Ice Sword damage by 100%",
+    "quality": 4,
+    "elements": 2
+  },
+  {
+    "id": 333,
+    "name": "Chasing Sparkle",
+    "description": "Rarity: Astral\n• On Spark hit, casts QUICKSILVER (Cooldown / interval:  2 seconds)\n• Increases Spark damage by 100%",
+    "quality": 4,
+    "elements": 4
+  },
+  {
+    "id": 334,
+    "name": "Short Circuit",
+    "description": "Rarity: Astral\n• Transforms Plasma into Fire Plasma\n• Increases Plasma Critical Hit chances by 100%",
+    "quality": 4,
+    "elements": 5
+  },
+  {
+    "id": 335,
+    "name": "Stormy Outburst",
+    "description": "Rarity: Astral\n• Summons 1 Nimbus (Cooldown / interval:  5 enemies killed)\n• On Nimbus hit, 20% chances to create 1 Thunder Strike\n• Increases Nimbus damage by 100%",
+    "quality": 4,
+    "elements": 4
+  },
+  {
+    "id": 336,
+    "name": "Raging Lightning",
+    "description": "Rarity: Astral\n• Casts THUNDER ORB (Cooldown / interval:  5 Lightning Orb created)\n• Increases Lightning Orb duration by 3 seconds\n• Increases Lightning Orb damage by 100%",
+    "quality": 4,
+    "elements": 4
+  },
+  {
+    "id": 337,
+    "name": "Thunderwalk",
+    "description": "Rarity: Astral\n• Casts EYE OF JUDGMENT (Cooldown / interval:  5 Thunder Strike created)\n• Increases Thunder Strike damage by 100%",
+    "quality": 4,
+    "elements": 4
+  },
+  {
+    "id": 338,
+    "name": "Toxic Chains",
+    "description": "Rarity: Astral\n• On hitting enemies with Poison, casts 2 THORNS CHAINS (Cooldown / interval:  1 seconds)\n• Increases Poison limit by 5\n• Increases Strength by 8% for each enemy with Poison",
+    "quality": 4,
+    "elements": 8
+  },
+  {
+    "id": 339,
+    "name": "Saplings Wrath",
+    "description": "Rarity: Astral\n• Casts POISONOUS VORTEX (Cooldown / interval:  10 Sapling summoned)\n• Increases Sapling damage by 100%",
+    "quality": 4,
+    "elements": 8
+  },
+  {
+    "id": 340,
+    "name": "Sanitized Water",
+    "description": "Rarity: Astral\n• On Slime hit, casts AQUA BALL (Cooldown / interval:  2 seconds)\n• Increases Slime damage by 100%",
+    "quality": 4,
+    "elements": 8
+  },
+  {
+    "id": 341,
+    "name": "Radioactive Impact",
+    "description": "Rarity: Astral\n• On Meteor impact, casts DARK BURST (Cooldown / interval:  2 Meteor created)\n• Increases Meteor damage by 100%",
+    "quality": 4,
+    "elements": 8
+  },
+  {
+    "id": 342,
+    "name": "Chain Reaction",
+    "description": "Rarity: Astral\n• On Toxic Gas hit, casts DEMONIC EXPLOSION (Cooldown / interval:  2 seconds)\n• Increases Toxic Gas damage by 100%",
+    "quality": 4,
+    "elements": 8
+  },
+  {
+    "id": 343,
+    "name": "Spicy Drugs",
+    "description": "Rarity: Astral\n• On spell hit, 20% chances to restore 1 Life\n• When Life is restored, casts 2 SURROUNDING SPHERES (Cooldown / interval:  1 seconds)",
+    "quality": 4,
+    "elements": 0
+  },
+  {
+    "id": 344,
+    "name": "Missiles Overload",
+    "description": "Rarity: Astral\n• Casts CORRUPTED TYPHOON (Cooldown / interval:  20 Missiles created)\n• Increases Missiles damage by 100%",
+    "quality": 4,
+    "elements": 16
+  },
+  {
+    "id": 345,
+    "name": "Mirror Swords",
+    "description": "Rarity: Astral\n• On Spirit Sword spawn, casts 1 THOUSAND KNIVES\n• Increases Spirit Sword damage by 100%",
+    "quality": 4,
+    "elements": 16
+  },
+  {
+    "id": 346,
+    "name": "Blade Storm",
+    "description": "Rarity: Astral\n• When dashing through enemies, casts SLASHING SQUALL (Cooldown / interval:  4 seconds)\n• On dash hit, deals damage\n• When entering a room, gains Movement speed for 15 seconds",
+    "quality": 4,
+    "elements": 0
+  },
+  {
+    "id": 347,
+    "name": "Spinning Spirit",
+    "description": "Rarity: Astral\n• Increases Strength by 30%\n• Casts RAVAGING SPHERES (Cooldown / interval:  10 seconds)",
+    "quality": 4,
+    "elements": 0
+  },
+  {
+    "id": 348,
+    "name": "Piercing Light I",
+    "description": "Rarity: Common\n• Summons 1 Nimbus (Cooldown / interval:  10 Mana spent)",
+    "quality": 1,
+    "elements": 4
+  },
+  {
+    "id": 349,
+    "name": "Piercing Light II",
+    "description": "Rarity: Rare\n• Summons 1 Nimbus (Cooldown / interval:  9 Mana spent)\n• Increases Nimbus damage by 30%",
+    "quality": 2,
+    "elements": 4
+  },
+  {
+    "id": 350,
+    "name": "Piercing Light III",
+    "description": "Rarity: Epic\n• Summons 2 Nimbus (Cooldown / interval:  8 Mana spent)\n• Increases Nimbus damage by 50%\n• On Nimbus hit, applies 1 Vulnerability",
+    "quality": 3,
+    "elements": 20
+  },
+  {
+    "id": 351,
+    "name": "Electrifying Touch I",
+    "description": "Rarity: Common\n• If enemy life is full, creates 1 Lightning Orb",
+    "quality": 1,
+    "elements": 4
+  },
+  {
+    "id": 352,
+    "name": "Electrifying Touch II",
+    "description": "Rarity: Rare\n• If enemy life is full, creates 1 Lightning Orb\n• Increases Lightning Orb fire rate by 20%",
+    "quality": 2,
+    "elements": 4
+  },
+  {
+    "id": 353,
+    "name": "Electrifying Touch III",
+    "description": "Rarity: Epic\n• If enemy life is full, creates 1 Lightning Orb\n• Increases Lightning Orb fire rate by 50%\n• On Lightning Orb spawn, creates 1 Combustion (Cooldown / interval:  2 seconds)",
+    "quality": 3,
+    "elements": 5
+  },
+  {
+    "id": 354,
+    "name": "Overvoltage I",
+    "description": "Rarity: Common\n• Increases Thunder Strike damage by 30%",
+    "quality": 1,
+    "elements": 4
+  },
+  {
+    "id": 355,
+    "name": "Overvoltage II",
+    "description": "Rarity: Rare\n• Increases Thunder Strike damage by 40%\n• On Thunder Strike hit, creates 2 Embers",
+    "quality": 2,
+    "elements": 4
+  },
+  {
+    "id": 356,
+    "name": "Overvoltage III",
+    "description": "Rarity: Epic\n• Increases Thunder Strike damage by 50%\n• On Thunder Strike hit, creates 3 Embers\n• Increases Embers damage by 50%",
+    "quality": 3,
+    "elements": 5
+  },
+  {
+    "id": 357,
+    "name": "Cold Amplification I",
+    "description": "Rarity: Common\n• Increases Strength by 2% for each enemy with Freeze",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 358,
+    "name": "Cold Amplification II",
+    "description": "Rarity: Rare\n• Increases Strength by 3% for each enemy with Freeze\n• Increases Frostbite damage by 20%",
+    "quality": 2,
+    "elements": 2
+  },
+  {
+    "id": 359,
+    "name": "Cold Amplification III",
+    "description": "Rarity: Epic\n• Increases Strength by 5% for each enemy with Freeze\n• Increases Frostbite damage by 30%\n• On dash hit, deals damage and applies 2 Freeze",
+    "quality": 3,
+    "elements": 2
+  },
+  {
+    "id": 360,
+    "name": "Conductive Shards I",
+    "description": "Rarity: Common\n• Increases Ice Fragment damage by 30%",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 361,
+    "name": "Conductive Shards II",
+    "description": "Rarity: Rare\n• Increases Ice Fragment damage by 40%\n• On Ice Fragment hit, 15% to create 1 Spark",
+    "quality": 2,
+    "elements": 6
+  },
+  {
+    "id": 362,
+    "name": "Conductive Shards III",
+    "description": "Rarity: Epic\n• Increases Ice Fragment damage by 50%\n• On Ice Fragment hit, 30% to create 1 Spark\n• Increases Spark damage by 30%",
+    "quality": 3,
+    "elements": 6
+  },
+  {
+    "id": 363,
+    "name": "Soothing Ice I",
+    "description": "Rarity: Common\n• Increases Ice Idol damage by 30%",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 364,
+    "name": "Soothing Ice II",
+    "description": "Rarity: Rare\n• Increases Ice Idol damage by 40%\n• On Ice Idol hit, 30% chances to apply 1 Pacification",
+    "quality": 2,
+    "elements": 2
+  },
+  {
+    "id": 365,
+    "name": "Soothing Ice III",
+    "description": "Rarity: Epic\n• Increases Ice Idol damage by 50%\n• On Ice Idol hit, 50% chances to apply 1 Pacification\n• On Ice Idol appearance, creates 1 Toxic Gas",
+    "quality": 3,
+    "elements": 2
+  },
+  {
+    "id": 366,
+    "name": "Flaming Touch I",
+    "description": "Rarity: Common\n• Increases Snowflake damage by 30%",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 367,
+    "name": "Flaming Touch II",
+    "description": "Rarity: Rare\n• Increases Snowflake damage by 40%\n• On Snowflake hit, creates 1 Embers",
+    "quality": 2,
+    "elements": 3
+  },
+  {
+    "id": 368,
+    "name": "Flaming Touch III",
+    "description": "Rarity: Epic\n• Increases Snowflake damage by 50%\n• On Snowflake hit, creates 2 Embers\n• Creates 4 Snowflake (Cooldown / interval:  5 enemies killed)",
+    "quality": 3,
+    "elements": 3
+  },
+  {
+    "id": 369,
+    "name": "Swords Invasion I",
+    "description": "Rarity: Common\n• Increases Ice Sword damage by 30%",
+    "quality": 1,
+    "elements": 2
+  },
+  {
+    "id": 370,
+    "name": "Swords Invasion II",
+    "description": "Rarity: Rare\n• Increases Ice Sword damage by 40%\n• On Ice Sword hit, creates 1 Spirit Sword (Cooldown / interval:  7 seconds)",
+    "quality": 2,
+    "elements": 18
+  },
+  {
+    "id": 371,
+    "name": "Swords Invasion III",
+    "description": "Rarity: Epic\n• Increases Ice Sword damage by 50%\n• On Ice Sword hit, creates 1 Spirit Sword (Cooldown / interval:  4 seconds)\n• Increases Spirit Sword damage by 50%",
+    "quality": 3,
+    "elements": 18
+  },
+  {
+    "id": 372,
+    "name": "Poisonous Seeds I",
+    "description": "Rarity: Common\n• Increases Sapling damage by 30%",
+    "quality": 1,
+    "elements": 8
+  },
+  {
+    "id": 373,
+    "name": "Poisonous Seeds II",
+    "description": "Rarity: Rare\n• Increases Sapling damage by 40%\n• On Sapling hit, 15% chances to create 1 Toxic Gas",
+    "quality": 2,
+    "elements": 8
+  },
+  {
+    "id": 374,
+    "name": "Poisonous Seeds III",
+    "description": "Rarity: Epic\n• Increases Sapling damage by 50%\n• On Sapling hit, 30% chances to create 1 Toxic Gas\n• On enemy death, summons 2 Sapling",
+    "quality": 3,
+    "elements": 8
+  },
+  {
+    "id": 375,
+    "name": "Yellow Jelly I",
+    "description": "Rarity: Common\n• Increases Slime damage by 30%",
+    "quality": 1,
+    "elements": 8
+  },
+  {
+    "id": 376,
+    "name": "Yellow Jelly II",
+    "description": "Rarity: Rare\n• Increases Slime damage by 40%\n• On Slime disappearance, creates 1 Spark",
+    "quality": 2,
+    "elements": 12
+  },
+  {
+    "id": 377,
+    "name": "Yellow Jelly III",
+    "description": "Rarity: Epic\n• Increases Slime damage by 50%\n• On Slime disappearance, creates 2 Spark\n• Increases Spark damage by 30%",
+    "quality": 3,
+    "elements": 12
+  },
+  {
+    "id": 378,
+    "name": "Weakening Star I",
+    "description": "Rarity: Common\n• Increases Meteor damage by 30%",
+    "quality": 1,
+    "elements": 8
+  },
+  {
+    "id": 379,
+    "name": "Weakening Star II",
+    "description": "Rarity: Rare\n• Increases Meteor damage by 40%\n• On Meteor hit, applies 2 Pacification",
+    "quality": 2,
+    "elements": 8
+  },
+  {
+    "id": 380,
+    "name": "Weakening Star III",
+    "description": "Rarity: Epic\n• Increases Meteor damage by 50%\n• On Meteor hit, applies 3 Pacification\n• Increases Meteor Critical Hit chances by 50%",
+    "quality": 3,
+    "elements": 8
+  },
+  {
+    "id": 381,
+    "name": "Freezing Toxin I",
+    "description": "Rarity: Common\n• Increases Toxic Gas damage by 30%",
+    "quality": 1,
+    "elements": 8
+  },
+  {
+    "id": 382,
+    "name": "Freezing Toxin II",
+    "description": "Rarity: Rare\n• Increases Toxic Gas damage by 40%\n• On Toxic Gas hit, applies 1 Freeze",
+    "quality": 2,
+    "elements": 10
+  },
+  {
+    "id": 383,
+    "name": "Freezing Toxin III",
+    "description": "Rarity: Epic\n• Increases Toxic Gas damage by 50%\n• On Toxic Gas hit, applies 2 Freeze\n• Increases Poison limit by 5",
+    "quality": 3,
+    "elements": 10
+  },
+  {
+    "id": 384,
+    "name": "Sharp Lightning I",
+    "description": "Rarity: Common\n• If enemy life is full, summons 1 Spirit Sword (Cooldown / interval:  15 seconds)",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 385,
+    "name": "Sharp Lightning II",
+    "description": "Rarity: Rare\n• If enemy life is full, summons 1 Spirit Sword (Cooldown / interval:  12 seconds)\n• Increases Spirit Sword damage by 40%",
+    "quality": 2,
+    "elements": 16
+  },
+  {
+    "id": 386,
+    "name": "Sharp Lightning III",
+    "description": "Rarity: Epic\n• If enemy life is full, summons 1 Spirit Sword (Cooldown / interval:  4 seconds)\n• Increases Spirit Sword damage by 50%\n• On Spirit Sword hit, 30% chances to create 1 Thunder Strike",
+    "quality": 3,
+    "elements": 20
+  },
+  {
+    "id": 387,
+    "name": "Weakspot I",
+    "description": "Rarity: Common\n• Applies 1 Target on nearby enemies for each Mana spent",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 388,
+    "name": "Weakspot II",
+    "description": "Rarity: Rare\n• Applies 1 Target on nearby enemies for each Mana spent\n• On Target disappearance, creates 2 Embers",
+    "quality": 2,
+    "elements": 17
+  },
+  {
+    "id": 389,
+    "name": "Weakspot III",
+    "description": "Rarity: Epic\n• Applies 1 Target on nearby enemies for each Mana spent\n• On Target disappearance, creates 3 Embers\n• Increases Critical Hit damage by 15%",
+    "quality": 3,
+    "elements": 17
+  },
+  {
+    "id": 390,
+    "name": "Allergic Reaction I",
+    "description": "Rarity: Common\n• When Life is restored, creates 3 Missiles (Cooldown / interval:  1 seconds)",
+    "quality": 1,
+    "elements": 16
+  },
+  {
+    "id": 391,
+    "name": "Allergic Reaction II",
+    "description": "Rarity: Rare\n• When Life is restored, creates 4 Missiles (Cooldown / interval:  1 seconds)\n• Increases Missiles damage by 30%",
+    "quality": 2,
+    "elements": 16
+  },
+  {
+    "id": 392,
+    "name": "Allergic Reaction III",
+    "description": "Rarity: Epic\n• When Life is restored, creates 5 Missiles (Cooldown / interval:  1 seconds)\n• Increases Missiles damage by 50%\n• On Missiles hit, 15% chances to create 1 Ice Sword",
+    "quality": 3,
+    "elements": 18
+  },
+  {
+    "id": 393,
+    "name": "Thick Yalee",
+    "description": "Rarity: Astral\n• Create 1 THICK YALEE falling on nearby enemies (Cooldown / interval:  5 Yalee summoned)\n• Increases Yalee damage by 100%",
+    "quality": 4,
+    "elements": 16
+  },
+  {
+    "id": 394,
+    "name": "Fire Propellant",
+    "description": "Rarity: Astral\n• Massively increases Combustion size\n• On Combustion hit, applies 3 Random Effect\n• Increases Combustion damage by 60%",
+    "quality": 4,
+    "elements": 1
+  },
+  {
+    "id": 395,
+    "name": "Homing Ember",
+    "description": "Rarity: Astral\n• On Critical Hit, creates 2 Embers (Interval: 1 seconds)\n• Embers move towards nearby enemies\n• Increases Embers damage by 100%",
+    "quality": 4,
+    "elements": 1
+  },
+  {
+    "id": 396,
+    "name": "Careless Wispers",
+    "description": "Rarity: Astral\n• On spell cast, summons 1 Wisp (Interval: 4 seconds)\n• On Wisp summon, summons 1 Kamikaze Wisp\n• Increases Wisp damage by 100%",
+    "quality": 4,
+    "elements": 1
+  },
+  {
+    "id": 397,
+    "name": "Shrineless Flame",
+    "description": "Rarity: Astral\n• Cast creates 1 Pulse applying 1 Ignition (Interval: 13 seconds)\n• Periodically triggers Fire Link on enemies with Ignition\n• Increases Ignition damage by 100%",
+    "quality": 4,
+    "elements": 1
+  },
+  {
+    "id": 398,
+    "name": "Heatseeker Shield",
+    "description": "Rarity: Astral\n• On a fall attack, gain Fire Shield for 6 seconds (Interval: 10 seconds)\n• Fire Shield periodically creates Homing Firebolt\n• Increases Fire Shield damage by 100%",
+    "quality": 4,
+    "elements": 1
+  },
+  {
+    "id": 399,
+    "name": "Sickening Spark",
+    "description": "Rarity: Astral\n• On Spell Refresh, creates 7 Spark\n• Creates 1 Poisonous Spark (Cooldown / interval:  7 Spark created)\n• Increases Slime damage by 100%",
+    "quality": 4,
+    "elements": 12
+  },
+  {
+    "id": 400,
+    "name": "Weaponized Conduct",
+    "description": "Rarity: Astral\n• On Spell Refresh, creates 6 Plasma\n• creates 1 Destructive Laser (Interval: 5 Plasma created)\n• Increases Plasma damage by 100%",
+    "quality": 4,
+    "elements": 0
+  },
+  {
+    "id": 401,
+    "name": "Sleety Cloud",
+    "description": "Rarity: Astral\n• 25% chance: On spell cast, summons 1 Nimbus\n• summons 1 Frost Nimbus (Interval: 5 Nimbus created)\n• Increases Nimbus damage by 100%",
+    "quality": 4,
+    "elements": 4
+  },
+  {
+    "id": 402,
+    "name": "Magnetic Field",
+    "description": "Rarity: Astral\n• 30% chance: On spell hit, creates 1 Lightning Orb\n• Lightning Orb has 50% chance to create 1 Electrified Area\n• Increases Lightning Orb damage by 100%",
+    "quality": 4,
+    "elements": 4
+  },
+  {
+    "id": 403,
+    "name": "Power Line",
+    "description": "Rarity: Astral\n• On Spell Refresh, creates 5 Thunder Strike\n• On Thunder Strike hit, creates 1 Rolling Thunder (Interval: 1 seconds)\n• Increases Thunder Strike damage by 100%",
+    "quality": 4,
+    "elements": 4
+  },
+  {
+    "id": 404,
+    "name": "Glacier's Fall",
+    "description": "Rarity: Astral\n• On Spell Refresh, creates 1 Pulse applying 5 Freeze\n• At the end of Frostbite, creates 1 Ice Detonation\n• Increases Frostbite damage by 60%",
+    "quality": 4,
+    "elements": 2
+  },
+  {
+    "id": 405,
+    "name": "Ice Pick",
+    "description": "Rarity: Astral\n• On Spell Refresh, creates 5 Ice Fragment\n• creates 1 Ice Spear (Interval: 5 Ice Fragment created)\n• Increases Ice Fragment damage by 100%",
+    "quality": 4,
+    "elements": 2
+  },
+  {
+    "id": 406,
+    "name": "Snow Day",
+    "description": "Rarity: Astral\n• On spell cast, creates 2 Snowflake\n• creates 1 Hail Storm (Interval: 7 Snowflake created)\n• Increases Snowflake damage by 100%",
+    "quality": 4,
+    "elements": 2
+  },
+  {
+    "id": 407,
+    "name": "Cold Sap",
+    "description": "Rarity: Astral\n• 20% chance: On spell hit, summons 2 Sapling\n• On Sapling destroyed, creates 1 Frozen Mine (Interval: 2 seconds)\n• Increases Sapling damage by 100%",
+    "quality": 4,
+    "elements": 10
+  },
+  {
+    "id": 408,
+    "name": "Icarus Slime",
+    "description": "Rarity: Astral\n• On Spell Refresh, summons 3 Flying Slime\n• Increases Slime damage by 100%\n• Increases Combustion damage by 60%",
+    "quality": 4,
+    "elements": 9
+  },
+  {
+    "id": 409,
+    "name": "Icy Shiv",
+    "description": "Rarity: Astral\n• On Spell Refresh, creates 6 Ice Sword\n• On Ice Sword hit, creates 1 Ice Dagger (Interval: 2 seconds)\n• Increases Ice Sword damage by 100%",
+    "quality": 4,
+    "elements": 2
+  },
+  {
+    "id": 410,
+    "name": "Burn your Idols",
+    "description": "Rarity: Astral\n• 20% chance: On spell hit, creates 1 Ice Idol\n• Ice Idol has 30% chance to become a Fire Idol\n• Increases Ice Idol damage by 100%",
+    "quality": 4,
+    "elements": 3
+  },
+  {
+    "id": 411,
+    "name": "Sparkling Stars",
+    "description": "Rarity: Astral\n• creates 3 Meteor (Interval: 4 Mana spent)\n• 20% chance: On Meteor hit, creates 1 Electric Meteor\n• Increases Meteor damage by 100%",
+    "quality": 4,
+    "elements": 12
+  },
+  {
+    "id": 412,
+    "name": "Maddening Darkness",
+    "description": "Rarity: Astral\n• On dash, creates 1 Toxic Gas\n• On Toxic Gas hit, creates 1 Dark Cloud (Interval: 8 seconds)\n• Increases Toxic Gas damage by 100%",
+    "quality": 4,
+    "elements": 8
+  },
+  {
+    "id": 413,
+    "name": "Disorienting Weapon",
+    "description": "Rarity: Astral\n• Increases Critical Hit damage by 25%\n• On Critical Hit, creates 1 Boomerang (Interval: 10 seconds)\n• Increases Critical Hit chances by 20%",
+    "quality": 4,
+    "elements": 16
+  },
+  {
+    "id": 414,
+    "name": "Bigger Body Initiative",
+    "description": "Rarity: Astral\n• On hitting an enemy with full life, creates 4 Missiles\n• Missiles have 25% chance to become a Explosive Missile",
+    "quality": 4,
+    "elements": 16
+  },
+  {
+    "id": 415,
+    "name": "Blade Dance",
+    "description": "Rarity: Astral\n• 50% chance: On spell cast, summons 1 Spirit Sword\n• On Spirit Sword summon, creates 1 Blade Whirlwind (Interval: 14 seconds)\n• Increases Spirit Sword damage by 100%",
+    "quality": 4,
+    "elements": 16
+  },
+  {
+    "id": 416,
+    "name": "Cast Off",
+    "description": "Rarity: Astral\n• summons 1 Yalee Skyship (Interval: 10 Yalee summoned)\n• Increases Yalee damage by 100%",
+    "quality": 4,
+    "elements": 16
+  }
+]

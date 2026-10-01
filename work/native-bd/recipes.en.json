@@ -1,0 +1,400 @@
+[
+  {
+    "name": "Missiles + Ice Swords",
+    "auras": [
+      143,
+      392,
+      143,
+      392,
+      414
+    ],
+    "spells": [
+      34,
+      45,
+      34,
+      45
+    ],
+    "gambits": [
+      113,
+      151,
+      113,
+      151
+    ],
+    "description": "Sabre summons and Allergic Reaction form the ice sword / missile cycle.",
+    "source": "https://www.bilibili.com/opus/999341346789523458",
+    "auraNames": [
+      "Saber Call III",
+      "Allergic Reaction III",
+      "Saber Call III",
+      "Allergic Reaction III",
+      "Bigger Body Initiative"
+    ]
+  },
+  {
+    "name": "Snowflakes + Ice Shards",
+    "auras": [
+      136,
+      136,
+      108,
+      108,
+      122
+    ],
+    "spells": [
+      38,
+      39,
+      43,
+      38
+    ],
+    "gambits": [
+      96,
+      107,
+      96,
+      107
+    ],
+    "description": "Glacial Soul generates snowflakes; Brittle Ice adds ice shards and freeze criticals.",
+    "source": "https://www.bilibili.com/opus/999341346789523458",
+    "auraNames": [
+      "Glacial Spirit III",
+      "Glacial Spirit III",
+      "Brittle Ice III",
+      "Brittle Ice III",
+      "Absolute Zero"
+    ]
+  },
+  {
+    "name": "Thundercloud Summons",
+    "auras": [
+      166,
+      350,
+      172,
+      335,
+      171
+    ],
+    "spells": [
+      31,
+      42,
+      31,
+      42
+    ],
+    "gambits": [
+      80,
+      80,
+      80,
+      80
+    ],
+    "description": "Refreshes, mana spending and kills create thunderclouds; the storm mark strengthens them.",
+    "source": "https://www.bilibili.com/video/BV1QxVrzXE8R/",
+    "auraNames": [
+      "Storm Caller III",
+      "Piercing Light III",
+      "Seal of the Storm Lord",
+      "Stormy Outburst",
+      "Nimbus Revenge III"
+    ]
+  },
+  {
+    "name": "Low-cost Spell Cycle",
+    "auras": [
+      230,
+      261,
+      255,
+      258,
+      140
+    ],
+    "spells": [
+      34,
+      45,
+      34,
+      45
+    ],
+    "gambits": [
+      138,
+      113,
+      138,
+      113
+    ],
+    "description": "Low-cost spells with mana leech and sacred sword / sabre triggers as a general engine.",
+    "source": "https://www.vgover.com/news/152849",
+    "auraNames": [
+      "Warchief Bracers",
+      "Mana Drainer III",
+      "Advanced Wizardry III",
+      "Magic Weapon III",
+      "Serac Saber III"
+    ]
+  },
+  {
+    "name": "3D Hunter (Marked Ice Swords)",
+    "auras": [
+      144,
+      294,
+      144,
+      294,
+      140
+    ],
+    "spells": [
+      30,
+      31,
+      38,
+      42
+    ],
+    "gambits": [
+      116,
+      116,
+      116,
+      116
+    ],
+    "description": "Community 3D Hunter: Mountain Hunter's Illusion and Durandal Fragment cycle marks, spirit swords and ice swords.\nSpells: FIREBALLS / THUNDER ORB / ICE THROWER / ELECTROSPHERES (1 mana each, multiple hits).\nEach spell: on-hit ice sword + mana recovery + mana recovery + casting barrier.",
+    "source": "https://game.3loumao.org/723945734",
+    "auraNames": [
+      "Vision of the Mountain Hunter",
+      "Durendal Shard III",
+      "Vision of the Mountain Hunter",
+      "Durendal Shard III",
+      "Serac Saber III"
+    ],
+    "gambitSlots": [
+      [
+        116,
+        140,
+        140,
+        172
+      ],
+      [
+        116,
+        140,
+        140,
+        172
+      ],
+      [
+        116,
+        140,
+        140,
+        172
+      ],
+      [
+        116,
+        140,
+        140,
+        172
+      ]
+    ]
+  },
+  {
+    "name": "Ice Shards + Ice Idols",
+    "auras": [
+      118,
+      127,
+      108,
+      124,
+      405
+    ],
+    "spells": [
+      34,
+      45,
+      34,
+      45
+    ],
+    "gambits": [
+      107,
+      106,
+      107,
+      106
+    ],
+    "description": "Ice Pebble and Subzero Dash cycle ice shards and idols.",
+    "source": "https://game.3loumao.org/723945734",
+    "auraNames": [
+      "Ice Pebble III",
+      "Sub-Zero Sprint III",
+      "Brittle Ice III",
+      "Carve Mastery",
+      "Ice Pick"
+    ]
+  },
+  {
+    "name": "Spark Loop",
+    "auras": [
+      150,
+      153,
+      147,
+      157,
+      153
+    ],
+    "spells": [
+      34,
+      45,
+      34,
+      45
+    ],
+    "gambits": [
+      71,
+      71,
+      71,
+      71
+    ],
+    "description": "Flashing Dash and Storm Strike trigger sparks and shocks in a loop.",
+    "source": "https://game.3loumao.org/723945734",
+    "auraNames": [
+      "Storm Blow III",
+      "Sparkling Sprint III",
+      "Thunder Blessing III",
+      "Sparks Conductor",
+      "Sparkling Sprint III"
+    ]
+  },
+  {
+    "name": "Slimes + Sparks",
+    "auras": [
+      399,
+      377,
+      377,
+      203,
+      220
+    ],
+    "spells": [
+      34,
+      45,
+      34,
+      45
+    ],
+    "gambits": [
+      21,
+      21,
+      21,
+      21
+    ],
+    "description": "Sickening Spark and Yellow Jelly form a spark / slime cycle.",
+    "source": "https://game.3loumao.org/723945734",
+    "auraNames": [
+      "Sickening Spark",
+      "Yellow Jelly III",
+      "Yellow Jelly III",
+      "Slimy Fall III",
+      "Viper Fall III"
+    ]
+  },
+  {
+    "name": "Burning Idols + Homing Shields",
+    "auras": [
+      410,
+      398,
+      118,
+      127,
+      124
+    ],
+    "spells": [
+      34,
+      45,
+      34,
+      45
+    ],
+    "gambits": [
+      106,
+      107,
+      106,
+      107
+    ],
+    "description": "Burning idols convert into fire idols, with homing shields adding tracking projectiles.",
+    "source": "https://www.bilibili.com/opus/999341346789523458",
+    "auraNames": [
+      "Burn your Idols",
+      "Heatseeker Shield",
+      "Ice Pebble III",
+      "Sub-Zero Sprint III",
+      "Carve Mastery"
+    ]
+  },
+  {
+    "name": "Ice Idols + Poison Chain",
+    "auras": [
+      365,
+      297,
+      221,
+      220,
+      377
+    ],
+    "spells": [
+      34,
+      45,
+      34,
+      45
+    ],
+    "gambits": [
+      106,
+      38,
+      106,
+      38
+    ],
+    "description": "Idols generate poison gas, linking spirit swords, slimes and sparks; an extended recipe.",
+    "source": "https://www.bilibili.com/opus/999341346789523458",
+    "auraNames": [
+      "Soothing Ice III",
+      "Sword Sculptor III",
+      "Sword Fang",
+      "Viper Fall III",
+      "Yellow Jelly III"
+    ]
+  },
+  {
+    "name": "Full-life First Strike Missiles",
+    "auras": [
+      414,
+      287,
+      291,
+      392,
+      143
+    ],
+    "spells": [
+      34,
+      45,
+      34,
+      45
+    ],
+    "gambits": [
+      151,
+      113,
+      151,
+      113
+    ],
+    "description": "First strike triggers missiles and joins the ice sword cycle; a clearing variant.",
+    "source": "https://www.vgover.com/news/152849",
+    "auraNames": [
+      "Bigger Body Initiative",
+      "Missile Generator III",
+      "Entropic Magic",
+      "Allergic Reaction III",
+      "Saber Call III"
+    ]
+  },
+  {
+    "name": "Ice Strike + Brittle Ice",
+    "auras": [
+      112,
+      112,
+      108,
+      108,
+      404
+    ],
+    "spells": [
+      34,
+      45,
+      34,
+      45
+    ],
+    "gambits": [
+      90,
+      107,
+      90,
+      107
+    ],
+    "description": "Ice Strike applies freeze and frostbite; Brittle Ice adds shards and criticals.",
+    "source": "https://www.bilibili.com/opus/999341346789523458",
+    "auraNames": [
+      "Icy Blow III",
+      "Icy Blow III",
+      "Brittle Ice III",
+      "Brittle Ice III",
+      "Glacier's Fall"
+    ]
+  }
+]

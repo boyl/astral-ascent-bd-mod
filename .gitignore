@@ -1,0 +1,12 @@
+outputs/
+*.obj
+*.exe
+*.dll
+*.lib
+*.exp
+__pycache__/
+profile.json
+aura-plans.json
+ui-settings.json
+*.jsonl
+*.sav

@@ -1,0 +1,19 @@
+LIBRARY version
+EXPORTS
+ GetFileVersionInfoA=bdForward0 @1 PRIVATE
+ GetFileVersionInfoByHandle=bdForward1 @2 PRIVATE
+ GetFileVersionInfoExA=bdForward2 @3 PRIVATE
+ GetFileVersionInfoExW=bdForward3 @4 PRIVATE
+ GetFileVersionInfoSizeA=bdForward4 @5 PRIVATE
+ GetFileVersionInfoSizeExA=bdForward5 @6 PRIVATE
+ GetFileVersionInfoSizeExW=bdForward6 @7 PRIVATE
+ GetFileVersionInfoSizeW=bdForward7 @8 PRIVATE
+ GetFileVersionInfoW=bdForward8 @9 PRIVATE
+ VerFindFileA=bdForward9 @10 PRIVATE
+ VerFindFileW=bdForward10 @11 PRIVATE
+ VerInstallFileA=bdForward11 @12 PRIVATE
+ VerInstallFileW=bdForward12 @13 PRIVATE
+ VerLanguageNameA=bdForward13 @14 PRIVATE
+ VerLanguageNameW=bdForward14 @15 PRIVATE
+ VerQueryValueA=bdForward15 @16 PRIVATE
+ VerQueryValueW=bdForward16 @17 PRIVATE
