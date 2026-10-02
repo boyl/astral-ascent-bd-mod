@@ -2,6 +2,12 @@
 
 **1.0.0-beta.1 · Steam Windows PC · verified game build 2.6.4**
 
+## Download
+
+**[Download the complete Mod ZIP (62.4 MB)](https://github.com/boyl/astral-ascent-bd-mod/releases/download/v1.0.0-beta.1/AstralAscent-BD-Mod-v1.0.0-beta.1.zip)**
+
+[Release notes and checksums](https://github.com/boyl/astral-ascent-bd-mod/releases/tag/v1.0.0-beta.1). This is a prerelease. Use the Mod ZIP above; GitHub's `Source code` archives are not installable packages.
+
 An unofficial gameplay mod with immediate build equipment, custom aura selection and saved aura plans. Chinese and English are included in one package.
 
 ## Install

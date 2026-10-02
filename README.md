@@ -2,6 +2,12 @@
 
 **1.0.0-beta.1 · Steam Windows PC · 游戏版本 2.6.4**
 
+## 下载 / Download
+
+**[下载完整安装包 / Download Mod ZIP（62.4 MB）](https://github.com/boyl/astral-ascent-bd-mod/releases/download/v1.0.0-beta.1/AstralAscent-BD-Mod-v1.0.0-beta.1.zip)**
+
+[发布说明与校验文件 / Release notes and checksums](https://github.com/boyl/astral-ascent-bd-mod/releases/tag/v1.0.0-beta.1)。当前为预发布版；请下载上述安装包，GitHub 的 `Source code` 压缩包不能直接安装。
+
 [English instructions](README.en.md)
 
 支持立即装配构筑、光环自选、保存光环方案、手柄操作及中英文切换。一个安装包包含两种语言，光环名称与效果取自游戏对应语言的数据。
