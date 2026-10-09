@@ -1,10 +1,10 @@
-"""连接游戏内界面的原生运行时；仅匹配已验明的 EXE 指纹。"""
+"""连接游戏内界面的原生运行时；按实际原生接口检查兼容性。"""
+import compatibility
 import aura_plans
 import localization
 from collections import deque
 import argparse
 import ctypes as C
-import hashlib
 import json
 import os
 import sys
@@ -19,11 +19,20 @@ auras=json.loads((folder/'auras.json').read_text(encoding='utf-8'))
 sys.path.insert(0,str(folder/'runtime' if package else root/'work/frida-runtime'))
 import frida
 
-DATA_HASHES={
- 'array_relicsbook.json':'445bef5e745844fa0c508de51c97f4a4ae218188f26e3582c8e0452e30ec1c04',
- 'array_modificatorsbook.json':'d33123dd1dacdc3ff88f1db20f24abec3aad1ae76fc5ac50fea5227e7b264a70',
- 'dictionary_spellbook.json':'87397723e709e0af689bc8ccb306a77a0e8fe6ae32ec3f0c47f0729221347552',
-}
+
+def validate_content(game_directory):
+ """校验实际组件 ID 存在，允许文件格式化或新增组件。"""
+ relics=json.loads((game_directory/'array_relicsbook.json').read_text(encoding='utf-8-sig'))
+ gambits=json.loads((game_directory/'array_modificatorsbook.json').read_text(encoding='utf-8-sig'))
+ spells=json.loads((game_directory/'dictionary_spellbook.json').read_text(encoding='utf-8-sig'))['data']
+ for aura in auras:
+  identifier=aura['id']
+  if not 0<identifier<len(relics['data'][9]) or relics['data'][9][identifier][0] not in (1,2,3,4):raise RuntimeError('游戏缺少有效光环组件：'+str(identifier))
+ for recipe in recipes:
+  for identifier in recipe['spells']:
+   if 'spell_'+str(identifier) not in spells:raise RuntimeError('游戏缺少法术组件：'+str(identifier))
+  for identifier in recipe['gambits']+[i for slots in recipe.get('gambitSlots',[]) for i in slots]:
+   if identifier and not 0<identifier<len(gambits['data'][0]):raise RuntimeError('游戏缺少符文组件：'+str(identifier))
 
 def validate_profile(profile):
  if not isinstance(profile,dict) or set(profile)!={'selected','mode','enabled','appliedRun','growth'}:raise ValueError('Mod 配置字段无效')
@@ -83,9 +92,9 @@ def _main():
  pid=process_id()
  if pid is None:raise RuntimeError('请先启动星界战士，再运行 BD Mod')
  game_exe=executable(pid)
- if hashlib.sha256(game_exe.read_bytes()).hexdigest().upper()!='CA376D2B741F65C75C416317517D24C316DD8A32A4EAE6559030797B3B9AA88B':raise RuntimeError('游戏版本不匹配：本版仅支持核对过的 2.6.4 EXE')
- for name,digest in DATA_HASHES.items():
-  if hashlib.sha256((game_exe.parent/name).read_bytes()).hexdigest()!=digest:raise RuntimeError('组件数据版本不匹配：'+name)
+ layout=compatibility.resolve(game_exe)
+ validate_content(game_exe.parent)
+ print('原生接口已解析：'+json.dumps(layout),flush=True)
  path=assets/'astral_bd_overlay.dll'
  local=C.CDLL(str(path));local.BDPresentAddress.restype=C.c_void_p
  k=C.WinDLL('kernel32');k.GetModuleHandleW.argtypes=[C.c_wchar_p];k.GetModuleHandleW.restype=C.c_void_p
@@ -95,7 +104,7 @@ def _main():
  language_path=args.data_dir/'ui-settings.json'
  language=localization.load(language_path)
  catalogs={'zh-CN':{'recipes':recipes,'auras':auras},'en':{name:json.loads((folder/(name+'.en.json')).read_text(encoding='utf-8')) for name in ('recipes','auras')}}
- source=(folder/'runtime.js').read_text(encoding='utf-8').replace('DLL_PATH',json.dumps(str(path))).replace('PRESENT_RVA',str(rva)).replace('CATALOG_DATA',json.dumps(catalogs,ensure_ascii=False)).replace('LANGUAGE_DATA',json.dumps(language))
+ source=(folder/'runtime.js').read_text(encoding='utf-8').replace('DLL_PATH',json.dumps(str(path))).replace('PRESENT_RVA',str(rva)).replace('CATALOG_DATA',json.dumps(catalogs,ensure_ascii=False)).replace('LANGUAGE_DATA',json.dumps(language)).replace('LAYOUT_DATA',json.dumps(layout))
  session=frida.attach(pid)
  probe=session.create_script("rpc.exports.ready=()=>!!Process.findModuleByName('dxgi.dll');")
  try:

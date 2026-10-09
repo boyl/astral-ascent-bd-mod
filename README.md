@@ -1,12 +1,14 @@
 # 星界战士 BD 选择 Mod
 
-**1.0.0-beta.1 · Steam Windows PC · 游戏版本 2.6.4**
+**1.0.1-beta.1 · Steam Windows PC · 已验证游戏版本 2.7.0**
+
+1.0.1-beta.1 修复游戏 2.7.0 更新后的自动加载失效，并取消游戏版本与整体哈希锁定。
 
 ## 下载 / Download
 
-**[下载完整安装包 / Download Mod ZIP（62.4 MB）](https://github.com/boyl/astral-ascent-bd-mod/releases/download/v1.0.0-beta.1/AstralAscent-BD-Mod-v1.0.0-beta.1.zip)**
+**[下载完整安装包 / Download Mod ZIP](https://github.com/boyl/astral-ascent-bd-mod/releases/download/v1.0.1-beta.1/AstralAscent-BD-Mod-v1.0.1-beta.1.zip)**
 
-[发布说明与校验文件 / Release notes and checksums](https://github.com/boyl/astral-ascent-bd-mod/releases/tag/v1.0.0-beta.1)。当前为预发布版；请下载上述安装包，GitHub 的 `Source code` 压缩包不能直接安装。
+[发布说明与校验文件 / Release notes and checksums](https://github.com/boyl/astral-ascent-bd-mod/releases/tag/v1.0.1-beta.1)。当前为预发布版；请下载上述安装包，GitHub 的 `Source code` 压缩包不能直接安装。
 
 [English instructions](README.en.md)
 
@@ -41,7 +43,7 @@
 
 ## 支持范围
 
-仅支持已核对指纹的 Steam Windows x64 2.6.4；其他版本清晰报错。目标为一号玩家，双人、全部角色与解锁组合、Proton 和其他平台尚未完整认证。本版使用原生挂钩和 D3D11，不属于 A2M2 外观替换包；**创意工坊订阅不能自动安装原生加载器，仍需手动安装**。
+本版已适配 Steam Windows x64 2.7.0。启动与安装不再按 EXE 整体哈希或版本号锁定；启动时通过原生代码锚点解析函数、全局对象和新局字段，并验证对象契约。游戏更新后接口仍匹配即可加载；接口缺失或存在歧义时明确报错。目标为一号玩家，双人、全部角色与解锁组合、Proton 和其他平台尚未完整认证。本版使用原生挂钩和 D3D11，不属于 A2M2 外观替换包；**创意工坊订阅不能自动安装原生加载器，仍需手动安装**。
 
 游戏 EXE、存档和个人方案不包含在公开包内。安装检测到其他来源的 `version.dll` 会停止覆盖。第三方依赖保留各自许可证；游戏名称与效果文案归原权利人。
 

@@ -16,7 +16,7 @@ try {
   $GameDirectory=$candidates[0]
  }
  $GameDirectory=(Resolve-Path -LiteralPath $GameDirectory).Path
- if((Get-InstallHash (Join-Path $GameDirectory 'Astral Ascent.exe')) -ne 'CA376D2B741F65C75C416317517D24C316DD8A32A4EAE6559030797B3B9AA88B'){throw 'Unsupported game build; only verified 2.6.4 is supported. / 游戏版本不匹配：只支持已核对的 2.6.4。'}
+ if(-not (Test-Path -LiteralPath (Join-Path $GameDirectory 'Astral Ascent.exe'))){throw '游戏 EXE 不存在。'}
  $proxy=Resolve-InstallFile $GameDirectory 'version.dll'
  if(Test-Path -LiteralPath $proxy){
   if(-not (Test-Path -LiteralPath $statePath)){throw 'Unrelated version.dll exists; installation stopped. / 已有其他 version.dll，停止安装，避免覆盖其他 Mod。'}

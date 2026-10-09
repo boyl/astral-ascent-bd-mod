@@ -1,0 +1,195 @@
+{
+  "format": 1,
+  "anchors": {
+    "assign": {
+      "bytes": "eb0a448b442464488b542468498d8ed0070000e8263c29fdf2450f109e30070000f2410f11be30070000f2450f10a638070000",
+      "mask": "101111111111111111110000111111111111111111111111111",
+      "kind": "call",
+      "instructionOffset": 19,
+      "instructionSize": 5,
+      "operandOffset": 1,
+      "operandSize": 4,
+      "add": 0
+    },
+    "refresh": {
+      "bytes": "488b0526463e0a488b0848890d34463e0a498bcde82c2f24ff8b4424780f57c9f20f10159daea403",
+      "mask": "1110000111111000011110000111111111110000",
+      "kind": "call",
+      "instructionOffset": 20,
+      "instructionSize": 5,
+      "operandOffset": 1,
+      "operandSize": 4,
+      "add": 0
+    },
+    "gambitRefresh": {
+      "bytes": "448ba528010000f2410f109630070000f2410f108e28070000498bcee88f1cf401f2410f108e28070000498bcee86e68f501",
+      "mask": "11111111111111111111111111111000011111111111110000",
+      "kind": "call",
+      "instructionOffset": 28,
+      "instructionSize": 5,
+      "operandOffset": 1,
+      "operandSize": 4,
+      "add": 0
+    },
+    "runStart": {
+      "bytes": "488bc4564881ecb00000000f2978d8488bf1440f2948b80f57fff2440f100d4d7b8f02",
+      "mask": "11111111111111111111111111111110000",
+      "kind": "entry",
+      "instructionOffset": 0,
+      "instructionSize": 3,
+      "operandOffset": 0,
+      "operandSize": 0,
+      "add": 0
+    },
+    "frameUpdate": {
+      "bytes": "85c07e1e0f1f8000000000488b0be808b1080084c0743bffc7",
+      "mask": "1110111111111110000111011",
+      "kind": "call",
+      "instructionOffset": 14,
+      "instructionSize": 5,
+      "operandOffset": 1,
+      "operandSize": 4,
+      "add": 0
+    },
+    "checkpointSave": {
+      "bytes": "488b0848890d0c677a0a488b9c24a0000000488bcbe8bcf680ff892dd6667a0a8935c0667a0a448935d9667a0a",
+      "mask": "111111000011111111111100001100001100001110000",
+      "kind": "call",
+      "instructionOffset": 21,
+      "instructionSize": 5,
+      "operandOffset": 1,
+      "operandSize": 4,
+      "add": 0
+    },
+    "jsonGet": {
+      "bytes": "488bd84c8d05cf31f40a488d95b8000000488b0dd1beb60ae8fc58220390488bc8e8536c8bff",
+      "mask": "11111100001111111111000010000111110000",
+      "kind": "call",
+      "instructionOffset": 24,
+      "instructionSize": 5,
+      "operandOffset": 1,
+      "operandSize": 4,
+      "add": 0
+    },
+    "progressObject": {
+      "bytes": "e889240004488bd84c8d05cf31f40a488d95b8000000488b0dd1beb60ae8fc58220390488bc8",
+      "mask": "10000111111000011111111110000100001111",
+      "kind": "rip",
+      "instructionOffset": 22,
+      "instructionSize": 7,
+      "operandOffset": 3,
+      "operandSize": 4,
+      "add": 0
+    },
+    "roomPath": {
+      "bytes": "4c8b2d0672bb0a4d85ed0f84821e0000498b7d384c8d05829cf40a488d9538050000488b0d04bfb60ae82f592203",
+      "mask": "1110000111110000111111100001111111111000010000",
+      "kind": "rip",
+      "instructionOffset": 20,
+      "instructionSize": 7,
+      "operandOffset": 3,
+      "operandSize": 4,
+      "add": 0
+    },
+    "worldPath": {
+      "bytes": "488d159521ea0a488b0daeefb60ae889240004488bd84c8d05cf31f40a488d95b8000000488b0dd1beb60ae8fc582203",
+      "mask": "111000011100001000011111100001111111111000010000",
+      "kind": "rip",
+      "instructionOffset": 22,
+      "instructionSize": 7,
+      "operandOffset": 3,
+      "operandSize": 4,
+      "add": 0
+    },
+    "runField": {
+      "bytes": "8b058f342109ffc83bf87cb9f20f108650481c008bfdf2410f58c1f20f118650481c00",
+      "mask": "11000011111011110000111111111111111",
+      "kind": "field",
+      "instructionOffset": 12,
+      "instructionSize": 8,
+      "operandOffset": 4,
+      "operandSize": 4,
+      "add": 0
+    },
+    "savePending": {
+      "bytes": "8b992007000048897c24388bb9a80f1c008981a80f1c0048898128971c00898120070000e8c046f9ff488bce",
+      "mask": "11111111111111111111111111000011111110000111",
+      "kind": "field",
+      "instructionOffset": 23,
+      "instructionSize": 7,
+      "operandOffset": 3,
+      "operandSize": 4,
+      "add": 0
+    },
+    "checkpointCount": {
+      "bytes": "8844243033c0488903448b3dda697a0a448b35e3697a0a488b05ec697a0a48898424b0000000438d1477",
+      "mask": "111111111111000011100001110000111111111111",
+      "kind": "rip",
+      "instructionOffset": 16,
+      "instructionSize": 7,
+      "operandOffset": 3,
+      "operandSize": 4,
+      "add": 0
+    },
+    "checkpointObject": {
+      "bytes": "33c0488903448b3dda697a0a448b35e3697a0a488b05ec697a0a48898424b0000000438d1477488d0da9697a0a",
+      "mask": "111111110000111000011100001111111111111110000",
+      "kind": "rip",
+      "instructionOffset": 19,
+      "instructionSize": 7,
+      "operandOffset": 3,
+      "operandSize": 4,
+      "add": 0
+    },
+    "equipment": {
+      "bytes": "a8017509488b4908e8da878002488b35733d2d09488b053c4a2d09488b4838f20f108980080000",
+      "mask": "111011111000011100001110000111111111111",
+      "kind": "rip",
+      "instructionOffset": 13,
+      "instructionSize": 7,
+      "operandOffset": 3,
+      "operandSize": 4,
+      "add": 0
+    },
+    "playerCount": {
+      "bytes": "418bd6f20f1005258f7504448bb9d0141c00c681d4141c00018b05c1a46f0affc8f20f11053788330885c0",
+      "mask": "1111111000011111111111111110000111111000011",
+      "kind": "rip",
+      "instructionOffset": 25,
+      "instructionSize": 6,
+      "operandOffset": 2,
+      "operandSize": 4,
+      "add": 0
+    },
+    "pauseList": {
+      "bytes": "e871150000488d542460488d0d25f76f0ae8106e3fff4c8b0d31f76f0a458b4108458bd74585c0",
+      "mask": "100001111111100001000011100001111111111",
+      "kind": "rip",
+      "instructionOffset": 22,
+      "instructionSize": 7,
+      "operandOffset": 3,
+      "operandSize": 4,
+      "add": 0
+    },
+    "pauseCount": {
+      "bytes": "41564881eca0000000448b25d33a820a488be9448b2dd93a820a488d0db23a820a488b05db3a820a",
+      "mask": "1111111111110000111111000011100001110000",
+      "kind": "rip",
+      "instructionOffset": 19,
+      "instructionSize": 7,
+      "operandOffset": 3,
+      "operandSize": 4,
+      "add": 0
+    },
+    "globals": {
+      "bytes": "0f844a01000044392570af100a0f8e3d010000488d158bc0490a488b0d34c40b0ae83f8a57030fb61085d2",
+      "mask": "1100001110000110000111000011100001000011111",
+      "kind": "rip",
+      "instructionOffset": 26,
+      "instructionSize": 7,
+      "operandOffset": 3,
+      "operandSize": 4,
+      "add": 0
+    }
+  }
+}

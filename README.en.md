@@ -1,12 +1,12 @@
 # Astral Ascent Build Selector
 
-**1.0.0-beta.1 · Steam Windows PC · verified game build 2.6.4**
+**1.0.1-beta.1 · Steam Windows PC · verified game build 2.7.0**
 
 ## Download
 
-**[Download the complete Mod ZIP (62.4 MB)](https://github.com/boyl/astral-ascent-bd-mod/releases/download/v1.0.0-beta.1/AstralAscent-BD-Mod-v1.0.0-beta.1.zip)**
+**[Download the complete Mod ZIP](https://github.com/boyl/astral-ascent-bd-mod/releases/download/v1.0.1-beta.1/AstralAscent-BD-Mod-v1.0.1-beta.1.zip)**
 
-[Release notes and checksums](https://github.com/boyl/astral-ascent-bd-mod/releases/tag/v1.0.0-beta.1). This is a prerelease. Use the Mod ZIP above; GitHub's `Source code` archives are not installable packages.
+[Release notes and checksums](https://github.com/boyl/astral-ascent-bd-mod/releases/tag/v1.0.1-beta.1). This is a prerelease. Use the Mod ZIP above; GitHub's `Source code` archives are not installable packages.
 
 An unofficial gameplay mod with immediate build equipment, custom aura selection and saved aura plans. Chinese and English are included in one package.
 
@@ -18,7 +18,7 @@ An unofficial gameplay mod with immediate build equipment, custom aura selection
 4. Press **F8**, or **Back + Start** on an XInput controller.
 5. Select **English** from **Language / 语言**. The setting is remembered. On Builds or Aura Plans, controller **Y** switches languages.
 
-Python and Frida are bundled. No separate Python installation is required. The installer checks the exact game executable and stops if an unrelated `version.dll` already exists.
+Python and Frida are bundled. No separate Python installation is required. The installer checks that the game executable exists and stops if an unrelated `version.dll` already exists.
 
 ## Use
 
@@ -63,7 +63,7 @@ To update, close the game and run the new package's `INSTALL.cmd`. To remove, cl
 
 ## Supported scope and limitations
 
-- Exact verified Steam Windows x64 game executable SHA-256: `CA376D2B741F65C75C416317517D24C316DD8A32A4EAE6559030797B3B9AA88B`.
+- Tested with Steam Windows x64 2.7.0. No game version or whole-file hash whitelist: unique native code anchors resolve interfaces, with runtime object checks. Missing or ambiguous interfaces produce a clear error.
 - Modifies Player 1. Full co-op, every character/unlock combination, other platforms, Proton and other game builds are not certified.
 - Uses native runtime hooks and D3D11; it is not an A2M2 sprite replacement. **Workshop subscription alone cannot install the native loader. Manual installation is required.**
 - English uses original English aura names/effect templates. Chinese display requires a Chinese-capable Windows font; English falls back to Segoe UI when Microsoft YaHei is unavailable.
@@ -71,4 +71,4 @@ To update, close the game and run the new package's `INSTALL.cmd`. To remove, cl
 
 ## Verification
 
-Previous equipment/save tests covered the existing gameplay path. This release adds Chinese/English catalog identity checks and isolated D3D/controller checks for both languages. These UI checks are separate from actual game performance tests.
+This release passes native interface regression tests, aura-plan and localization contract checks. Real-game loading and menu hooks were verified, and the user confirmed normal operation on 2.7.0 before publication. This confirmation does not certify every character or platform.

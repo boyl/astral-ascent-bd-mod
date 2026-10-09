@@ -1,7 +1,10 @@
-// 仅支持已核对的 2.6.4 EXE；地址由主模块基址计算。
+// 原生地址来自代码锚点解析，不按 EXE 哈希或版本号拒绝加载。
 let language=LANGUAGE_DATA;
 function t(zh,en){return language==='en'?en:zh;}
-const b=Process.mainModule.base,state=b.add(0xa12acc8);
+const b=Process.mainModule.base,L=LAYOUT_DATA;
+let state=null;
+function requireFrame(){if(state===null)throw Error(t("游戏帧尚未就绪","Game frame is not ready"));return state;}
+function validateFrame(p){const scene=p.add(0x28).readS32();if(scene<0||scene>1024||!Number.isFinite(p.add(L.runField).readDouble()))throw Error("Invalid game frame");}
 const loadLibrary=new NativeFunction(Process.getModuleByName('kernel32.dll').getExportByName('LoadLibraryW'),'pointer',['pointer']);
 if(loadLibrary(Memory.allocUtf16String(DLL_PATH)).isNull())throw Error(t("原生界面加载失败","Native overlay failed to load"));
 const dll=Process.getModuleByName('astral_bd_overlay.dll');
@@ -17,6 +20,7 @@ nativeLanguage(language==='en'?1:0);
 let auraPlans=[],pendingPlans=null,planSaving=false;
 const clearPlans=exported('BDAuraPlansClear','void',[]),addPlan=exported('BDAuraPlan','void',['int','pointer','pointer']),planName=exported('BDAuraPlanName','pointer',[]);
 const addRecipe=exported('BDRecipe','void',['int','pointer','pointer']),addAura=exported('BDAura','void',['int','pointer','pointer','int','int']),auraSlots=exported('BDAuraSlots','void',['pointer']);
+if(text(b.add(L.roomPath))!=='progress.currentRoom'||text(b.add(L.worldPath))!=='progress.currentWorld')throw Error('Invalid progression path layout');
 function populateCatalog(){
  recipes.forEach((r,i)=>addRecipe(i,Memory.allocUtf8String(r.name),Memory.allocUtf8String(r.description+'\n'+r.auraNames.join(' / '))));
  auras.forEach(a=>addAura(a.id,Memory.allocUtf8String(a.name),Memory.allocUtf8String(a.description),a.quality,a.elements));
@@ -29,18 +33,18 @@ function setLanguage(value){
  notify(t('界面已切换为简体中文。','Interface switched to English.'));send({event:'language',language});
 }
 function text(p){const f=p.readU8();return f&1?p.add(8).readPointer().readUtf8String(p.add(4).readU32()):p.add(1).readUtf8String(f>>1);}
-function dictionary(rva){const o=b.add(rva).readPointer(),h=o.add(0x240).readPointer(),count=o.add(0x248).readU64().toNumber();let p=h.readPointer(),out={};for(let i=0;i<count;i++,p=p.readPointer())out[text(p.add(16))]=p.add(0x50);return out;}
+function dictionary(rva){const o=b.add(rva).readPointer(),h=o.add(0x240).readPointer(),count=o.add(0x248).readU64().toNumber();if(count>20000||h.isNull())throw Error("Invalid dictionary layout");let p=h.readPointer(),out={};for(let i=0;i<count;i++,p=p.readPointer()){if(p.isNull()||p.equals(h))throw Error("Invalid dictionary node");const key=text(p.add(16));if(Object.hasOwn(out,key))throw Error("Duplicate dictionary key");out[key]=p.add(0x50);}return out;}
 function bits(v){const p=Memory.alloc(8);p.writeDouble(v);return p.readU64();}
-const assign=new NativeFunction(b.add(0x63f9a0),'void',['pointer','pointer','uint']);
-const refresh=new NativeFunction(b.add(0x1450440),'void',['pointer']);
-const gambitRefresh=new NativeFunction(b.add(0x3582dc0),'uint64',['pointer','uint64','uint64']);
-const checkpointSave=new NativeFunction(b.add(0x15fda50),'void',['pointer']);
+const assign=new NativeFunction(b.add(L.assign),'void',['pointer','pointer','uint']);
+const refresh=new NativeFunction(b.add(L.refresh),'void',['pointer']);
+const gambitRefresh=new NativeFunction(b.add(L.gambitRefresh),'uint64',['pointer','uint64','uint64']);
+const checkpointSave=new NativeFunction(b.add(L.checkpointSave),'void',['pointer']);
 function prepareCheckpoint(){
- if(b.add(0xc0b7ca0).readU32()<2)throw Error(t("当前房间存档点尚未准备好","The room checkpoint is not ready yet"));
+ if(b.add(L.checkpointCount).readU32()<2)throw Error(t("当前房间存档点尚未准备好","The room checkpoint is not ready yet"));
  // 检查点缓存是在房间开始时生成的；仅同步当前 P1 装备，沿用原版检查点与写盘入口。
- const cached=b.add(0xc0b7cb0).readPointer().add(0x38).readPointer().add(0x40),snapshot=JSON.parse(text(cached));
+ const cached=b.add(L.checkpointObject).readPointer().add(0x38).readPointer().add(0x40),snapshot=JSON.parse(text(cached));
  if(!snapshot.playerSpells||!snapshot.playerSpells.data)throw Error(t("检查点装备快照失效","Invalid checkpoint equipment snapshot"));
- const values=dictionary(0xc0d5cb0),data=snapshot.playerSpells.data;
+ const values=dictionary(L.equipment),data=snapshot.playerSpells.data;
  const keys=[1,2,3,4,5].map(s=>'P1_relic_'+s);
  for(let s=1;s<=4;s++)keys.push('P1_spell_'+s,'P1_spell_'+s+'_modificators');
  for(const key of keys)if(!(key in data)||!values[key])throw Error(t("检查点装备字段失效：","Invalid checkpoint equipment field: ")+key);
@@ -50,7 +54,8 @@ function saveEquipment(checkpoint){
  const {cached,snapshot,keys,values}=checkpoint,data=snapshot.playerSpells.data;
  for(const key of keys)data[key]=values[key].readU8()===0?values[key].add(8).readDouble():text(values[key].add(8));
  const value=JSON.stringify(snapshot).replace(/[^\x00-\x7f]/g,c=>'\\u'+c.charCodeAt(0).toString(16).padStart(4,'0'));
- assign(cached,Memory.allocUtf8String(value),value.length);state.add(0x1c95e0).writeDouble(1);checkpointSave(state);
+ const frame=requireFrame(),pending=frame.add(L.savePending),flag=pending.readDouble();if(flag!==0&&flag!==1)throw Error("Invalid save scheduler field");
+ assign(cached,Memory.allocUtf8String(value),value.length);pending.writeDouble(1);checkpointSave(frame);
 }
 let selected=null,mode='formed',enabled=true,freshRun=null,appliedRun=null,stopping=false;
 let growth=null,restoration=null,tick=0,claimRequested=false;
@@ -66,12 +71,13 @@ function commitEquipmentSave(checkpoint){
  if(checkpoint){saveEquipment(checkpoint);pendingEquipmentSave=false;}
  else pendingEquipmentSave=true;
 }
-function equipment(){const v=dictionary(0xc0d5cb0);return [1,2,3,4,5].map(s=>v['P1_relic_'+s].add(8).readDouble());}
+function equipment(){const v=dictionary(L.equipment);return [1,2,3,4,5].map(s=>{const p=v["P1_relic_"+s];if(!p||p.readU8()!==0)throw Error("Invalid aura slot field");const n=p.add(8).readDouble();if(!Number.isInteger(n)||n<0)throw Error("Invalid aura ID");return n;});}
 function equipAura(slot,id){
+ requireFrame();
  if(!Number.isInteger(slot)||slot<1||slot>5||id!==0&&!auras.some(a=>a.id===id))throw Error(t("光环或槽位无效","Invalid aura or slot"));
- if(b.add(0xc0dfa20).readU32()<2)throw Error(t("请先进入本轮游戏，再装备光环","Enter a run before equipping auras"));
- const checkpoint=equipmentCheckpoint(),v=checkpoint?checkpoint.values:dictionary(0xc0d5cb0),p=v['P1_relic_'+slot];
- p.add(8).writeDouble(id);refresh(state);commitEquipmentSave(checkpoint);
+ if(b.add(L.playerCount).readU32()<2)throw Error(t("请先进入本轮游戏，再装备光环","Enter a run before equipping auras"));
+ const checkpoint=equipmentCheckpoint(),v=checkpoint?checkpoint.values:dictionary(L.equipment),p=v['P1_relic_'+slot];
+ if(!p||p.readU8()!==0)throw Error("Invalid aura slot field");p.add(8).writeDouble(id);refresh(requireFrame());commitEquipmentSave(checkpoint);
  notify(id?t('已立即装备「','Equipped ')+auras.find(a=>a.id===id).name+t('」至光环槽 ',' in aura slot ')+slot:t('已清空光环槽 ','Cleared aura slot ')+slot);
  send({event:'aura-equipped',slot,id,equipment:equipment()});
 }
@@ -83,33 +89,35 @@ function renderPlans(document,error){
 }
 function saveAuraPlan(){
  if(planSaving)return;
- if(b.add(0xc0dfa20).readU32()<2)throw Error(t("请先进入本轮游戏，再保存当前光环","Enter a run before saving current auras"));
+ if(b.add(L.playerCount).readU32()<2)throw Error(t("请先进入本轮游戏，再保存当前光环","Enter a run before saving current auras"));
  planSaving=true;notify(t("正在保存光环方案…","Saving aura plan..."));send({event:'aura-plan-save',name:planName().readUtf8String(),auras:equipment(),language});
 }
 function applyAuraPlan(index){
+ requireFrame();
  const plan=auraPlans[index];if(!plan)throw Error(t("光环方案不存在","Aura plan does not exist"));
- if(b.add(0xc0dfa20).readU32()<2)throw Error(t("请先进入本轮游戏，再应用光环方案","Enter a run before applying an aura plan"));
+ if(b.add(L.playerCount).readU32()<2)throw Error(t("请先进入本轮游戏，再应用光环方案","Enter a run before applying an aura plan"));
  for(const id of plan.auras)if(id!==0&&!auras.some(a=>a.id===id))throw Error(t('方案包含已失效的光环 ID：','Plan contains an unavailable aura ID: ')+id+t('。请重新保存方案。','. Save a new plan.'));
- const checkpoint=equipmentCheckpoint(),v=dictionary(0xc0d5cb0);
+ const checkpoint=equipmentCheckpoint(),v=dictionary(L.equipment);
  for(let i=0;i<5;i++)if(!v['P1_relic_'+(i+1)]||v['P1_relic_'+(i+1)].readU8()!==0)throw Error(t("光环槽字段失效","Invalid aura slot field"));
  plan.auras.forEach((id,i)=>v['P1_relic_'+(i+1)].add(8).writeDouble(id));
  refresh(state);commitEquipmentSave(checkpoint);notify(t('已立即应用光环方案「','Applied aura plan: ')+plan.name+t('」。','.'));send({event:'aura-plan-applied',id:plan.id,equipment:equipment()});
 }
 function applyCurrent(index,value){
+ requireFrame();
  if(!Number.isInteger(index)||!recipes[index])throw Error(t("配方编号无效","Invalid build index"));
- if(b.add(0xc0dfa20).readU32()<2)throw Error(t("请先进入本轮游戏，再装配 BD","Enter a run before equipping a build"));
+ if(b.add(L.playerCount).readU32()<2)throw Error(t("请先进入本轮游戏，再装配 BD","Enter a run before equipping a build"));
  const checkpoint=equipmentCheckpoint();
- selected=index;mode=value;enabled=true;freshRun=state.add(0x1c4768).readDouble();
+ selected=index;mode=value;enabled=true;freshRun=state.add(L.runField).readDouble();
  apply(index);commitEquipmentSave(checkpoint);uiSelectionRequested=true;
  if(!checkpoint)notify(t('已立即装配「','Equipped ')+recipes[index].name+t('」。当前为大厅或起始平台；开始新局沿用此配方，进入房间后同步检查点。','. In the hub/start platform, equipment is saved at the next room checkpoint. Future runs use this build.'));
 }
 let lastVisible=false,pauseOwned=false,pauseStarted=0,resumeRequested=false,stopDeadline=null;
-function gamePaused(){const list=b.add(0xc0db828).readPointer(),count=b.add(0xc0db830).readU32();for(let i=1;i<count;i++)if(list.add(i*16).readPointer().add(0x38).readPointer().add(0x890).readDouble()!==0)return true;return false;}
+function gamePaused(){const list=b.add(L.pauseList).readPointer(),count=b.add(L.pauseCount).readU32();for(let i=1;i<count;i++)if(list.add(i*16).readPointer().add(0x38).readPointer().add(0x890).readDouble()!==0)return true;return false;}
 function syncPause(){
  const shown=!!isVisible();
  if(shown!==lastVisible){
   lastVisible=shown;
-  if(shown){resumeRequested=false;if(!pauseOwned&&b.add(0xc0dfa20).readU32()>1&&b.add(0xc0db830).readU32()>1&&!gamePaused()&&!escapePending()){if(nativeEscape()){pauseOwned=true;pauseStarted=Date.now();}}}
+  if(shown){resumeRequested=false;if(!pauseOwned&&b.add(L.playerCount).readU32()>1&&b.add(L.pauseCount).readU32()>1&&!gamePaused()&&!escapePending()){if(nativeEscape()){pauseOwned=true;pauseStarted=Date.now();}}}
   else if(pauseOwned)resumeRequested=true;
  }
  if(resumeRequested&&!shown&&!escapePending()&&Date.now()-pauseStarted>300){if(gamePaused())nativeEscape();pauseOwned=false;resumeRequested=false;}
@@ -129,12 +137,12 @@ const inputObserver=Process.attachModuleObserver({onAdded(module){
  const address=module.findExportByName('XInputGetState');if(!address)return;inputModules.add(module.base.toString());
  inputHooks.push(Interceptor.attach(address,{onEnter(a){this.index=a[0].toUInt32();this.output=a[1];this.fromGame=this.returnAddress.compare(b)>=0&&this.returnAddress.compare(b.add(Process.mainModule.size))<0;},onLeave(r){if(this.fromGame&&r.toUInt32()===0)filterPad(this.index,this.output,!!isVisible());}}));
 }});
-const jsonGet=new NativeFunction(b.add(0x499c1e0),'pointer',['pointer','pointer','pointer']),jsonOut=Memory.alloc(72);
-function progress(path){jsonGet(b.add(0xc08c600).readPointer(),jsonOut,b.add(path));if(jsonOut.readU8()!==0)throw Error(t("房间进度字段失效","Invalid room progression field"));return jsonOut.add(8).readDouble();}
-function room(){return progress(0xc43d250);}
-function seed(){const p=dictionary(0xc068390)['global_val_masterSeed__progress'];if(!p||p.readU8()!==0)throw Error(t("局种子字段失效","Invalid run seed field"));return p.add(8).readDouble();}
-function sameGrowthRun(){return growth&&growth.run===state.add(0x1c4768).readDouble()&&growth.seed===seed();}
-function eligibility(){const reached=progress(0xc43c650)>(growth.baseWorld||1)?4:Math.max(0,room()-(growth.baseRoom||0));if(reached>(growth.available||0)){growth.available=reached;persist();}return growth.available||0;}
+const jsonGet=new NativeFunction(b.add(L.jsonGet),'pointer',['pointer','pointer','pointer']),jsonOut=Memory.alloc(72);
+function progress(path){jsonGet(b.add(L.progressObject).readPointer(),jsonOut,b.add(path));if(jsonOut.readU8()!==0)throw Error(t("房间进度字段失效","Invalid room progression field"));return jsonOut.add(8).readDouble();}
+function room(){return progress(L.roomPath);}
+function seed(){const p=dictionary(L.globals)['global_val_masterSeed__progress'];if(!p||p.readU8()!==0)throw Error(t("局种子字段失效","Invalid run seed field"));return p.add(8).readDouble();}
+function sameGrowthRun(){return state!==null&&growth&&growth.run===state.add(L.runField).readDouble()&&growth.seed===seed();}
+function eligibility(){const reached=progress(L.worldPath)>(growth.baseWorld||1)?4:Math.max(0,room()-(growth.baseRoom||0));if(reached>(growth.available||0)){growth.available=reached;persist();}return growth.available||0;}
 function persist(){send({event:'profile',profile:{selected,mode,enabled,appliedRun,growth}});}
 function growthUI(){
  if(!enabled||!sameGrowthRun()){reward(Memory.allocUtf8String(''),0);return;}
@@ -156,8 +164,9 @@ function setGambit(v,slot,id){
  commitGambit(prepareGambit(v,slot,id));
 }
 function claim(){
+ requireFrame();
  if(!enabled||!sameGrowthRun()||growth.stage>=4||eligibility()<growth.stage+1)return;
- const r=recipes[growth.recipe],v=dictionary(0xc0d5cb0),stage=growth.stage;
+ const r=recipes[growth.recipe],v=dictionary(L.equipment),stage=growth.stage;
  const checkpoint=prepareCheckpoint();
  if(stage===0)setGambit(v,1,r.gambits[0]);
  else if(stage===3){const items=[2,3,4].map(s=>prepareGambit(v,s,r.gambits[s-1]));for(const item of items)commitGambit(item);}
@@ -170,7 +179,7 @@ function claim(){
 }
 function notify(message,allowed=true){status(Memory.allocUtf8String(message),allowed?1:0);send({event:'status',message});}
 function apply(index){
- const recipe=recipes[index],v=dictionary(0xc0d5cb0);
+ const recipe=recipes[index],v=dictionary(L.equipment);
  const writes=[];
  if(mode==='formed')for(let slot=1;slot<=5;slot++)writes.push(['P1_relic_'+slot,recipe.auras[slot-1]||0]);
  for(let slot=1;slot<=4;slot++)writes.push(['P1_spell_'+slot,recipe.spells[slot-1]]);
@@ -183,12 +192,13 @@ function apply(index){
   assign(v['P1_spell_'+slot+'_modificators'].add(8),Memory.allocUtf8String(value),value.length);
  }
  refresh(state);for(let slot=1;slot<=4;slot++)gambitRefresh(state,bits(1),bits(slot));
- appliedRun=freshRun;growth=mode==='growth'?{run:freshRun,seed:seed(),recipe:index,stage:0,available:0,baseRoom:room(),baseWorld:progress(0xc43c650)}:null;
+ appliedRun=freshRun;growth=mode==='growth'?{run:freshRun,seed:seed(),recipe:index,stage:0,available:0,baseRoom:room(),baseWorld:progress(L.worldPath)}:null;
  persist();growthUI();notify(mode==='growth'?recipe.name+t('：成长模式已开始。按 F8 查看和领取后续补给。',': growth mode started. Press F8 to view and claim rewards.'):t('已装配「','Equipped ')+recipe.name+t('」。本局不再重复发放；下一次新局仍使用此配方。','. Applied once this run. Future new runs use this build.'));
  send({event:'applied',recipe:index,run:freshRun});
 }
-const runHook=Interceptor.attach(b.add(0x31ddff0),{onLeave(){
- freshRun=state.add(0x1c4768).readDouble();
+const frameHook=Interceptor.attach(b.add(L.frameUpdate),{onEnter(a){try{validateFrame(a[0]);state=a[0];}catch(e){state=null;send({event:"frame-error",error:String(e)});}}});
+const runHook=Interceptor.attach(b.add(L.runStart),{onEnter(a){validateFrame(a[0]);state=a[0];},onLeave(){
+ freshRun=state.add(L.runField).readDouble();
  if(enabled&&selected!==null){try{apply(selected);}catch(e){enabled=false;persist();notify(e.toString(),false);send({event:'error',error:e.toString()});}}
  else if(enabled){notify(t("本局使用原版装备。进入房间后可在此立即装配 BD。","This run uses your original loadout. Equip a build here during the run."));visible(1);}
 }});
@@ -201,13 +211,13 @@ const presentHook=Interceptor.attach(Process.getModuleByName('dxgi.dll').base.ad
    visible(0);syncPause();
    if(pauseOwned||resumeRequested||escapePending())return;
    if(stopDeadline===null){stopDeadline=Date.now()+150;return;}if(Date.now()<stopDeadline)return;
-   presentHook.detach();runHook.detach();inputObserver.detach();for(const hook of inputHooks)hook.detach();shutdown();send({event:'stopped'});return;
+   presentHook.detach();runHook.detach();frameHook.detach();inputObserver.detach();for(const hook of inputHooks)hook.detach();shutdown();send({event:'stopped'});return;
   }
   syncPause();
   if(pendingPlans){const p=pendingPlans;pendingPlans=null;renderPlans(p.document,p.error);}
   if(restoration){const p=restoration;restoration=null;selected=p.selected;mode=p.mode;enabled=p.enabled;appliedRun=p.appliedRun;growth=p.growth;uiSelectionRequested=true;growthUI();}
   if(uiSelectionRequested){uiSelectionRequested=false;if(selected!==null)uiSelection(selected,mode==='growth'?1:0);}
-  if(++tick%60===0){growthUI();if(b.add(0xc0dfa20).readU32()>1){auraSlots(Memory.allocUtf8String(equipment().map((id,i)=>(i+1)+': '+(auras.find(a=>a.id===id)?.name||t("空","Empty"))).join(' / ')));if(pendingEquipmentSave&&room()>0&&b.add(0xc0b7ca0).readU32()>=2){try{commitEquipmentSave(prepareCheckpoint());send({event:'equipment-checkpoint-synced'});}catch(e){pendingEquipmentSave=false;notify(e.toString());send({event:'action-error',error:e.toString()});}}}}
+  if(++tick%60===0){growthUI();if(b.add(L.playerCount).readU32()>1){auraSlots(Memory.allocUtf8String(equipment().map((id,i)=>(i+1)+': '+(auras.find(a=>a.id===id)?.name||t("空","Empty"))).join(' / ')));if(pendingEquipmentSave&&room()>0&&b.add(L.checkpointCount).readU32()>=2){try{commitEquipmentSave(prepareCheckpoint());send({event:'equipment-checkpoint-synced'});}catch(e){pendingEquipmentSave=false;notify(e.toString());send({event:'action-error',error:e.toString()});}}}}
   if(actionRequested){const a=actionRequested;actionRequested=null;try{if(a.kind==='language')setLanguage(a.value);else if(a.kind==='aura')equipAura(a.slot,a.id);else if(a.kind==='plan')applyAuraPlan(a.index);else if(a.kind==='savePlan')saveAuraPlan();else applyCurrent(a.index,a.mode);}catch(e){notify(e.toString());send({event:'action-error',error:e.toString()});}}
   if(claimRequested){claimRequested=false;try{claim();}catch(e){enabled=false;persist();notify(e.toString(),false);send({event:'error',error:e.toString()});}}
   const c=command();if(!c)return;
@@ -222,5 +232,5 @@ const presentHook=Interceptor.attach(Process.getModuleByName('dxgi.dll').base.ad
   }catch(e){notify(e.toString());send({event:'action-error',error:e.toString()});}
  }
 });
-rpc.exports={language(value){if(value!=='en'&&value!=='zh-CN')throw Error('Unsupported language');actionRequested={kind:'language',value};},plans(document,error=null){pendingPlans={document,error};},saveplan(){actionRequested={kind:'savePlan'};},applyplan(index){actionRequested={kind:'plan',index};},stop(){stopping=true;},restore(profile){restoration=profile;},claim(){claimRequested=true;},equip(index,value='formed'){actionRequested={kind:'recipe',index,mode:value};},aura(slot,id){actionRequested={kind:'aura',slot,id};},select(index,value='formed'){selected=index;mode=value||'formed';enabled=true;uiSelectionRequested=true;},show(value){visible(value?1:0);},snapshot(){return{language,selected,mode,enabled,freshRun,appliedRun,growth,equipment:equipment(),paused:gamePaused(),pauseOwned,visible:!!isVisible()};}};
-send({event:'ready',version:'2.6.4',modVersion:'1.0.0-beta.1',language});
+rpc.exports={language(value){if(value!=='en'&&value!=='zh-CN')throw Error('Unsupported language');actionRequested={kind:'language',value};},plans(document,error=null){pendingPlans={document,error};},saveplan(){actionRequested={kind:'savePlan'};},applyplan(index){actionRequested={kind:'plan',index};},stop(){stopping=true;},restore(profile){restoration=profile;},claim(){claimRequested=true;},equip(index,value='formed'){actionRequested={kind:'recipe',index,mode:value};},aura(slot,id){actionRequested={kind:'aura',slot,id};},select(index,value='formed'){selected=index;mode=value||'formed';enabled=true;uiSelectionRequested=true;},show(value){visible(value?1:0);},snapshot(){return{frameReady:state!==null,run:state===null?null:state.add(L.runField).readDouble(),savePending:state===null?null:state.add(L.savePending).readDouble(),language,selected,mode,enabled,freshRun,appliedRun,growth,equipment:b.add(L.playerCount).readU32()>1?equipment():[],paused:gamePaused(),pauseOwned,visible:!!isVisible()};}};
+send({event:'ready',compatibility:'native-anchors',modVersion:'1.0.1-beta.1',language});

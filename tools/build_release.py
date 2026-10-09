@@ -15,7 +15,7 @@ if len(args.commit)!=40 or any(c not in '0123456789abcdef' for c in args.commit)
 version=(root/'VERSION').read_text().strip()
 package=root/'outputs/astral-bd';package.mkdir(parents=True,exist_ok=True)
 source=root/'work/native-bd'
-for name in ['runtime.js','controller.py','aura_plans.py','localization.py','autoload.py','recipes.json','auras.json','recipes.en.json','auras.en.json']:
+for name in ['compatibility.py','compatibility.json','runtime.js','controller.py','aura_plans.py','localization.py','autoload.py','recipes.json','auras.json','recipes.en.json','auras.en.json']:
     shutil.copy2(source/name,package/name)
 for path in (root/'installer').iterdir():shutil.copy2(path,package/path.name)
 for name in ['README.md','README.en.md']:shutil.copy2(root/name,package/name)
@@ -24,9 +24,9 @@ shutil.copy2(source/'vendor/imgui/LICENSE.txt',package/'ImGui-LICENSE.txt')
 shutil.copytree(args.runtime_dir,package/'runtime',dirs_exist_ok=True,ignore=shutil.ignore_patterns('__pycache__'))
 required={'autoload/version.dll','astral_bd_overlay.dll','runtime/python.exe','runtime/frida/_frida.pyd','runtime/LICENSE.txt','runtime/frida-17.19.0.dist-info/licenses/COPYING'}
 assert all((package/p).is_file() for p in required)
-(package/'release.json').write_text(json.dumps({'modVersion':version,'gameVersion':'2.6.4','sourceCommit':args.commit,'languages':['zh-CN','en'],'channel':'beta'},indent=2),encoding='utf-8')
+(package/'release.json').write_text(json.dumps({'modVersion':version,'compatibility':'native-anchors','testedGameVersions':['2.7.0'],'sourceCommit':args.commit,'languages':['zh-CN','en'],'channel':'beta'},indent=2),encoding='utf-8')
 allowed=['autoload/version.dll','astral_bd_overlay.dll','release.json','ImGui-LICENSE.txt','LICENSE-Mod.txt','README.md','README.en.md']
-allowed += ['runtime.js','controller.py','aura_plans.py','localization.py','autoload.py','recipes.json','auras.json','recipes.en.json','auras.en.json']
+allowed += ['compatibility.py','compatibility.json','runtime.js','controller.py','aura_plans.py','localization.py','autoload.py','recipes.json','auras.json','recipes.en.json','auras.en.json']
 allowed += [p.name for p in (root/'installer').iterdir()]
 allowed += [p.relative_to(package).as_posix() for p in (package/'runtime').rglob('*') if p.is_file() and '__pycache__' not in p.parts]
 manifest={name:hashlib.sha256((package/name).read_bytes()).hexdigest() for name in sorted(allowed)}
