@@ -1,0 +1,33 @@
+name: Package verified release
+on:
+  workflow_dispatch:
+    inputs:
+      delta_sha256:
+        description: Verified delta archive SHA-256
+        required: true
+      manifest_sha256:
+        description: Verified payload manifest SHA-256
+        required: true
+permissions:
+  contents: write
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      DELTA_SHA256: ${{ inputs.delta_sha256 }}
+      MANIFEST_SHA256: ${{ inputs.manifest_sha256 }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download verified inputs
+        run: |
+          gh release download v1.0.0-beta.1 --pattern AstralAscent-BD-Mod-v1.0.0-beta.1.zip
+          gh release download v1.0.1-beta.1 --pattern verified-release-delta.zip
+      - name: Assemble and validate every payload file
+        run: python tools/assemble_release.py
+      - name: Upload verified release assets
+        run: gh release upload v1.0.1-beta.1 AstralAscent-BD-Mod-v1.0.1-beta.1.zip SHA256SUMS.txt --clobber
