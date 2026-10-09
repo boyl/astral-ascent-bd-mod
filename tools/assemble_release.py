@@ -25,13 +25,13 @@ assert digest(files['manifest.json']) == os.environ['MANIFEST_SHA256']
 manifest = json.loads(files['manifest.json'])
 assert len(manifest) == 82
 metadata = json.loads(files['release.json'])
-assert metadata['modVersion'] == '1.0.1-beta.1'
+assert metadata['modVersion'] == '1.0.1'
 assert metadata['sourceCommit'] == os.environ['GITHUB_SHA']
 for name, expected in manifest.items():
     assert digest(files[name]) == expected, name
     assert Path(name).name not in ('profile.json', 'aura-plans.json', 'ui-settings.json')
     assert not name.endswith(('.sav', '.jsonl', '.log'))
-output = Path('AstralAscent-BD-Mod-v1.0.1-beta.1.zip')
+output = Path('AstralAscent-BD-Mod-v1.0.1.zip')
 with zipfile.ZipFile(output, 'w', zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
     for name in [*manifest, 'manifest.json']:
         archive.writestr('astral-bd/' + name, files[name])

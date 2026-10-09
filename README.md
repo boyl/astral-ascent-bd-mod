@@ -1,14 +1,14 @@
 # 星界战士 BD 选择 Mod
 
-**1.0.1-beta.1 · Steam Windows PC · 已验证游戏版本 2.7.0**
+**1.0.1 · Steam Windows PC · 已验证游戏版本 2.7.0**
 
-1.0.1-beta.1 修复游戏 2.7.0 更新后的自动加载失效，并取消游戏版本与整体哈希锁定。
+1.0.1 修复游戏 2.7.0 更新后的自动加载失效，并取消游戏版本与整体哈希锁定。
 
 ## 下载 / Download
 
-**[下载完整安装包 / Download Mod ZIP](https://github.com/boyl/astral-ascent-bd-mod/releases/download/v1.0.1-beta.1/AstralAscent-BD-Mod-v1.0.1-beta.1.zip)**
+**[下载完整安装包 / Download Mod ZIP](https://github.com/boyl/astral-ascent-bd-mod/releases/download/v1.0.1/AstralAscent-BD-Mod-v1.0.1.zip)**
 
-[发布说明与校验文件 / Release notes and checksums](https://github.com/boyl/astral-ascent-bd-mod/releases/tag/v1.0.1-beta.1)。当前为预发布版；请下载上述安装包，GitHub 的 `Source code` 压缩包不能直接安装。
+[发布说明与校验文件 / Release notes and checksums](https://github.com/boyl/astral-ascent-bd-mod/releases/tag/v1.0.1)。当前为正式版；请下载上述安装包，GitHub 的 `Source code` 压缩包不能直接安装。
 
 [English instructions](README.en.md)
 

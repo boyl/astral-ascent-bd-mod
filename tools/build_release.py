@@ -24,7 +24,7 @@ shutil.copy2(source/'vendor/imgui/LICENSE.txt',package/'ImGui-LICENSE.txt')
 shutil.copytree(args.runtime_dir,package/'runtime',dirs_exist_ok=True,ignore=shutil.ignore_patterns('__pycache__'))
 required={'autoload/version.dll','astral_bd_overlay.dll','runtime/python.exe','runtime/frida/_frida.pyd','runtime/LICENSE.txt','runtime/frida-17.19.0.dist-info/licenses/COPYING'}
 assert all((package/p).is_file() for p in required)
-(package/'release.json').write_text(json.dumps({'modVersion':version,'compatibility':'native-anchors','testedGameVersions':['2.7.0'],'sourceCommit':args.commit,'languages':['zh-CN','en'],'channel':'beta'},indent=2),encoding='utf-8')
+(package/'release.json').write_text(json.dumps({'modVersion':version,'compatibility':'native-anchors','testedGameVersions':['2.7.0'],'sourceCommit':args.commit,'languages':['zh-CN','en'],'channel':'stable'},indent=2),encoding='utf-8')
 allowed=['autoload/version.dll','astral_bd_overlay.dll','release.json','ImGui-LICENSE.txt','LICENSE-Mod.txt','README.md','README.en.md']
 allowed += ['compatibility.py','compatibility.json','runtime.js','controller.py','aura_plans.py','localization.py','autoload.py','recipes.json','auras.json','recipes.en.json','auras.en.json']
 allowed += [p.name for p in (root/'installer').iterdir()]

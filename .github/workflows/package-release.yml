@@ -26,8 +26,8 @@ jobs:
       - name: Download verified inputs
         run: |
           gh release download v1.0.0-beta.1 --pattern AstralAscent-BD-Mod-v1.0.0-beta.1.zip
-          gh release download v1.0.1-beta.1 --pattern verified-release-delta.zip
+          gh release download v1.0.1 --pattern verified-release-delta.zip
       - name: Assemble and validate every payload file
         run: python tools/assemble_release.py
       - name: Upload verified release assets
-        run: gh release upload v1.0.1-beta.1 AstralAscent-BD-Mod-v1.0.1-beta.1.zip SHA256SUMS.txt --clobber
+        run: gh release upload v1.0.1 AstralAscent-BD-Mod-v1.0.1.zip SHA256SUMS.txt --clobber
