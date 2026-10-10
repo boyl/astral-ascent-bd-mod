@@ -1,5 +1,8 @@
 param([switch]$UIFixture)
 $ErrorActionPreference='Stop'
+$modVersion=(Get-Content (Join-Path $PSScriptRoot '../../VERSION') -Raw).Trim()
+if($modVersion -notmatch '^\d+\.\d+\.\d+(?:-[A-Za-z0-9.]+)?$'){throw '无效 Mod 版本'}
+Set-Content (Join-Path $PSScriptRoot 'mod_version.h') ('#pragma once'+"`n"+'#define BD_MOD_VERSION "'+$modVersion+'"') -Encoding utf8NoBOM
 if($PSVersionTable.PSVersion.Major -lt 7){throw '需要 PowerShell 7'}
 $compilerRoot=Get-ChildItem 'C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC' -Directory | Sort-Object Name -Descending | Select-Object -First 1
 $sdkRoot=Get-ChildItem 'C:/Program Files (x86)/Windows Kits/10/Include' -Directory | Sort-Object Name -Descending | Select-Object -First 1
@@ -13,7 +16,7 @@ New-Item -ItemType Directory -Path $output -Force | Out-Null
 Push-Location $PSScriptRoot
 try{
  $defines=@();if($UIFixture){$defines=@('/DBD_UI_TEST')}
- & $compiler /nologo /LD /O2 /EHsc /std:c++17 /utf-8 /MT @defines /Ivendor/imgui overlay.cpp vendor/imgui/imgui.cpp vendor/imgui/imgui_draw.cpp vendor/imgui/imgui_tables.cpp vendor/imgui/imgui_widgets.cpp vendor/imgui/backends/imgui_impl_win32.cpp vendor/imgui/backends/imgui_impl_dx11.cpp /link ('/OUT:'+(Join-Path $output 'astral_bd_overlay.dll')) d3d11.lib dxgi.lib d3dcompiler.lib user32.lib gdi32.lib dwmapi.lib
+ & $compiler /nologo /LD /O2 /EHsc /std:c++17 /utf-8 /MT @defines /Ivendor/imgui overlay.cpp vendor/imgui/imgui.cpp vendor/imgui/imgui_draw.cpp vendor/imgui/imgui_tables.cpp vendor/imgui/imgui_widgets.cpp vendor/imgui/backends/imgui_impl_win32.cpp vendor/imgui/backends/imgui_impl_dx11.cpp /link ('/OUT:'+(Join-Path $output 'astral_bd_overlay.dll')) d3d11.lib dxgi.lib d3dcompiler.lib user32.lib gdi32.lib dwmapi.lib version.lib
  if($LASTEXITCODE -ne 0){throw "原生构建失败：$LASTEXITCODE"}
  if(-not $UIFixture){
   $assembler=Join-Path $compilerRoot.FullName 'bin/Hostx64/x64/ml64.exe'

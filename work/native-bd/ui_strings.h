@@ -17,7 +17,7 @@ static const char* T(const char* zh){
  if(std::strcmp(zh,u8"通用")==0)return "Neutral";
  if(std::strcmp(zh,u8"星界战士 · BD 选择")==0)return "Astral Ascent \u00b7 Build Selector";
  if(std::strcmp(zh,u8"LB/RB 切页 · 上下/左摇杆选择 · LT/RT 快速翻页 · B 收起")==0)return "LB/RB: tabs \u00b7 Up/Down: select \u00b7 LT/RT: jump \u00b7 B: close";
- if(std::strcmp(zh,u8"F8 或 Back＋Start 打开或关闭。进入本轮后可立即装配。版本：2.6.4")==0)return "F8 or Back+Start: open/close. Apply immediately during a run. Game: 2.6.4";
+ if(std::strcmp(zh,u8"F8 或 Back＋Start 打开或关闭。进入本轮后可立即装配。")==0)return "F8 or Back+Start: open/close. Apply immediately during a run.";
  if(std::strcmp(zh,u8"BD 构筑")==0)return "Builds";
  if(std::strcmp(zh,u8"左右切换模式 · A 立即装配 · X 领取成长补给")==0)return "Left/Right: mode \u00b7 A: equip \u00b7 X: claim growth reward";
  if(std::strcmp(zh,u8"成型模式")==0)return "Complete";

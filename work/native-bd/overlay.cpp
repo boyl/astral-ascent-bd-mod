@@ -9,11 +9,30 @@
 #include <string>
 #include <vector>
 #include <cstdio>
+#include "mod_version.h"
 #include "ui_strings.h"
 #include "imgui.h"
 #include "backends/imgui_impl_win32.h"
 #include "backends/imgui_impl_dx11.h"
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND,UINT,WPARAM,LPARAM);
+
+static std::string fileVersion(const wchar_t* path){
+ DWORD unused=0,size=GetFileVersionInfoSizeW(path,&unused);
+ if(!size)return "?";
+ std::vector<unsigned char> data(size);
+ if(!GetFileVersionInfoW(path,0,size,data.data()))return "?";
+ VS_FIXEDFILEINFO* info=nullptr;UINT length=0;
+ if(!VerQueryValueW(data.data(),L"\\",reinterpret_cast<void**>(&info),&length)||length<sizeof(*info)||info->dwSignature!=0xfeef04bd)return "?";
+ char value[64];
+ if(LOWORD(info->dwFileVersionLS))std::snprintf(value,sizeof(value),"%u.%u.%u.%u",HIWORD(info->dwFileVersionMS),LOWORD(info->dwFileVersionMS),HIWORD(info->dwFileVersionLS),LOWORD(info->dwFileVersionLS));
+ else std::snprintf(value,sizeof(value),"%u.%u.%u",HIWORD(info->dwFileVersionMS),LOWORD(info->dwFileVersionMS),HIWORD(info->dwFileVersionLS));
+ return value;
+}
+extern "C" __declspec(dllexport) const char* BDFileVersion(const wchar_t* path){static std::string value;value=fileVersion(path);return value.c_str();}
+static const std::string& gameVersion(){
+ static const std::string value=[](){wchar_t path[32768];DWORD n=GetModuleFileNameW(nullptr,path,32768);return n&&n<32768?fileVersion(path):std::string("?");}();
+ return value;
+}
 
 static ID3D11Device* device=nullptr;
 static ID3D11DeviceContext* context=nullptr;
@@ -194,7 +213,8 @@ extern "C" __declspec(dllexport) void BDRender(IDXGISwapChain* chain){
  ImGui::SetNextWindowPos(ImVec2((io.DisplaySize.x-size.x)/2,(io.DisplaySize.y-size.y)/2),ImGuiCond_Always);
  ImGui::SetNextWindowSize(size,ImGuiCond_Always);
  ImGui::Begin(T(u8"星界战士 · BD 选择"),nullptr,ImGuiWindowFlags_NoCollapse|ImGuiWindowFlags_NoResize|ImGuiWindowFlags_NoMove);
- ImGui::TextWrapped("%s",padActive?T(u8"LB/RB 切页 · 上下/左摇杆选择 · LT/RT 快速翻页 · B 收起"):T(u8"F8 或 Back＋Start 打开或关闭。进入本轮后可立即装配。版本：2.6.4"));
+ ImGui::TextWrapped("%s",padActive?T(u8"LB/RB 切页 · 上下/左摇杆选择 · LT/RT 快速翻页 · B 收起"):T(u8"F8 或 Back＋Start 打开或关闭。进入本轮后可立即装配。"));
+ ImGui::Text("%s: %s  |  Mod: %s",uiLanguage==0?u8"游戏版本":"Game",gameVersion().c_str(),BD_MOD_VERSION);
  int requestedLanguage=uiLanguage;
  ImGui::SetNextItemWidth(140);
  if(ImGui::Combo("Language / 语言",&requestedLanguage,"简体中文\0English\0"))command.store(0x600000+requestedLanguage);

@@ -1,14 +1,14 @@
 # Astral Ascent Build Selector
 
-**1.0.2 · Steam Windows PC · verified game build 2.7.0**
+**1.0.3 · Steam Windows PC · verified game build 2.7.0**
 
 ## Download
 
-1.0.2 prevents unavailable aura fields from terminating the mod during display refresh. Diagnostics identify the slot and field type; display resumes when fields become available. Equipment writes still require valid numeric fields.
+1.0.3 displays the actual game executable version and the mod version. It retains the 1.0.2 fix that prevents unavailable aura fields from terminating the mod during display refresh. Diagnostics identify the slot and field type; display resumes when fields become available. Equipment writes still require valid numeric fields.
 
-**[Download the complete Mod ZIP](https://github.com/boyl/astral-ascent-bd-mod/releases/download/v1.0.2/AstralAscent-BD-Mod-v1.0.2.zip)**
+**[Download the complete Mod ZIP](https://github.com/boyl/astral-ascent-bd-mod/releases/download/v1.0.3/AstralAscent-BD-Mod-v1.0.3.zip)**
 
-[Release notes and checksums](https://github.com/boyl/astral-ascent-bd-mod/releases/tag/v1.0.2). This is a stable release. Use the Mod ZIP above; GitHub's `Source code` archives are not installable packages.
+[Release notes and checksums](https://github.com/boyl/astral-ascent-bd-mod/releases/tag/v1.0.3). This is a stable release. Use the Mod ZIP above; GitHub's `Source code` archives are not installable packages.
 
 An unofficial gameplay mod with immediate build equipment, custom aura selection and saved aura plans. Chinese and English are included in one package.
 
