@@ -1,5 +1,6 @@
 """针对真实 EXE 的离线兼容边界回归；不会启动或修改游戏。"""
 import json
+import hashlib
 import re
 import struct
 import sys
@@ -27,10 +28,16 @@ class NativeCompatibilityTests(unittest.TestCase):
 
     def test_real_layout(self):
         result = compatibility.resolve_image(self.image)
-        self.assertEqual(result['refresh'], 0x150a470)
-        self.assertEqual(result['runStart'], 0x341a880)
-        self.assertEqual(result['equipment'], 0xc6a14e0)
-        self.assertEqual(result['runField'], 0x1c4850)
+        fixtures = {
+            '9bf346e5815ebc3f86e2e17f3d86e8c3925ef257bf7b91424d92e90f02b0e21c':
+                (0x150a470, 0x341a880, 0xc6a14e0, 0x1c4850),
+            # 2026-10-11 本机 EXE：锚点通过原生函数表检查，equipment 经只读实机五槽采样。
+            'f46d2391e2725d68e11ea842e0e610b8ab0f690a3a8acc59b4a11a1180db2cf2':
+                (22097296, 54700624, 208469872, 1853520),
+        }
+        fingerprint = hashlib.sha256(self.image).hexdigest()
+        self.assertIn(fingerprint, fixtures, '新 EXE 需要独立核对测试预期；运行时不按指纹拦截')
+        self.assertEqual(tuple(result[k] for k in ('refresh', 'runStart', 'equipment', 'runField')), fixtures[fingerprint])
 
     def test_unrelated_executable_change_remains_compatible(self):
         self.assertEqual(compatibility.resolve_image(self.image + b'UNRELATED_FILE_CONTENT_CHANGE'), compatibility.resolve_image(self.image))

@@ -71,7 +71,37 @@ function commitEquipmentSave(checkpoint){
  if(checkpoint){saveEquipment(checkpoint);pendingEquipmentSave=false;}
  else pendingEquipmentSave=true;
 }
-function equipment(){const v=dictionary(L.equipment);return [1,2,3,4,5].map(s=>{const p=v["P1_relic_"+s];if(!p||p.readU8()!==0)throw Error("Invalid aura slot field");const n=p.add(8).readDouble();if(!Number.isInteger(n)||n<0)throw Error("Invalid aura ID");return n;});}
+class AuraSlotError extends Error {
+ constructor(slot,type,value){super('Aura slot unavailable: P1_relic_'+slot+'; type='+type+'; value='+String(value));this.slot=slot;this.fieldType=type;this.fieldValue=String(value);}
+}
+function equipment(){
+ const v=dictionary(L.equipment);
+ return [1,2,3,4,5].map(slot=>{
+  const p=v['P1_relic_'+slot];
+  if(!p)throw new AuraSlotError(slot,'missing','');
+  const type=p.readU8();
+  // 原版初值为字符串；它不能作为数字直接读写，也不能猜成空槽。
+  if(type!==0)throw new AuraSlotError(slot,type,type===1?text(p.add(8)):'unsupported');
+  const id=p.add(8).readDouble();
+  if(!Number.isInteger(id)||id<0)throw new AuraSlotError(slot,type,id);
+  return id;
+ });
+}
+let equipmentIssue=null;
+function updateAuraSlots(){
+ try{
+  const ids=equipment();
+  auraSlots(Memory.allocUtf8String(ids.map((id,i)=>(i+1)+': '+(auras.find(a=>a.id===id)?.name||t('空','Empty'))).join(' / ')));
+  if(equipmentIssue!==null){send({event:'equipment-ready'});equipmentIssue=null;}
+  return true;
+ }catch(e){
+  if(!(e instanceof AuraSlotError))throw e;
+  auraSlots(Memory.allocUtf8String(t('光环槽尚不可用；进入房间后自动检查。','Aura slots unavailable; checked automatically in the room.')));
+  const issue=e.message;
+  if(issue!==equipmentIssue){equipmentIssue=issue;send({event:'equipment-unavailable',slot:e.slot,fieldType:e.fieldType,fieldValue:e.fieldValue,error:issue});}
+  return false;
+ }
+}
 function equipAura(slot,id){
  requireFrame();
  if(!Number.isInteger(slot)||slot<1||slot>5||id!==0&&!auras.some(a=>a.id===id))throw Error(t("光环或槽位无效","Invalid aura or slot"));
@@ -90,7 +120,8 @@ function renderPlans(document,error){
 function saveAuraPlan(){
  if(planSaving)return;
  if(b.add(L.playerCount).readU32()<2)throw Error(t("请先进入本轮游戏，再保存当前光环","Enter a run before saving current auras"));
- planSaving=true;notify(t("正在保存光环方案…","Saving aura plan..."));send({event:'aura-plan-save',name:planName().readUtf8String(),auras:equipment(),language});
+ const ids=equipment();
+ planSaving=true;notify(t("正在保存光环方案…","Saving aura plan..."));send({event:'aura-plan-save',name:planName().readUtf8String(),auras:ids,language});
 }
 function applyAuraPlan(index){
  requireFrame();
@@ -217,7 +248,7 @@ const presentHook=Interceptor.attach(Process.getModuleByName('dxgi.dll').base.ad
   if(pendingPlans){const p=pendingPlans;pendingPlans=null;renderPlans(p.document,p.error);}
   if(restoration){const p=restoration;restoration=null;selected=p.selected;mode=p.mode;enabled=p.enabled;appliedRun=p.appliedRun;growth=p.growth;uiSelectionRequested=true;growthUI();}
   if(uiSelectionRequested){uiSelectionRequested=false;if(selected!==null)uiSelection(selected,mode==='growth'?1:0);}
-  if(++tick%60===0){growthUI();if(b.add(L.playerCount).readU32()>1){auraSlots(Memory.allocUtf8String(equipment().map((id,i)=>(i+1)+': '+(auras.find(a=>a.id===id)?.name||t("空","Empty"))).join(' / ')));if(pendingEquipmentSave&&room()>0&&b.add(L.checkpointCount).readU32()>=2){try{commitEquipmentSave(prepareCheckpoint());send({event:'equipment-checkpoint-synced'});}catch(e){pendingEquipmentSave=false;notify(e.toString());send({event:'action-error',error:e.toString()});}}}}
+  if(++tick%60===0){growthUI();if(b.add(L.playerCount).readU32()>1){const equipmentReady=updateAuraSlots();if(equipmentReady&&pendingEquipmentSave&&room()>0&&b.add(L.checkpointCount).readU32()>=2){try{commitEquipmentSave(prepareCheckpoint());send({event:'equipment-checkpoint-synced'});}catch(e){pendingEquipmentSave=false;notify(e.toString());send({event:'action-error',error:e.toString()});}}}}
   if(actionRequested){const a=actionRequested;actionRequested=null;try{if(a.kind==='language')setLanguage(a.value);else if(a.kind==='aura')equipAura(a.slot,a.id);else if(a.kind==='plan')applyAuraPlan(a.index);else if(a.kind==='savePlan')saveAuraPlan();else applyCurrent(a.index,a.mode);}catch(e){notify(e.toString());send({event:'action-error',error:e.toString()});}}
   if(claimRequested){claimRequested=false;try{claim();}catch(e){enabled=false;persist();notify(e.toString(),false);send({event:'error',error:e.toString()});}}
   const c=command();if(!c)return;
@@ -233,4 +264,4 @@ const presentHook=Interceptor.attach(Process.getModuleByName('dxgi.dll').base.ad
  }
 });
 rpc.exports={language(value){if(value!=='en'&&value!=='zh-CN')throw Error('Unsupported language');actionRequested={kind:'language',value};},plans(document,error=null){pendingPlans={document,error};},saveplan(){actionRequested={kind:'savePlan'};},applyplan(index){actionRequested={kind:'plan',index};},stop(){stopping=true;},restore(profile){restoration=profile;},claim(){claimRequested=true;},equip(index,value='formed'){actionRequested={kind:'recipe',index,mode:value};},aura(slot,id){actionRequested={kind:'aura',slot,id};},select(index,value='formed'){selected=index;mode=value||'formed';enabled=true;uiSelectionRequested=true;},show(value){visible(value?1:0);},snapshot(){return{frameReady:state!==null,run:state===null?null:state.add(L.runField).readDouble(),savePending:state===null?null:state.add(L.savePending).readDouble(),language,selected,mode,enabled,freshRun,appliedRun,growth,equipment:b.add(L.playerCount).readU32()>1?equipment():[],paused:gamePaused(),pauseOwned,visible:!!isVisible()};}};
-send({event:'ready',compatibility:'native-anchors',modVersion:'1.0.1',language});
+send({event:'ready',compatibility:'native-anchors',modVersion:'1.0.2',language});
