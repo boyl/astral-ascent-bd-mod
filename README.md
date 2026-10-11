@@ -1,14 +1,16 @@
 # 星界战士 BD 选择 Mod
 
-**1.0.4 · Steam Windows PC · 已验证游戏版本 2.7.0**
+**1.0.5 · Steam Windows PC · 已验证游戏版本 2.7.3**
 
-1.0.4 在界面同时显示实际游戏 EXE 版本与 Mod 版本。保留 1.0.2 的修复：光环槽尚不可用时显示刷新导致 Mod 退出的问题；记录具体异常槽位和类型，数据恢复后自动恢复显示。未就绪的槽位保留写入限制。1.0.1 的游戏原生接口动态适配继续保留。
+1.0.5 修复同一局连续切换 BD 后技能不更新：同步原生技能当前定义，并以正确的浮点参数刷新符文。12 套正序及倒序共 24 次实机连续切换通过；成长模式连续切换和光环自选、方案回归通过。
+
+在界面同时显示实际游戏 EXE 版本与 Mod 版本。保留 1.0.2 的修复：光环槽尚不可用时显示刷新导致 Mod 退出的问题；记录具体异常槽位和类型，数据恢复后自动恢复显示。未就绪的槽位保留写入限制。1.0.1 的游戏原生接口动态适配继续保留。
 
 ## 下载 / Download
 
-**[下载完整安装包 / Download Mod ZIP](https://github.com/boyl/astral-ascent-bd-mod/releases/download/v1.0.4/AstralAscent-BD-Mod-v1.0.4.zip)**
+**[下载完整安装包 / Download Mod ZIP](https://github.com/boyl/astral-ascent-bd-mod/releases/download/v1.0.5/AstralAscent-BD-Mod-v1.0.5.zip)**
 
-[发布说明与校验文件 / Release notes and checksums](https://github.com/boyl/astral-ascent-bd-mod/releases/tag/v1.0.4)。当前为正式版；请下载上述安装包，GitHub 的 `Source code` 压缩包不能直接安装。
+[发布说明与校验文件 / Release notes and checksums](https://github.com/boyl/astral-ascent-bd-mod/releases/tag/v1.0.5)。当前为正式版；请下载上述安装包，GitHub 的 `Source code` 压缩包不能直接安装。
 
 [English instructions](README.en.md)
 

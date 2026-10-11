@@ -34,10 +34,10 @@ function setLanguage(value){
 }
 function text(p){const f=p.readU8();return f&1?p.add(8).readPointer().readUtf8String(p.add(4).readU32()):p.add(1).readUtf8String(f>>1);}
 function dictionary(rva){const o=b.add(rva).readPointer(),h=o.add(0x240).readPointer(),count=o.add(0x248).readU64().toNumber();if(count>20000||h.isNull())throw Error("Invalid dictionary layout");let p=h.readPointer(),out={};for(let i=0;i<count;i++,p=p.readPointer()){if(p.isNull()||p.equals(h))throw Error("Invalid dictionary node");const key=text(p.add(16));if(Object.hasOwn(out,key))throw Error("Duplicate dictionary key");out[key]=p.add(0x50);}return out;}
-function bits(v){const p=Memory.alloc(8);p.writeDouble(v);return p.readU64();}
 const assign=new NativeFunction(b.add(L.assign),'void',['pointer','pointer','uint']);
 const refresh=new NativeFunction(b.add(L.refresh),'void',['pointer']);
-const gambitRefresh=new NativeFunction(b.add(L.gambitRefresh),'uint64',['pointer','uint64','uint64']);
+// 原生包装器从 xmm1/xmm2 读取玩家与槽号，并通过 xmm0 返回 double。
+const gambitRefresh=new NativeFunction(b.add(L.gambitRefresh),'double',['pointer','double','double']);
 const checkpointSave=new NativeFunction(b.add(L.checkpointSave),'void',['pointer']);
 function prepareCheckpoint(){
  if(b.add(L.checkpointCount).readU32()<2)throw Error(t("当前房间存档点尚未准备好","The room checkpoint is not ready yet"));
@@ -193,7 +193,7 @@ function prepareGambit(v,slot,id,fullSlots=null){
  parts[0]=String(id);return {p,slot,value:parts.join('*')};
 }
 function commitGambit(item){
- assign(item.p.add(8),Memory.allocUtf8String(item.value),item.value.length);gambitRefresh(state,bits(1),bits(item.slot));
+ assign(item.p.add(8),Memory.allocUtf8String(item.value),item.value.length);gambitRefresh(state,1,item.slot);
 }
 function setGambit(v,slot,id){
  commitGambit(prepareGambit(v,slot,id));
@@ -213,8 +213,34 @@ function claim(){
  saveEquipment(checkpoint);growth.stage++;persist();growthUI();notify(t("成长补给已领取，下一件会在后续房间保留。","Growth reward collected. The next reward remains available in later rooms."));send({event:'growth-claimed',stage:growth.stage,run:growth.run});
 }
 function notify(message,allowed=true){status(Memory.allocUtf8String(message),allowed?1:0);send({event:'status',message});}
+function spellIcons(){
+ const frame=requireFrame(),layers=frame.add(0x70).readPointer(),count=frame.add(0x78).readU64().toNumber(),icons=[];
+ if(count>256||(count&&layers.isNull()))throw Error('Invalid spell icon layers');
+ for(let i=0;i<count;i++){
+  const layer=layers.add(i*0x253c0),sentinel=layer.add(0x10);let object=layer.add(0x68).readPointer(),visited=0;
+  while(!object.equals(sentinel)){
+   if(object.isNull()||++visited>20000)throw Error('Invalid spell icon object list');
+   const meta=object.add(8).readPointer(),flag=meta.readU8(),length=flag&1?meta.add(8).readU64().toNumber():flag>>1;
+   if(length>256)throw Error('Invalid native object name');
+   const name=flag&1?meta.add(16).readPointer().readUtf8String(length):meta.add(1).readUtf8String(length);
+   if(name==='obj_ui_spell_icon'){
+    const values=object.add(0x38).readPointer(),slot=values.add(0x880).readDouble(),player=values.add(0x888).readDouble();
+    if(player===1){
+     if(!Number.isInteger(slot)||slot<1||slot>4||icons[slot-1])throw Error('Invalid or duplicate player spell icon');
+     const current=values.add(0x8a8),id=current.readDouble();
+     if(!Number.isInteger(id)||id<0)throw Error('Invalid current spell definition');
+     icons[slot-1]=current;
+    }
+   }
+   object=object.add(0x58).readPointer();
+  }
+ }
+ if([0,1,2,3].some(s=>!icons[s]))throw Error(t('四个技能图标尚未就绪，请进入本轮后再装配。','Four spell icons are not ready. Enter a run before equipping.'));
+ return icons;
+}
 function apply(index){
  const recipe=recipes[index],v=dictionary(L.equipment);
+ const icons=spellIcons();
  const writes=[];
  if(mode==='formed')for(let slot=1;slot<=5;slot++)writes.push(['P1_relic_'+slot,recipe.auras[slot-1]||0]);
  for(let slot=1;slot<=4;slot++)writes.push(['P1_spell_'+slot,recipe.spells[slot-1]]);
@@ -226,7 +252,10 @@ function apply(index){
   const value=slots.map((id,i)=>id+(i?'x':'')).join('*')+'*'+(mode==='formed'&&recipe.gambitSlots?'1111':'1000');
   assign(v['P1_spell_'+slot+'_modificators'].add(8),Memory.allocUtf8String(value),value.length);
  }
- refresh(state);for(let slot=1;slot<=4;slot++)gambitRefresh(state,bits(1),bits(slot));
+ // 原生拾取替换也写当前定义；保留 previous，让引擎检测变化并重建技能。
+ for(let slot=1;slot<=4;slot++)icons[slot-1].writeDouble(recipe.spells[slot-1]);
+ refresh(state);for(let slot=1;slot<=4;slot++)gambitRefresh(state,1,slot);
+ for(let slot=1;slot<=4;slot++)if(icons[slot-1].readDouble()!==recipe.spells[slot-1]||v['P1_spell_'+slot].add(8).readDouble()!==recipe.spells[slot-1])throw Error('Spell replacement verification failed: '+slot);
  appliedRun=freshRun;growth=mode==='growth'?{run:freshRun,seed:seed(),recipe:index,stage:0,available:0,baseRoom:room(),baseWorld:progress(L.worldPath)}:null;
  persist();growthUI();notify(mode==='growth'?recipe.name+t('：成长模式已开始。按 F8 查看和领取后续补给。',': growth mode started. Press F8 to view and claim rewards.'):t('已装配「','Equipped ')+recipe.name+t('」。本局不再重复发放；下一次新局仍使用此配方。','. Applied once this run. Future new runs use this build.'));
  send({event:'applied',recipe:index,run:freshRun});
@@ -268,4 +297,4 @@ const presentHook=Interceptor.attach(Process.getModuleByName('dxgi.dll').base.ad
  }
 });
 rpc.exports={language(value){if(value!=='en'&&value!=='zh-CN')throw Error('Unsupported language');actionRequested={kind:'language',value};},plans(document,error=null){pendingPlans={document,error};},saveplan(){actionRequested={kind:'savePlan'};},applyplan(index){actionRequested={kind:'plan',index};},stop(){stopping=true;},restore(profile){restoration=profile;},claim(){claimRequested=true;},equip(index,value='formed'){actionRequested={kind:'recipe',index,mode:value};},aura(slot,id){actionRequested={kind:'aura',slot,id};},select(index,value='formed'){selected=index;mode=value||'formed';enabled=true;uiSelectionRequested=true;},show(value){visible(value?1:0);},snapshot(){return{frameReady:state!==null,run:state===null?null:state.add(L.runField).readDouble(),savePending:state===null?null:state.add(L.savePending).readDouble(),language,selected,mode,enabled,freshRun,appliedRun,growth,equipment:b.add(L.playerCount).readU32()>1?equipment():[],paused:gamePaused(),pauseOwned,visible:!!isVisible()};}};
-send({event:'ready',compatibility:'native-anchors',modVersion:'1.0.4',language});
+send({event:'ready',compatibility:'native-anchors',modVersion:'1.0.5',language});
