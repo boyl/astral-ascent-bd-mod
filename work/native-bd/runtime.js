@@ -182,10 +182,14 @@ function growthUI(){
  const available=eligibility()>=growth.stage+1;
  reward(Memory.allocUtf8String(t('下一件：','Next: ')+names[growth.stage]+t('。推进至第 ','; available after room ')+(growth.stage+1)+t(' 个房间后可领取，错过后仍保留。',' from selection. Unclaimed rewards remain available.')),available?1:0);
 }
-function prepareGambit(v,slot,id){
+function prepareGambit(v,slot,id,fullSlots=null){
  const p=v['P1_spell_'+slot+'_modificators'];if(!p||p.readU8()!==1)throw Error(t("符文槽失效","Invalid gambit slot"));
  const old=text(p.add(8)),parts=old.split('*');
  if(parts.length!==5||parts[4][0]!=='1')throw Error(t("首个符文槽未解锁","The first gambit slot is locked"));
+ if(fullSlots){
+  if(fullSlots.length!==4||fullSlots.some(x=>!Number.isInteger(x)||x<0))throw Error('Invalid full gambit loadout');
+  return {p,slot,value:fullSlots.map((x,i)=>x+(i?'x':'')).join('*')+'*1111'};
+ }
  parts[0]=String(id);return {p,slot,value:parts.join('*')};
 }
 function commitGambit(item){
@@ -199,8 +203,8 @@ function claim(){
  if(!enabled||!sameGrowthRun()||growth.stage>=4||eligibility()<growth.stage+1)return;
  const r=recipes[growth.recipe],v=dictionary(L.equipment),stage=growth.stage;
  const checkpoint=prepareCheckpoint();
- if(stage===0)setGambit(v,1,r.gambits[0]);
- else if(stage===3){const items=[2,3,4].map(s=>prepareGambit(v,s,r.gambits[s-1]));for(const item of items)commitGambit(item);}
+ if(stage===0)commitGambit(prepareGambit(v,1,r.gambits[0],r.gambitSlots?.[0]));
+ else if(stage===3){const items=[2,3,4].map(s=>prepareGambit(v,s,r.gambits[s-1],r.gambitSlots?.[s-1]));for(const item of items)commitGambit(item);}
  else{
   const ids=stage===1?r.auras.slice(0,2):r.auras.slice(2),slots=[1,2,3,4,5].filter(s=>v['P1_relic_'+s]&&v['P1_relic_'+s].readU8()===0&&v['P1_relic_'+s].add(8).readDouble()===0);
   if(slots.length<ids.length){notify(t('需要 ','Requires ')+ids.length+t(' 个空光环槽；请用光环自选页腾出槽位，再领取保留补给。',' empty aura slots. Clear slots in Custom Auras, then claim the retained reward.'));return;}
@@ -264,4 +268,4 @@ const presentHook=Interceptor.attach(Process.getModuleByName('dxgi.dll').base.ad
  }
 });
 rpc.exports={language(value){if(value!=='en'&&value!=='zh-CN')throw Error('Unsupported language');actionRequested={kind:'language',value};},plans(document,error=null){pendingPlans={document,error};},saveplan(){actionRequested={kind:'savePlan'};},applyplan(index){actionRequested={kind:'plan',index};},stop(){stopping=true;},restore(profile){restoration=profile;},claim(){claimRequested=true;},equip(index,value='formed'){actionRequested={kind:'recipe',index,mode:value};},aura(slot,id){actionRequested={kind:'aura',slot,id};},select(index,value='formed'){selected=index;mode=value||'formed';enabled=true;uiSelectionRequested=true;},show(value){visible(value?1:0);},snapshot(){return{frameReady:state!==null,run:state===null?null:state.add(L.runField).readDouble(),savePending:state===null?null:state.add(L.savePending).readDouble(),language,selected,mode,enabled,freshRun,appliedRun,growth,equipment:b.add(L.playerCount).readU32()>1?equipment():[],paused:gamePaused(),pauseOwned,visible:!!isVisible()};}};
-send({event:'ready',compatibility:'native-anchors',modVersion:'1.0.3',language});
+send({event:'ready',compatibility:'native-anchors',modVersion:'1.0.4',language});

@@ -1,14 +1,14 @@
 # Astral Ascent Build Selector
 
-**1.0.3 · Steam Windows PC · verified game build 2.7.0**
+**1.0.4 · Steam Windows PC · verified game build 2.7.0**
 
 ## Download
 
-1.0.3 displays the actual game executable version and the mod version. It retains the 1.0.2 fix that prevents unavailable aura fields from terminating the mod during display refresh. Diagnostics identify the slot and field type; display resumes when fields become available. Equipment writes still require valid numeric fields.
+1.0.4 displays the actual game executable version and the mod version. It retains the 1.0.2 fix that prevents unavailable aura fields from terminating the mod during display refresh. Diagnostics identify the slot and field type; display resumes when fields become available. Equipment writes still require valid numeric fields.
 
-**[Download the complete Mod ZIP](https://github.com/boyl/astral-ascent-bd-mod/releases/download/v1.0.3/AstralAscent-BD-Mod-v1.0.3.zip)**
+**[Download the complete Mod ZIP](https://github.com/boyl/astral-ascent-bd-mod/releases/download/v1.0.4/AstralAscent-BD-Mod-v1.0.4.zip)**
 
-[Release notes and checksums](https://github.com/boyl/astral-ascent-bd-mod/releases/tag/v1.0.3). This is a stable release. Use the Mod ZIP above; GitHub's `Source code` archives are not installable packages.
+[Release notes and checksums](https://github.com/boyl/astral-ascent-bd-mod/releases/tag/v1.0.4). This is a stable release. Use the Mod ZIP above; GitHub's `Source code` archives are not installable packages.
 
 An unofficial gameplay mod with immediate build equipment, custom aura selection and saved aura plans. Chinese and English are included in one package.
 
@@ -24,8 +24,8 @@ Python and Frida are bundled. No separate Python installation is required. The i
 
 ## Use
 
-- **Builds / Complete:** immediately replace Player 1's 5 auras, 4 spells and recipe gambits. Most recipes use the first gambit slot; 3D Hunter includes all four slots per spell.
-- **Builds / Growth:** equip spells immediately. Subsequent room progress unlocks four retained rewards: the first gambit, two auras, three auras, and remaining primary gambits. Aura rewards require empty slots.
+- **Builds / Complete:** immediately replace Player 1's 5 auras, 4 spells and recipe gambits. All twelve recipes include four gambit slots per spell, with low-cost, multi-hit or area spells selected for their trigger mechanics.
+- **Builds / Growth:** equip spells immediately. Subsequent room progress unlocks four retained rewards: the first spell's gambit set, two auras, three auras, and the other three spells' gambit sets. Aura rewards require empty slots.
 - **Custom Auras:** filter 355 original auras by rarity and element; view English effects, select a slot and equip immediately. Duplicate auras and clearing individual slots are supported.
 - **Aura Plans:** enter an optional name and save all five current aura slots. Select a saved plan and apply it immediately. Empty slots are preserved; spells and gambits stay unchanged. Blank names are generated automatically.
 - The selected build becomes the default for future new runs. Custom auras and aura plans do not change that default. Continuing a saved run does not reapply the build.

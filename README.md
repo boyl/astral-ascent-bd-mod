@@ -1,14 +1,14 @@
 # 星界战士 BD 选择 Mod
 
-**1.0.3 · Steam Windows PC · 已验证游戏版本 2.7.0**
+**1.0.4 · Steam Windows PC · 已验证游戏版本 2.7.0**
 
-1.0.3 在界面同时显示实际游戏 EXE 版本与 Mod 版本。保留 1.0.2 的修复：光环槽尚不可用时显示刷新导致 Mod 退出的问题；记录具体异常槽位和类型，数据恢复后自动恢复显示。未就绪的槽位保留写入限制。1.0.1 的游戏原生接口动态适配继续保留。
+1.0.4 在界面同时显示实际游戏 EXE 版本与 Mod 版本。保留 1.0.2 的修复：光环槽尚不可用时显示刷新导致 Mod 退出的问题；记录具体异常槽位和类型，数据恢复后自动恢复显示。未就绪的槽位保留写入限制。1.0.1 的游戏原生接口动态适配继续保留。
 
 ## 下载 / Download
 
-**[下载完整安装包 / Download Mod ZIP](https://github.com/boyl/astral-ascent-bd-mod/releases/download/v1.0.3/AstralAscent-BD-Mod-v1.0.3.zip)**
+**[下载完整安装包 / Download Mod ZIP](https://github.com/boyl/astral-ascent-bd-mod/releases/download/v1.0.4/AstralAscent-BD-Mod-v1.0.4.zip)**
 
-[发布说明与校验文件 / Release notes and checksums](https://github.com/boyl/astral-ascent-bd-mod/releases/tag/v1.0.3)。当前为正式版；请下载上述安装包，GitHub 的 `Source code` 压缩包不能直接安装。
+[发布说明与校验文件 / Release notes and checksums](https://github.com/boyl/astral-ascent-bd-mod/releases/tag/v1.0.4)。当前为正式版；请下载上述安装包，GitHub 的 `Source code` 压缩包不能直接安装。
 
 [English instructions](README.en.md)
 
@@ -27,7 +27,7 @@
 | 光环自选 | 按品质和元素筛选 355 项光环，查看效果，指定五槽之一立即装备或清空；允许重复 |
 | 光环方案 | 保存当前五槽（含空槽），在列表中选择后立即应用；保留当前法术与符文 |
 
-成型模式替换一号玩家五个光环、四个法术及配方符文。多数配方只开放首槽；3D 猎人四个法术各有完整四槽配套符文。成长模式立即装备法术，之后按房间推进分四次领取核心符文、两件光环、三件光环、剩余核心符文；未领补给保留，需要足够空光环槽。
+成型模式替换一号玩家五个光环、四个法术及配方符文。12 套配方的四个法术均有完整四槽配套符文；低费、多段和 AOE 技能按各构筑触发机制选配。成长模式立即装备法术，之后按房间推进分四次领取首个法术的配套符文、两件光环、三件光环、其余三个法术的配套符文；未领补给保留，需要足够空光环槽。
 
 手柄：LB/RB 切三页，上下或左摇杆选择，LT/RT 跳八项，A 应用，B 收起。BD 页 X 领补给；光环页 X 切元素、Y 清槽、右摇杆按下切品质、左摇杆按下重置筛选；方案页 X 保存。方案名称留空自动命名，同名另存。
 

@@ -1,7 +1,8 @@
 """从已核对的原版数据生成配方和手动光环目录。"""
-import json,re
-from aura_descriptions import description
+import json,re,sys
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).parent))
+from aura_descriptions import description
 game=Path('C:/Program Files (x86)/Steam/steamapps/common/Astral Ascent')
 folder=Path(__file__).parent
 loc=json.loads((game/'dictionary_localisation_chinese_simplified.json').read_text(encoding='utf-8'))['data']
@@ -24,18 +25,20 @@ rows=[
  ('冰击＋脆冰',[112,112,108,108,404],[90,107,90,107],'冰击施加冻结与冻伤，脆冰提供碎片和暴击。',ice),
 ]
 recipes=[]
+skill_loadouts=json.loads((folder/'skill_loadouts.json').read_text(encoding='utf-8'))
+assert len(skill_loadouts)==len(rows)
 for i,(title,ids,gambits,desc,source) in enumerate(rows):
- spells=[30,31,38,42] if i==4 else [38,39,43,38] if i==1 else [31,42,31,42] if i==2 else [34,45,34,45]
+ skills=skill_loadouts[i];spells=skills['spells'];gambits=[slots[0] for slots in skills['slots']]
  assert all(name(a) and 1<=book[9][a][0]<=4 for a in ids)
  recipes.append(dict(name=title,auras=ids,spells=spells,gambits=gambits,description=desc,source=source,auraNames=[name(a) for a in ids]))
- if i==4:
-  recipes[-1]['gambitSlots']=[[116,140,140,172] for _ in range(4)]
-  recipes[-1]['description']+='\n配套法术：'+ ' / '.join(re.sub(r'\[.*?\]','',loc['skill_name_'+str(x)]) for x in spells)+'（全部 1 费、多段）。\n每个法术：命中冰剑＋回蓝＋回蓝＋施法屏障。'
+ recipes[-1]['gambitSlots']=skills['slots']
+ recipes[-1]['description']+='\n配套法术：'+ ' / '.join(re.sub(r'\[.*?\]','',loc['skill_name_'+str(x)]) for x in spells)+'。\n完整四槽：'+skills['zh']+'。'
 auras=[dict(id=i,name=name(i),description='品质：'+{1:'普通',2:'稀有',3:'史诗',4:'星界'}[book[9][i][0]]+'\n'+description(i)) for i in range(len(book[0])) if name(i) and book[9][i][0] in (1,2,3,4)]
 for a in auras:
  a['quality']=book[9][a['id']][0]
  tags=str(book[11][a['id']][0]).replace('!','').split(';')
  a['elements']=sum(1<<i for i,e in enumerate(['fire','ice','electric','poison','neutral']) if e in tags)
 for filename,value in [('recipes.json',recipes),('auras.json',auras)]:
+ if filename=='auras.json' and '--recipes-only' in sys.argv:continue
  (folder/filename).write_text(json.dumps(value,ensure_ascii=False,indent=2),encoding='utf-8')
 print(len(recipes),'套配方，',len(auras),'项光环')

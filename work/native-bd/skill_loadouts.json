@@ -1,0 +1,14 @@
+[
+ {"spells":[30,31,38,42],"slots":[[116,154,140,172],[116,154,140,172],[116,154,140,172],[116,154,140,172]],"zh":"命中冰剑 / 施法导弹 / 命中回蓝 / 施法屏障","en":"on-hit ice sword / on-cast missiles / on-hit mana recovery / on-cast barrier"},
+ {"spells":[38,39,43,34],"slots":[[99,111,140,172],[99,111,140,172],[99,111,140,172],[99,111,140,172]],"zh":"施法雪花 / 施法冰碎片 / 命中回蓝 / 施法屏障","en":"on-cast snowflakes / on-cast ice shards / on-hit mana recovery / on-cast barrier"},
+ {"spells":[31,42,61,62],"slots":[[82,64,140,172],[82,64,140,172],[82,140,140,172],[82,140,140,172]],"zh":"前两法术：积雨云 / 感电 / 回蓝 / 屏障；后两法术：积雨云 / 回蓝 / 回蓝 / 屏障","en":"first two: storm clouds / electrify / mana / barrier; last two: storm clouds / mana / mana / barrier"},
+ {"spells":[30,31,38,42],"slots":[[140,140,154,172],[140,140,154,172],[140,140,154,172],[140,140,154,172]],"zh":"命中回蓝 / 命中回蓝 / 施法导弹 / 施法屏障","en":"on-hit mana / on-hit mana / on-cast missiles / on-cast barrier"},
+ {"spells":[30,31,38,42],"slots":[[116,140,140,172],[116,140,140,172],[116,140,140,172],[116,140,140,172]],"zh":"命中冰剑 / 命中回蓝 / 命中回蓝 / 施法屏障","en":"on-hit ice sword / on-hit mana / on-hit mana / on-cast barrier"},
+ {"spells":[57,40,65,48],"slots":[[106,111,140,172],[106,111,140,172],[106,111,140,172],[106,111,140,172]],"zh":"命中冰圣像 / 施法冰碎片 / 命中回蓝 / 施法屏障","en":"on-hit ice idol / on-cast ice shards / on-hit mana / on-cast barrier"},
+ {"spells":[31,42,61,62],"slots":[[64,140,140,172],[64,140,140,172],[64,140,140,172],[64,140,140,172]],"zh":"命中感电（启动光环火花循环）/ 命中回蓝 / 命中回蓝 / 施法屏障","en":"on-hit electrify (starts the aura spark loop) / on-hit mana / on-hit mana / on-cast barrier"},
+ {"spells":[65,64,51,34],"slots":[[20,20,140,172],[20,20,140,172],[20,20,140,172],[20,20,140,172]],"zh":"命中黏液 / 命中黏液 / 命中回蓝 / 施法屏障","en":"on-hit slimes / on-hit slimes / on-hit mana / on-cast barrier"},
+ {"spells":[57,40,65,48],"slots":[[106,111,140,172],[106,111,140,172],[106,111,140,172],[106,111,140,172]],"zh":"命中冰圣像 / 施法冰碎片 / 命中回蓝 / 施法屏障","en":"on-hit ice idol / on-cast ice shards / on-hit mana / on-cast barrier"},
+ {"spells":[57,65,40,48],"slots":[[106,38,140,172],[106,38,140,172],[106,38,140,172],[106,38,140,172]],"zh":"命中冰圣像 / 命中毒气 / 命中回蓝 / 施法屏障","en":"on-hit ice idol / on-hit toxic gas / on-hit mana / on-cast barrier"},
+ {"spells":[30,31,38,42],"slots":[[155,116,140,172],[155,116,140,172],[155,116,140,172],[155,116,140,172]],"zh":"命中导弹 / 命中冰剑 / 命中回蓝 / 施法屏障","en":"on-hit missiles / on-hit ice sword / on-hit mana / on-cast barrier"},
+ {"spells":[40,48,57,65],"slots":[[91,111,140,172],[91,111,140,172],[91,111,140,172],[91,111,140,172]],"zh":"命中冰冻 / 施法冰碎片 / 命中回蓝 / 施法屏障","en":"on-hit freeze / on-cast ice shards / on-hit mana / on-cast barrier"}
+]

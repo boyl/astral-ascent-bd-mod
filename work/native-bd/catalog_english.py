@@ -1,7 +1,9 @@
 """使用原版英文名称与效果模板生成英文目录；组件 ID 与中文共用。"""
 import json
 import re
+import sys
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).parent))
 from aura_descriptions import english, description
 
 folder=Path(__file__).parent
@@ -25,11 +27,12 @@ rows=[
 ('Full-life First Strike Missiles','First strike triggers missiles and joins the ice sword cycle; a clearing variant.'),
 ('Ice Strike + Brittle Ice','Ice Strike applies freeze and frostbite; Brittle Ice adds shards and criticals.'),
 ]
-for r,(title,desc) in zip(recipes,rows,strict=True):
+skills=json.loads((folder/'skill_loadouts.json').read_text(encoding='utf-8'))
+for r,(title,desc),skill in zip(recipes,rows,skills,strict=True):
     r.update(name=title,description=desc,auraNames=[name(i) for i in r['auras']])
-    if 'gambitSlots' in r:
-        r['description']+='\nSpells: '+' / '.join(re.sub(r'\[.*?\]','',english['skill_name_'+str(i)]) for i in r['spells'])+' (1 mana each, multiple hits).\nEach spell: on-hit ice sword + mana recovery + mana recovery + casting barrier.'
+    r['description']+='\nSpells: '+' / '.join(re.sub(r'\[.*?\]','',english['skill_name_'+str(i)]) for i in r['spells'])+'.\nFour gambit slots: '+skill['en']+'.'
 for filename,value in [('auras.en.json',auras),('recipes.en.json',recipes)]:
+    if filename=='auras.en.json' and '--recipes-only' in sys.argv:continue
     assert not any(re.search(r'[\u4e00-\u9fff]',x['name']+x['description']) for x in value)
     (folder/filename).write_text(json.dumps(value,ensure_ascii=False,indent=2),encoding='utf-8')
 print('English catalog:',len(recipes),'builds,',len(auras),'auras')
