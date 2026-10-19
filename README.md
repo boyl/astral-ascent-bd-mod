@@ -1,3 +1,5 @@
+![GitHub Release Downloads](https://img.shields.io/github/downloads/boyl/astral-ascent-bd-mod/total?label=Downloads&color=blue)
+
 # 星界战士 BD 选择 Mod
 
 **1.0.5 · Steam Windows PC · 已验证游戏版本 2.7.3**
